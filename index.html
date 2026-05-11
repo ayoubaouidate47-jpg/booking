@@ -43,6 +43,7 @@ nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--deep)}
 .hero-pattern{position:absolute;inset:0;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpolygon points='40,2 78,20 78,60 40,78 2,60 2,20' fill='none' stroke='%23F0C040' stroke-width='1'/%3E%3Cpolygon points='40,14 66,27 66,53 40,66 14,53 14,27' fill='none' stroke='%23F0C040' stroke-width='0.5'/%3E%3C/svg%3E")}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1A0F0A 0%,#3D1A0A 40%,#1A2A20 100%)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35}
 .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:900px}
 .hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold-bright);font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;padding:8px 24px;border-radius:2px;margin-bottom:2rem}
 .hero-title{font-family:'Cinzel Decorative',serif;font-size:clamp(2.5rem,6vw,5rem);color:#fff;line-height:1.1;margin-bottom:1rem}
@@ -71,8 +72,15 @@ nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.75rem}
 .card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);transition:all 0.3s;border:1px solid var(--border)}
 .card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,0.13)}
-.card-img-placeholder{width:100%;height:180px;display:flex;align-items:center;justify-content:center;font-size:3.2rem;position:relative}
-.card-badge{position:absolute;top:10px;left:10px;background:var(--terracotta);color:#fff;font-size:0.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:3px}
+
+/* ── REAL IMAGE STYLES ── */
+.card-img{width:100%;height:200px;object-fit:cover;display:block;transition:transform 0.4s}
+.card:hover .card-img{transform:scale(1.04)}
+.card-img-wrap{position:relative;overflow:hidden;height:200px}
+.card-img-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3.2rem;position:relative;background:linear-gradient(135deg,#F5E6CC,#D4A96B)}
+.card-badge{position:absolute;top:10px;left:10px;background:var(--terracotta);color:#fff;font-size:0.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:3px;z-index:2}
+.img-credit{position:absolute;bottom:4px;right:6px;font-size:0.6rem;color:rgba(255,255,255,0.55);background:rgba(0,0,0,0.3);padding:1px 5px;border-radius:2px;z-index:2}
+
 .card-body{padding:1.25rem}
 .card-name{font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:var(--deep);margin-bottom:0.4rem}
 .card-location{font-size:0.78rem;color:var(--text-muted);margin-bottom:0.6rem}
@@ -98,7 +106,11 @@ nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0
 .filter-btn:hover,.filter-btn.active{background:var(--terracotta);color:#fff;border-color:var(--terracotta)}
 .filter-btn-teal:hover,.filter-btn-teal.active{background:var(--teal);border-color:var(--teal);color:#fff}
 .filter-btn-gold:hover,.filter-btn-gold.active{background:var(--gold);border-color:var(--gold);color:var(--deep)}
+
+/* ── PLACE CARDS WITH REAL IMAGES ── */
 .place-card{position:relative;border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:all 0.4s}
+.place-bg-img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.place-card:hover .place-bg-img{transform:scale(1.06)}
 .place-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4.5rem;transition:transform 0.4s}
 .place-card:hover .place-bg{transform:scale(1.06)}
 .place-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,15,10,0.95) 0%,rgba(26,15,10,0.3) 60%,transparent 100%);opacity:0.72;transition:opacity 0.3s}
@@ -107,17 +119,25 @@ nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0
 .place-name{font-family:'Cinzel Decorative',serif;font-size:1rem;margin-bottom:0.2rem}
 .place-detail{font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.5}
 .place-link{margin-top:0.6rem;display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-bright);cursor:pointer}
+
+/* ── ACTIVITY CARDS WITH REAL IMAGES ── */
 .activity-card{background:var(--deep);border-radius:8px;overflow:hidden;border:1px solid rgba(240,192,64,0.15);transition:all 0.3s}
 .activity-card:hover{transform:translateY(-5px);border-color:var(--gold)}
-.activity-header{height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.activity-header{height:160px;position:relative;overflow:hidden}
+.activity-header-img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.activity-card:hover .activity-header-img{transform:scale(1.06)}
+.activity-header-fallback{height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
 .activity-body{padding:1.25rem}
 .activity-name{font-family:'Cinzel Decorative',serif;font-size:0.88rem;color:var(--gold-bright);margin-bottom:0.4rem}
 .activity-desc{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:0.75rem}
 .activity-footer{display:flex;justify-content:space-between;align-items:center;padding-top:0.75rem;border-top:1px solid rgba(240,192,64,0.12)}
 .activity-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold-bright);font-weight:600}
 .activity-duration{font-size:0.72rem;color:rgba(255,255,255,0.45)}
+
+/* ── GUIDE CARDS ── */
 .guide-card{background:#fff;border-radius:8px;overflow:hidden;border:1px solid var(--border);transition:all 0.3s;display:flex;flex-direction:column}
 .guide-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.1)}
+.guide-avatar-img{width:100%;height:180px;object-fit:cover;object-position:top}
 .guide-avatar{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--cream-dark)}
 .guide-body{padding:1.25rem;flex:1}
 .guide-name{font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:var(--deep);margin-bottom:0.2rem}
@@ -182,6 +202,11 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.78rem}
 .footer-contact-item{font-size:0.8rem;display:flex;align-items:center;gap:7px;color:rgba(255,255,255,0.45);margin-bottom:0.5rem}
 #hotels,#restaurants,#tourism,#cars,#map,#activities,#guides{scroll-margin-top:65px}
+
+/* skeleton loader */
+.img-skeleton{width:100%;height:100%;background:linear-gradient(90deg,#f0e8d8 25%,#faf5ee 50%,#f0e8d8 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
 @media(max-width:768px){
   .nav-links{display:none}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
@@ -246,6 +271,7 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=1600&q=80&fit=crop" alt="Marrakech" onerror="this.style.display='none'"/>
   <div class="hero-content">
     <div class="hero-badge" id="hero-badge">✦ The Red City Awaits ✦</div>
     <h1 class="hero-title">Marrakech<br/><span>Easier</span></h1>
@@ -432,6 +458,39 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
 <div class="toast" id="toast"></div>
 
 <script>
+// ── UNSPLASH CONFIG ──
+const UNSPLASH_KEY = 'rSzmn2j7UedbUHuC_6RfZMMPqwJ4pCup_xJ_UjwasKo';
+
+// Image cache to avoid repeat requests
+const imgCache = {};
+
+async function fetchUnsplashImg(query, fallbackEmoji) {
+  if (imgCache[query]) return imgCache[query];
+  try {
+    const res = await fetch(
+      `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=3&orientation=landscape&client_id=${UNSPLASH_KEY}`
+    );
+    const data = await res.json();
+    if (data.results && data.results.length > 0) {
+      const idx = Math.floor(Math.random() * Math.min(3, data.results.length));
+      const img = data.results[idx];
+      const result = {
+        url: img.urls.regular,
+        thumb: img.urls.small,
+        credit: img.user.name,
+        creditLink: img.user.links.html
+      };
+      imgCache[query] = result;
+      return result;
+    }
+  } catch(e) {}
+  return null;
+}
+
+function imgTag(url, alt, credit, extraClass='') {
+  return `<img class="card-img${extraClass?' '+extraClass:''}" src="${url}" alt="${alt}" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F5E6CC,#D4A96B)\'></div>'"  />${credit?`<span class="img-credit">📷 ${credit}</span>`:''}`;
+}
+
 // ── TRANSLATIONS ──
 const T = {
   en:{
@@ -576,66 +635,71 @@ const T = {
 
 // ── DATA ──
 const hotels = [
-  {id:'h1',type:'riad',tier:'luxury',name:'Riad El Cadi',location:'Medina, Mouassine',desc:'A stunning 12th-century palace with 12 unique suites. Original zellige floors, carved plaster, jasmine courtyard.',price:280,stars:5,amenities:['Rooftop terrace','Hammam','Pool','Breakfast'],tags:['riad','heritage'],img:'🏰',badge:'Heritage'},
-  {id:'h2',type:'hotel',tier:'luxury',name:'La Mamounia',location:'Avenue Bab Jdid',desc:'The legendary palace hotel. Winston Churchill painted its gardens. Pure Art Deco grandeur.',price:650,stars:5,amenities:['3 pools','Spa','4 restaurants','Casino'],tags:['hotel','iconic'],img:'🏛️',badge:'Legendary'},
-  {id:'h3',type:'riad',tier:'mid',name:'Riad Yasmine',location:'Derb Sidi Ahmed',desc:'A romantic 6-room riad with its iconic blue mosaic pool. Instagram-famous and blissfully quiet.',price:120,stars:4,amenities:['Pool','Breakfast','Terrace','Hammam'],tags:['riad','romantic'],img:'💙',badge:'Boutique'},
-  {id:'h4',type:'riad',tier:'budget',name:'Riad Dar Zitoun',location:'Mellah district',desc:'Family-run riad in the historic Jewish quarter. Authentic hospitality and homemade breakfasts.',price:65,stars:3,amenities:['Terrace','Breakfast','WiFi'],tags:['riad','budget'],img:'🌿',badge:'Local Charm'},
-  {id:'h5',type:'hotel',tier:'luxury',name:'Royal Mansour',location:'Rue Abou Abbas El Sebti',desc:'53 private riads within a walled medina, each with its own courtyard and pool. The most exclusive address.',price:1200,stars:5,amenities:['Private pool','Butler','3 restaurants','Spa'],tags:['hotel','ultra-luxury'],img:'👑',badge:'Ultra Luxury'},
-  {id:'h6',type:'hotel',tier:'mid',name:'Nobu Hotel Marrakech',location:'Avenue Mohammed VI, Guéliz',desc:'Japanese minimalism meets Moroccan craft. Famous for its Nobu restaurant and rooftop pool.',price:320,stars:5,amenities:['Rooftop pool','Nobu restaurant','Spa','Gym'],tags:['hotel','design'],img:'🎋',badge:'Design Hotel'},
-  {id:'h7',type:'riad',tier:'mid',name:'Riad BE Marrakech',location:'Bab Doukkala, Medina',desc:'Beautifully restored 19th-century riad with a serene rooftop and stylishly decorated rooms.',price:150,stars:4,amenities:['Rooftop','Hammam','Pool','Breakfast'],tags:['riad','boutique'],img:'🕯️',badge:'Boutique Riad'},
-  {id:'h8',type:'hotel',tier:'luxury',name:'Mandarin Oriental',location:'Route du Golf, Palmeraie',desc:'Set amid 20 hectares of lush gardens in the Palmeraie with the Atlas as a backdrop.',price:550,stars:5,amenities:['5 pools','Spa','6 restaurants','Tennis'],tags:['hotel','resort'],img:'🌴',badge:'Resort'},
-  {id:'h9',type:'riad',tier:'budget',name:'Riad Kniza',location:'Near Bab Doukkala',desc:"An 18th-century palace-riad with one of Marrakech's finest antique collections. UNESCO recommended.",price:90,stars:4,amenities:['Pool','Restaurant','Hammam','Library'],tags:['riad','heritage'],img:'🏺',badge:'Historic'},
+  {id:'h1',type:'riad',tier:'luxury',name:'Riad El Cadi',location:'Medina, Mouassine',desc:'A stunning 12th-century palace with 12 unique suites. Original zellige floors, carved plaster, jasmine courtyard.',price:280,stars:5,amenities:['Rooftop terrace','Hammam','Pool','Breakfast'],tags:['riad','heritage'],img:'marrakech riad interior courtyard',badge:'Heritage'},
+  {id:'h2',type:'hotel',tier:'luxury',name:'La Mamounia',location:'Avenue Bab Jdid',desc:'The legendary palace hotel. Winston Churchill painted its gardens. Pure Art Deco grandeur.',price:650,stars:5,amenities:['3 pools','Spa','4 restaurants','Casino'],tags:['hotel','iconic'],img:'luxury moroccan palace hotel pool',badge:'Legendary'},
+  {id:'h3',type:'riad',tier:'mid',name:'Riad Yasmine',location:'Derb Sidi Ahmed',desc:'A romantic 6-room riad with its iconic blue mosaic pool. Instagram-famous and blissfully quiet.',price:120,stars:4,amenities:['Pool','Breakfast','Terrace','Hammam'],tags:['riad','romantic'],img:'blue mosaic pool riad marrakech',badge:'Boutique'},
+  {id:'h4',type:'riad',tier:'budget',name:'Riad Dar Zitoun',location:'Mellah district',desc:'Family-run riad in the historic Jewish quarter. Authentic hospitality and homemade breakfasts.',price:65,stars:3,amenities:['Terrace','Breakfast','WiFi'],tags:['riad','budget'],img:'moroccan riad courtyard fountain',badge:'Local Charm'},
+  {id:'h5',type:'hotel',tier:'luxury',name:'Royal Mansour',location:'Rue Abou Abbas El Sebti',desc:'53 private riads within a walled medina, each with its own courtyard and pool. The most exclusive address.',price:1200,stars:5,amenities:['Private pool','Butler','3 restaurants','Spa'],tags:['hotel','ultra-luxury'],img:'royal luxury moroccan hotel suite',badge:'Ultra Luxury'},
+  {id:'h6',type:'hotel',tier:'mid',name:'Nobu Hotel Marrakech',location:'Avenue Mohammed VI, Guéliz',desc:'Japanese minimalism meets Moroccan craft. Famous for its Nobu restaurant and rooftop pool.',price:320,stars:5,amenities:['Rooftop pool','Nobu restaurant','Spa','Gym'],tags:['hotel','design'],img:'modern luxury hotel rooftop pool morocco',badge:'Design Hotel'},
+  {id:'h7',type:'riad',tier:'mid',name:'Riad BE Marrakech',location:'Bab Doukkala, Medina',desc:'Beautifully restored 19th-century riad with a serene rooftop and stylishly decorated rooms.',price:150,stars:4,amenities:['Rooftop','Hammam','Pool','Breakfast'],tags:['riad','boutique'],img:'riad marrakech rooftop terrace',badge:'Boutique Riad'},
+  {id:'h8',type:'hotel',tier:'luxury',name:'Mandarin Oriental',location:'Route du Golf, Palmeraie',desc:'Set amid 20 hectares of lush gardens in the Palmeraie with the Atlas as a backdrop.',price:550,stars:5,amenities:['5 pools','Spa','6 restaurants','Tennis'],tags:['hotel','resort'],img:'palm tree resort pool atlas mountains morocco',badge:'Resort'},
+  {id:'h9',type:'riad',tier:'budget',name:'Riad Kniza',location:'Near Bab Doukkala',desc:"An 18th-century palace-riad with one of Marrakech's finest antique collections. UNESCO recommended.",price:90,stars:4,amenities:['Pool','Restaurant','Hammam','Library'],tags:['riad','heritage'],img:'historic riad interior morocco zellige',badge:'Historic'},
 ];
+
 const restaurants = [
-  {id:'r1',type:'restaurant',name:'Le Jardin',location:'Rue Sidi Abdelaziz, Mouassine',desc:'Romantic rooftop restaurant in a lush garden. Traditional Moroccan cuisine with modern flair.',price:25,stars:5,img:'🌳',opens:'12:00 – 23:00'},
-  {id:'r2',type:'restaurant',name:'Nomad',location:'Derb Aarjane, Medina',desc:'Stylish modern Moroccan food with rooftop views over the medina.',price:30,stars:5,img:'🍽️',opens:'12:00 – 23:30'},
-  {id:'r3',type:'cafe',name:'Café de France',location:'Djemaa El-Fna Square',desc:"The iconic café overlooking the great square. Sip mint tea and watch the world's most famous plaza.",price:6,stars:4,img:'☕',opens:'07:00 – 23:00'},
-  {id:'r4',type:'cafe',name:'Café Clock',location:'Derb Chtouka, Medina',desc:'Cultural café serving camel burgers, storytelling nights, and the best fresh juices in the medina.',price:10,stars:5,img:'🕰️',opens:'09:00 – 24:00'},
-  {id:'r5',type:'bar',name:'Kosybar',location:'Place des Ferblantiers',desc:'Rooftop bar overlooking a palace and stork towers. Signature cocktails meet Moroccan bites.',price:18,stars:5,img:'🍹',opens:'12:00 – 01:00'},
-  {id:'r6',type:'club',name:'Pacha Marrakech',location:'Avenue Mohammed VI',desc:'The world-famous Ibiza nightclub in Marrakech. International DJs, desert-palace architecture.',price:30,stars:5,img:'🎉',opens:'23:00 – 06:00'},
-  {id:'r7',type:'club',name:'Sky Bar 5',location:'Hivernage district',desc:'Open-air nightclub on a hotel rooftop. Pool parties, live music.',price:25,stars:4,img:'🌃',opens:'21:00 – 04:00'},
-  {id:'r8',type:'restaurant',name:'Al Fassia',location:'Boulevard Zerktouni, Guéliz',desc:'Entirely run by women — a Marrakech institution for 35 years. Definitive Moroccan home cooking.',price:28,stars:5,img:'🫕',opens:'12:00–15:00, 19:30–23:00'},
-  {id:'r9',type:'restaurant',name:'Dar Yacout',location:'Rue Sidi Ahmed Soussi',desc:"Opulent 16th-century palace turned restaurant. Seven-course dinner in pure 1001 Nights splendour.",price:55,stars:5,img:'🕌',opens:'19:30 – 23:30 (dinner only)'},
-  {id:'r10',type:'cafe',name:'Terrasse des Épices',location:'Souk Cherifa, Medina',desc:'Rooftop café with sweeping medina views. Organic Moroccan salads, fresh juices, and world-class mint tea.',price:12,stars:4,img:'🌿',opens:'10:00 – 23:00'},
-  {id:'r11',type:'bar',name:'Grand Café de la Poste',location:'Boulevard El Mansour Eddahbi',desc:'Colonial-era Art Deco brasserie. Oysters, champagne, classic cocktails.',price:22,stars:4,img:'🥂',opens:'08:00 – 01:00'},
-  {id:'r12',type:'club',name:'Theatro',location:'Hotel Es Saadi, Hivernage',desc:"Marrakech's most glamorous nightclub inside a former theatre. Lavish decor and international DJs.",price:35,stars:5,img:'🎭',opens:'22:00 – 05:00'},
+  {id:'r1',type:'restaurant',name:'Le Jardin',location:'Rue Sidi Abdelaziz, Mouassine',desc:'Romantic rooftop restaurant in a lush garden. Traditional Moroccan cuisine with modern flair.',price:25,stars:5,img:'moroccan restaurant garden rooftop',opens:'12:00 – 23:00'},
+  {id:'r2',type:'restaurant',name:'Nomad',location:'Derb Aarjane, Medina',desc:'Stylish modern Moroccan food with rooftop views over the medina.',price:30,stars:5,img:'marrakech rooftop restaurant medina view',opens:'12:00 – 23:30'},
+  {id:'r3',type:'cafe',name:'Café de France',location:'Djemaa El-Fna Square',desc:"The iconic café overlooking the great square. Sip mint tea and watch the world's most famous plaza.",price:6,stars:4,img:'moroccan mint tea cafe marrakech',opens:'07:00 – 23:00'},
+  {id:'r4',type:'cafe',name:'Café Clock',location:'Derb Chtouka, Medina',desc:'Cultural café serving camel burgers, storytelling nights, and the best fresh juices in the medina.',price:10,stars:5,img:'moroccan cafe interior colorful',opens:'09:00 – 24:00'},
+  {id:'r5',type:'bar',name:'Kosybar',location:'Place des Ferblantiers',desc:'Rooftop bar overlooking a palace and stork towers. Signature cocktails meet Moroccan bites.',price:18,stars:5,img:'rooftop bar cocktails sunset morocco',opens:'12:00 – 01:00'},
+  {id:'r6',type:'club',name:'Pacha Marrakech',location:'Avenue Mohammed VI',desc:'The world-famous Ibiza nightclub in Marrakech. International DJs, desert-palace architecture.',price:30,stars:5,img:'nightclub dj crowd lights party',opens:'23:00 – 06:00'},
+  {id:'r7',type:'club',name:'Sky Bar 5',location:'Hivernage district',desc:'Open-air nightclub on a hotel rooftop. Pool parties, live music.',price:25,stars:4,img:'rooftop pool party night',opens:'21:00 – 04:00'},
+  {id:'r8',type:'restaurant',name:'Al Fassia',location:'Boulevard Zerktouni, Guéliz',desc:'Entirely run by women — a Marrakech institution for 35 years. Definitive Moroccan home cooking.',price:28,stars:5,img:'moroccan tagine traditional food',opens:'12:00–15:00, 19:30–23:00'},
+  {id:'r9',type:'restaurant',name:'Dar Yacout',location:'Rue Sidi Ahmed Soussi',desc:"Opulent 16th-century palace turned restaurant. Seven-course dinner in pure 1001 Nights splendour.",price:55,stars:5,img:'moroccan palace restaurant interior luxury',opens:'19:30 – 23:30 (dinner only)'},
+  {id:'r10',type:'cafe',name:'Terrasse des Épices',location:'Souk Cherifa, Medina',desc:'Rooftop café with sweeping medina views. Organic Moroccan salads, fresh juices, and world-class mint tea.',price:12,stars:4,img:'marrakech terrace cafe spices view',opens:'10:00 – 23:00'},
+  {id:'r11',type:'bar',name:'Grand Café de la Poste',location:'Boulevard El Mansour Eddahbi',desc:'Colonial-era Art Deco brasserie. Oysters, champagne, classic cocktails.',price:22,stars:4,img:'art deco brasserie bar elegant',opens:'08:00 – 01:00'},
+  {id:'r12',type:'club',name:'Theatro',location:'Hotel Es Saadi, Hivernage',desc:"Marrakech's most glamorous nightclub inside a former theatre. Lavish decor and international DJs.",price:35,stars:5,img:'glamorous theater nightclub interior',opens:'22:00 – 05:00'},
 ];
+
 const places = [
-  {name:'Djemaa El-Fna',icon:'🎪',color:'#C1440E',desc:"The heart of Marrakech. Snake charmers, storytellers, musicians, and the world's greatest open-air food market after dark.",hours:'24h / Souks 09:00–20:00',tip:'Visit at sunset for the magic hour'},
-  {name:'Majorelle Garden',icon:'💙',color:'#1A5BAB',desc:'Cobalt-blue garden by Jacques Majorelle, restored by Yves Saint Laurent. Home to the iconic YSL Museum.',hours:'08:00 – 17:30',tip:'Buy tickets online to skip queues'},
-  {name:'Koutoubia Mosque',icon:'🕌',color:'#3D7A40',desc:'The most perfect Moorish architecture in Morocco. The 70-metre minaret has inspired minarets from Seville to Rabat.',hours:'Exterior 24h',tip:'Best photographed at golden hour'},
-  {name:"Sa'adian Tombs",icon:'⚱️',color:'#B8860B',desc:'Magnificent Saadian dynasty tombs, walled up in 1792 and not rediscovered until 1917.',hours:'09:00 – 17:00 daily',tip:'Arrive early to avoid tour groups'},
-  {name:'Bahia Palace',icon:'🏛️',color:'#7C3AED',desc:'19th-century palace of breathtaking scale. 8 hectares, 150 rooms of carved plaster and painted cedar.',hours:'09:00 – 17:00 daily',tip:'Free with the Marrakech Museum pass'},
-  {name:'El Badi Palace',icon:'🏚️',color:'#9B4400',desc:'Once the most magnificent palace in the world — today a vast romantic ruin with storks in the battlements.',hours:'09:00 – 17:00 daily',tip:'Climb the walls for panoramic views'},
-  {name:'Souks of the Medina',icon:'🛍️',color:'#D4A017',desc:"One thousand years of trade. The world's most labyrinthine marketplace — leather, spices, lanterns, carpets.",hours:'09:00 – 20:00',tip:'Getting lost is the point'},
-  {name:'Menara Gardens',icon:'🫒',color:'#2A7A50',desc:'Ancient olive groves with a reflecting pool and snow-capped Atlas backdrop.',hours:'Sunrise – Sunset',tip:'Visit Oct–Apr for Atlas snow views'},
-  {name:'Mellah (Jewish Quarter)',icon:'✡️',color:'#6B4C3A',desc:"Marrakech's historic Jewish quarter, once home to a vibrant community. Beautiful synagogues and artisan workshops.",hours:'09:00 – 18:00',tip:'Visit the Lazama Synagogue'},
+  {name:'Djemaa El-Fna',icon:'🎪',color:'#C1440E',img:'djemaa el fna marrakech square',desc:"The heart of Marrakech. Snake charmers, storytellers, musicians, and the world's greatest open-air food market after dark.",hours:'24h / Souks 09:00–20:00',tip:'Visit at sunset for the magic hour'},
+  {name:'Majorelle Garden',icon:'💙',color:'#1A5BAB',img:'majorelle garden blue marrakech',desc:'Cobalt-blue garden by Jacques Majorelle, restored by Yves Saint Laurent. Home to the iconic YSL Museum.',hours:'08:00 – 17:30',tip:'Buy tickets online to skip queues'},
+  {name:'Koutoubia Mosque',icon:'🕌',color:'#3D7A40',img:'koutoubia mosque marrakech minaret',desc:'The most perfect Moorish architecture in Morocco. The 70-metre minaret has inspired minarets from Seville to Rabat.',hours:'Exterior 24h',tip:'Best photographed at golden hour'},
+  {name:"Sa'adian Tombs",icon:'⚱️',color:'#B8860B',img:'saadian tombs marrakech gold',desc:'Magnificent Saadian dynasty tombs, walled up in 1792 and not rediscovered until 1917.',hours:'09:00 – 17:00 daily',tip:'Arrive early to avoid tour groups'},
+  {name:'Bahia Palace',icon:'🏛️',color:'#7C3AED',img:'bahia palace marrakech interior courtyard',desc:'19th-century palace of breathtaking scale. 8 hectares, 150 rooms of carved plaster and painted cedar.',hours:'09:00 – 17:00 daily',tip:'Free with the Marrakech Museum pass'},
+  {name:'El Badi Palace',icon:'🏚️',color:'#9B4400',img:'el badi palace ruins marrakech',desc:'Once the most magnificent palace in the world — today a vast romantic ruin with storks in the battlements.',hours:'09:00 – 17:00 daily',tip:'Climb the walls for panoramic views'},
+  {name:'Souks of the Medina',icon:'🛍️',color:'#D4A017',img:'marrakech souk medina spices market',desc:"One thousand years of trade. The world's most labyrinthine marketplace — leather, spices, lanterns, carpets.",hours:'09:00 – 20:00',tip:'Getting lost is the point'},
+  {name:'Menara Gardens',icon:'🫒',color:'#2A7A50',img:'menara gardens marrakech atlas mountains',desc:'Ancient olive groves with a reflecting pool and snow-capped Atlas backdrop.',hours:'Sunrise – Sunset',tip:'Visit Oct–Apr for Atlas snow views'},
+  {name:'Mellah (Jewish Quarter)',icon:'✡️',color:'#6B4C3A',img:'marrakech mellah jewish quarter historic',desc:"Marrakech's historic Jewish quarter, once home to a vibrant community. Beautiful synagogues and artisan workshops.",hours:'09:00 – 18:00',tip:'Visit the Lazama Synagogue'},
 ];
+
 const cars = [
-  {id:'c1',type:'sedan',name:'Dacia Logan',desc:'Reliable, economical city car. Perfect for Marrakech and day trips to Ourika.',price:30,seats:5,fuel:'Petrol',transmission:'Manual',img:'images/1img.jpg',badge:'Best Value'},
-  {id:'c2',type:'sedan',name:'Renault Clio',desc:'Comfortable compact with A/C. Great for Guéliz to medina and airport transfers.',price:30,seats:5,fuel:'Petrol',transmission:'Auto',img:'images/2img.jpg',badge:'Popular'},
-  {id:'c3',type:'suv',name:'Porche Macan',desc:'The ideal Morocco adventurer. Built for piste roads to Agafay and the Draa Valley.',price:250,seats:5,fuel:'Diesel',transmission:'Manual',img:'images/4img.jpg',badge:'Adventure Ready'},
-  {id:'c4',type:'suv',name:'Toyota Land Cruiser',desc:'Go anywhere — Atlas passes, Sahara edges, and everywhere between.',price:130,seats:7,fuel:'Diesel',transmission:'Auto',img:'🛻',badge:'Premium 4x4'},
-  {id:'c5',type:'scooter',name:'Yamaha 125cc',desc:'Zip through medina streets where no car can go. For experienced city riders.',price:28,seats:2,fuel:'Petrol',transmission:'Automatic',img:'images/5img.jpg',badge:'City Cruiser'},
-  {id:'c6',type:'bike',name:'X ADV',desc:'Explore the palmeraie on two wheels. Includes helmet, lock, and cycling map.',price:50,seats:1,fuel:'—',transmission:'21 gears',img:'images/6img.jpg',badge:'Eco Rider'},
-  {id:'c7',type:'sedan',name:'Golf 8',desc:'Travel in style. Premium sedan with A/C, leather, and GPS.',price:110,seats:5,fuel:'Petrol',transmission:'Auto',img:'images/3img.jpg',badge:'Premium Sedan'},
-  {id:'c8',type:'suv',name:'Jeep Wrangler',desc:'Iconic off-roader. Take it to Agafay, Oukaïmeden, or beyond the paved roads.',price:100,seats:4,fuel:'Petrol',transmission:'Manual 4x4',img:'🚙',badge:'Iconic 4x4'},
+  {id:'c1',type:'sedan',name:'Dacia Logan',desc:'Reliable, economical city car. Perfect for Marrakech and day trips to Ourika.',price:30,seats:5,fuel:'Petrol',transmission:'Manual',img:'dacia logan white car',badge:'Best Value'},
+  {id:'c2',type:'sedan',name:'Renault Clio',desc:'Comfortable compact with A/C. Great for Guéliz to medina and airport transfers.',price:30,seats:5,fuel:'Petrol',transmission:'Auto',img:'renault clio compact car',badge:'Popular'},
+  {id:'c3',type:'suv',name:'Porsche Macan',desc:'The ideal Morocco adventurer. Built for piste roads to Agafay and the Draa Valley.',price:250,seats:5,fuel:'Diesel',transmission:'Manual',img:'porsche macan suv luxury',badge:'Adventure Ready'},
+  {id:'c4',type:'suv',name:'Toyota Land Cruiser',desc:'Go anywhere — Atlas passes, Sahara edges, and everywhere between.',price:130,seats:7,fuel:'Diesel',transmission:'Auto',img:'toyota land cruiser 4x4 desert',badge:'Premium 4x4'},
+  {id:'c5',type:'scooter',name:'Yamaha 125cc',desc:'Zip through medina streets where no car can go. For experienced city riders.',price:28,seats:2,fuel:'Petrol',transmission:'Automatic',img:'yamaha scooter 125 city',badge:'City Cruiser'},
+  {id:'c6',type:'bike',name:'X ADV Honda',desc:'Explore the palmeraie on two wheels. Includes helmet, lock, and cycling map.',price:50,seats:1,fuel:'—',transmission:'21 gears',img:'honda xadv adventure motorcycle',badge:'Eco Rider'},
+  {id:'c7',type:'sedan',name:'Volkswagen Golf',desc:'Travel in style. Premium sedan with A/C, leather, and GPS.',price:110,seats:5,fuel:'Petrol',transmission:'Auto',img:'volkswagen golf 8 silver car',badge:'Premium Sedan'},
+  {id:'c8',type:'suv',name:'Jeep Wrangler',desc:'Iconic off-roader. Take it to Agafay, Oukaïmeden, or beyond the paved roads.',price:100,seats:4,fuel:'Petrol',transmission:'Manual 4x4',img:'jeep wrangler offroad desert',badge:'Iconic 4x4'},
 ];
+
 const activities = [
-  {id:'a1',name:'Hot Air Balloon',desc:'Soar above Marrakech at sunrise. Champagne breakfast included.',price:180,duration:'3–4 hrs',time:'Dawn',img:'🎈',color:'#C1440E'},
-  {id:'a2',name:'Agafay Desert Dinner',desc:'Stone desert sunset dinner, Gnawa music, camels, starlit sky.',price:95,duration:'Half day',time:'16:00–22:00',img:'🐪',color:'#B8860B'},
-  {id:'a3',name:'Quad Biking Agafay',desc:'Race across rocky lunar landscape. No experience needed.',price:65,duration:'2 hrs',time:'09:00 / 15:00',img:'🏍️',color:'#1A6B5A'},
-  {id:'a4',name:'Atlas Trekking',desc:'Full-day guided hike with Berber village lunch.',price:55,duration:'Full day',time:'07:00–18:00',img:'⛰️',color:'#3D7A40'},
-  {id:'a5',name:'Hammam & Spa',desc:'Traditional hammam with black soap, ghassoul, and argan massage.',price:45,duration:'2 hrs',time:'By appt.',img:'🧖',color:'#7C3AED'},
-  {id:'a6',name:'Cooking Class',desc:'Learn tagine, harira & bastilla with a local chef + market tour.',price:70,duration:'4 hrs',time:'09:00 / 16:00',img:'🫕',color:'#C17A2E'},
-  {id:'a7',name:'Sunset Rooftop Party',desc:'Exclusive rooftop DJ event, cocktails, 360° medina views.',price:40,duration:'Evening',time:'18:00–24:00',img:'🌅',color:'#C1440E'},
-  {id:'a8',name:'Horse Riding Palmeraie',desc:'Canter through 30,000 palms. Sunset rides specially recommended.',price:55,duration:'2 hrs',time:'09:00 / 16:30',img:'🐎',color:'#8B4513'},
+  {id:'a1',name:'Hot Air Balloon',desc:'Soar above Marrakech at sunrise. Champagne breakfast included.',price:180,duration:'3–4 hrs',time:'Dawn',img:'hot air balloon morocco sunrise atlas'},
+  {id:'a2',name:'Agafay Desert Dinner',desc:'Stone desert sunset dinner, Gnawa music, camels, starlit sky.',price:95,duration:'Half day',time:'16:00–22:00',img:'agafay desert dinner morocco sunset camel'},
+  {id:'a3',name:'Quad Biking Agafay',desc:'Race across rocky lunar landscape. No experience needed.',price:65,duration:'2 hrs',time:'09:00 / 15:00',img:'quad biking desert agafay morocco'},
+  {id:'a4',name:'Atlas Trekking',desc:'Full-day guided hike with Berber village lunch.',price:55,duration:'Full day',time:'07:00–18:00',img:'atlas mountains trekking morocco berber'},
+  {id:'a5',name:'Hammam & Spa',desc:'Traditional hammam with black soap, ghassoul, and argan massage.',price:45,duration:'2 hrs',time:'By appt.',img:'moroccan hammam spa traditional'},
+  {id:'a6',name:'Cooking Class',desc:'Learn tagine, harira & bastilla with a local chef + market tour.',price:70,duration:'4 hrs',time:'09:00 / 16:00',img:'moroccan cooking class tagine chef'},
+  {id:'a7',name:'Sunset Rooftop Party',desc:'Exclusive rooftop DJ event, cocktails, 360° medina views.',price:40,duration:'Evening',time:'18:00–24:00',img:'marrakech rooftop sunset party cocktails'},
+  {id:'a8',name:'Horse Riding Palmeraie',desc:'Canter through 30,000 palms. Sunset rides specially recommended.',price:55,duration:'2 hrs',time:'09:00 / 16:30',img:'horse riding palmeraie marrakech palm trees'},
 ];
+
 const guides = [
-  {id:'g1',name:'Hassan El Mansouri',role:'Licensed City Guide',avatar:'🧔',languages:['Arabic','French','English','Spanish'],experience:12,reviews:247,rating:4.9,specialties:['Medina history','Architecture','Souks','Gastronomy'],price:60,priceType:'half day'},
-  {id:'g2',name:'Fatima Ouardirhi',role:'Cultural Heritage Expert',avatar:'👩',languages:['Arabic','French','English'],experience:8,reviews:189,rating:5.0,specialties:["Palaces","Women's history","Crafts","Photo spots"],price:75,priceType:'half day'},
-  {id:'g3',name:'Youssef Aït Brahim',role:'Mountain & Adventure Guide',avatar:'🧗',languages:['Amazigh','Arabic','French','English'],experience:15,reviews:312,rating:4.8,specialties:['Atlas treks','Agafay','Berber culture','Off-road'],price:90,priceType:'full day'},
-  {id:'g4',name:'Mohamed — Chauffeur Privé',role:'Private Chauffeur',avatar:'🚗',languages:['Arabic','French','English'],experience:10,reviews:203,rating:4.9,specialties:['Airport transfers','Day trips','Luxury cars','Discretion'],price:50,priceType:'3 hours'},
+  {id:'g1',name:'Hassan El Mansouri',role:'Licensed City Guide',img:'moroccan man guide traditional',languages:['Arabic','French','English','Spanish'],experience:12,reviews:247,rating:4.9,specialties:['Medina history','Architecture','Souks','Gastronomy'],price:60,priceType:'half day'},
+  {id:'g2',name:'Fatima Ouardirhi',role:'Cultural Heritage Expert',img:'moroccan woman guide smiling',languages:['Arabic','French','English'],experience:8,reviews:189,rating:5.0,specialties:["Palaces","Women's history","Crafts","Photo spots"],price:75,priceType:'half day'},
+  {id:'g3',name:'Youssef Aït Brahim',role:'Mountain & Adventure Guide',img:'mountain guide hiking morocco atlas',languages:['Amazigh','Arabic','French','English'],experience:15,reviews:312,rating:4.8,specialties:['Atlas treks','Agafay','Berber culture','Off-road'],price:90,priceType:'full day'},
+  {id:'g4',name:'Mohamed — Chauffeur',role:'Private Chauffeur',img:'professional chauffeur driver car',languages:['Arabic','French','English'],experience:10,reviews:203,rating:4.9,specialties:['Airport transfers','Day trips','Luxury cars','Discretion'],price:50,priceType:'3 hours'},
 ];
 
 // ── STATE ──
@@ -664,7 +728,6 @@ function setLang(l){
   document.body.style.fontFamily = l==='ar'?"'Tajawal',sans-serif":"'Jost',sans-serif";
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
-  // Update all translatable static elements
   const ids = ['hero-badge','hero-sub','hero-btn1','hero-btn2','stat1','stat2','stat3','stat4',
     'tag-accommodation','title-hotels','desc-hotels','tag-cuisine','title-dine','desc-dine',
     'tag-discover','title-places','desc-places','tag-rentals','title-cars','desc-cars',
@@ -677,45 +740,31 @@ function setLang(l){
     const el = document.getElementById(id);
     if(el && T[lang][id]) el.textContent = T[lang][id];
   });
-  // Update nav links via data-i
   document.querySelectorAll('[data-i]').forEach(el=>{
     const key = el.getAttribute('data-i');
     if(T[lang][key]) el.textContent = T[lang][key];
   });
-  // Re-render dynamic sections
   renderHotels(); renderRestaurants(); renderCars(); renderActivities(); renderGuides(); renderTourism();
 }
 
 // ── HELPERS ──
-function hBg(i){const m={'🏰':'linear-gradient(135deg,#F5E6CC,#D4A96B)','🏛️':'linear-gradient(135deg,#E8D5B0,#C4956A)','💙':'linear-gradient(135deg,#D0E8F0,#6BAFD4)','🌿':'linear-gradient(135deg,#D4E8CC,#8AB46A)','👑':'linear-gradient(135deg,#F0E4C8,#D4A030)','🎋':'linear-gradient(135deg,#D8E8D8,#7A9A7A)','🕯️':'linear-gradient(135deg,#F5ECD8,#C4905A)','🌴':'linear-gradient(135deg,#D4ECD8,#5A9A6A)','🏺':'linear-gradient(135deg,#ECD8C8,#A4704A)'};return m[i]||'linear-gradient(135deg,#FAF5EE,#F0E8D8)'}
-function rBg(tp){const m={restaurant:'linear-gradient(135deg,#F8E8D8,#D4906A)',cafe:'linear-gradient(135deg,#E8D8C8,#C4906A)',bar:'linear-gradient(135deg,#D8E4E8,#8AB4C4)',club:'linear-gradient(135deg,#2A1A3A,#4A2A6A)'};return m[tp]||'linear-gradient(135deg,#FAF5EE,#F0E8D8)'}
 function stars(n){return '★'.repeat(n)}
 
-// ── RENDER FILTERS ──
-function renderHotelFilters(){
-  const filters=[['all','f-all'],['riad','f-riad'],['hotel','f-hotel'],['luxury','f-luxury'],['budget','f-budget']];
-  document.getElementById('hotel-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn${hotelFilter===v?' active':''}" onclick="setHotelFilter('${v}')">${t(k)}</button>`).join('');
+function skeletonImg(height='200px'){
+  return `<div class="img-skeleton" style="height:${height}"></div>`;
 }
-function renderRestFilters(){
-  const filters=[['all','f-all'],['restaurant','f-restaurants'],['cafe','f-cafes'],['club','f-clubs'],['bar','f-bars']];
-  document.getElementById('rest-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn filter-btn-teal${restFilter===v?' active':''}" onclick="setRestFilter('${v}')">${t(k)}</button>`).join('');
-}
-function renderCarFilters(){
-  const filters=[['all','f-all'],['sedan','f-sedans'],['suv','f-suv'],['scooter','f-scooters'],['bike','f-bikes']];
-  document.getElementById('car-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn filter-btn-gold${carFilter===v?' active':''}" onclick="setCarFilter('${v}')">${t(k)}</button>`).join('');
-}
-function setHotelFilter(v){hotelFilter=v;renderHotels();}
-function setRestFilter(v){restFilter=v;renderRestaurants();}
-function setCarFilter(v){carFilter=v;renderCars();}
 
-// ── RENDER HOTELS ──
-function renderHotels(){
+// ── RENDER WITH REAL IMAGES ──
+async function renderHotels(){
   renderHotelFilters();
   const data = hotelFilter==='all'?hotels:hotels.filter(h=>h.type===hotelFilter||h.tier===hotelFilter);
-  document.getElementById('hotels-grid').innerHTML = data.map(h=>`
-    <div class="card">
-      <div class="card-img-placeholder" style="background:${hBg(h.img)}">
-        <span>${h.img}</span><div class="card-badge">${h.badge}</div>
+  const grid = document.getElementById('hotels-grid');
+  // First render with skeletons
+  grid.innerHTML = data.map(h=>`
+    <div class="card" id="card-${h.id}">
+      <div class="card-img-wrap">
+        ${skeletonImg()}
+        <div class="card-badge">${h.badge}</div>
       </div>
       <div class="card-body">
         <div class="tags">${h.tags.map(tg=>`<span class="tag tag-terra">${tg}</span>`).join('')}</div>
@@ -734,17 +783,30 @@ function renderHotels(){
       </div>
     </div>
   `).join('');
+  // Then load images async
+  for(const h of data){
+    const imgData = await fetchUnsplashImg(h.img, '🏨');
+    const wrap = document.querySelector(`#card-${h.id} .card-img-wrap`);
+    if(wrap){
+      const badge = wrap.querySelector('.card-badge').outerHTML;
+      if(imgData){
+        wrap.innerHTML = `<img class="card-img" src="${imgData.url}" alt="${h.name}" loading="lazy"/>${badge}<span class="img-credit">📷 ${imgData.credit}</span>`;
+      } else {
+        wrap.innerHTML = `<div style="width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F5E6CC,#D4A96B)">🏨</div>${badge}`;
+      }
+    }
+  }
 }
 
-// ── RENDER RESTAURANTS ──
-function renderRestaurants(){
+async function renderRestaurants(){
   renderRestFilters();
   const data = restFilter==='all'?restaurants:restaurants.filter(r=>r.type===restFilter);
   const typeEmoji={restaurant:'🍴',cafe:'☕',bar:'🍸',club:'🎵'};
-  document.getElementById('restaurants-grid').innerHTML = data.map(r=>`
-    <div class="card">
-      <div class="card-img-placeholder" style="background:${rBg(r.type)};height:160px">
-        <span style="font-size:3rem">${r.img}</span>
+  const grid = document.getElementById('restaurants-grid');
+  grid.innerHTML = data.map(r=>`
+    <div class="card" id="card-${r.id}">
+      <div class="card-img-wrap" style="height:160px">
+        ${skeletonImg('160px')}
         <div class="card-badge">${typeEmoji[r.type]} ${r.type.charAt(0).toUpperCase()+r.type.slice(1)}</div>
       </div>
       <div class="card-body">
@@ -760,13 +822,25 @@ function renderRestaurants(){
       </div>
     </div>
   `).join('');
+  for(const r of data){
+    const imgData = await fetchUnsplashImg(r.img, '🍽️');
+    const wrap = document.querySelector(`#card-${r.id} .card-img-wrap`);
+    if(wrap){
+      const badge = wrap.querySelector('.card-badge').outerHTML;
+      if(imgData){
+        wrap.innerHTML = `<img class="card-img" src="${imgData.url}" alt="${r.name}" loading="lazy" style="height:160px;object-fit:cover;width:100%"/>${badge}<span class="img-credit">📷 ${imgData.credit}</span>`;
+      } else {
+        wrap.innerHTML = `<div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F8E8D8,#D4906A)">🍽️</div>${badge}`;
+      }
+    }
+  }
 }
 
-// ── RENDER TOURISM ──
-function renderTourism(){
-  document.getElementById('tourism-grid').innerHTML = places.map(p=>`
-    <div class="place-card" onclick="openPlaceModal(${JSON.stringify(p).replace(/"/g,'&quot;')})">
-      <div class="place-bg" style="background:linear-gradient(135deg,${p.color}22,${p.color}44)">${p.icon}</div>
+async function renderTourism(){
+  const grid = document.getElementById('tourism-grid');
+  grid.innerHTML = places.map((p,i)=>`
+    <div class="place-card" id="place-${i}" onclick="openPlaceModal(${JSON.stringify(p).replace(/"/g,'&quot;')})">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,${p.color}22,${p.color}44);display:flex;align-items:center;justify-content:center;font-size:4.5rem" class="place-bg-fallback">${p.icon}</div>
       <div class="place-overlay"></div>
       <div class="place-content">
         <div class="place-name">${p.name}</div>
@@ -775,16 +849,35 @@ function renderTourism(){
       </div>
     </div>
   `).join('');
+  for(let i=0;i<places.length;i++){
+    const p = places[i];
+    const imgData = await fetchUnsplashImg(p.img, p.icon);
+    const card = document.getElementById(`place-${i}`);
+    if(card && imgData){
+      const fallback = card.querySelector('.place-bg-fallback');
+      if(fallback){
+        const img = document.createElement('img');
+        img.className = 'place-bg-img';
+        img.src = imgData.url;
+        img.alt = p.name;
+        img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover';
+        card.insertBefore(img, card.firstChild);
+        fallback.style.display='none';
+      }
+    }
+  }
 }
 
-// ── RENDER CARS ──
-function renderCars(){
+async function renderCars(){
   renderCarFilters();
   const data = carFilter==='all'?cars:cars.filter(c=>c.type===carFilter);
-  document.getElementById('cars-grid').innerHTML = data.map(c=>`
-    <div class="card" style="border-color:rgba(240,192,64,0.2)">
-      <div class="card-img-placeholder" style="background:linear-gradient(135deg,#1A0F0A,#3D1A0A)">
-<img src="${c.img}" style="width:100%;height:100%;object-fit:cover;" alt="${c.name}" onerror="this.style.display='none'"/>      </div>
+  const grid = document.getElementById('cars-grid');
+  grid.innerHTML = data.map(c=>`
+    <div class="card" id="card-${c.id}" style="border-color:rgba(240,192,64,0.2)">
+      <div class="card-img-wrap">
+        ${skeletonImg()}
+        <div class="card-badge">${c.badge}</div>
+      </div>
       <div class="card-body">
         <div class="card-name">${c.name}</div>
         <div class="card-desc">${c.desc}</div>
@@ -804,13 +897,27 @@ function renderCars(){
       </div>
     </div>
   `).join('');
+  for(const c of data){
+    const imgData = await fetchUnsplashImg(c.img, '🚗');
+    const wrap = document.querySelector(`#card-${c.id} .card-img-wrap`);
+    if(wrap){
+      const badge = wrap.querySelector('.card-badge').outerHTML;
+      if(imgData){
+        wrap.innerHTML = `<img class="card-img" src="${imgData.url}" alt="${c.name}" loading="lazy"/>${badge}<span class="img-credit">📷 ${imgData.credit}</span>`;
+      } else {
+        wrap.innerHTML = `<div style="width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#1A0F0A,#3D1A0A)">🚗</div>${badge}`;
+      }
+    }
+  }
 }
 
-// ── RENDER ACTIVITIES ──
-function renderActivities(){
-  document.getElementById('activities-grid').innerHTML = activities.map(a=>`
-    <div class="activity-card">
-      <div class="activity-header" style="background:linear-gradient(135deg,${a.color}33,${a.color}11)">${a.img}</div>
+async function renderActivities(){
+  const grid = document.getElementById('activities-grid');
+  grid.innerHTML = activities.map(a=>`
+    <div class="activity-card" id="card-${a.id}">
+      <div class="activity-header" id="act-img-${a.id}">
+        ${skeletonImg('160px')}
+      </div>
       <div class="activity-body">
         <div class="activity-name">${a.name}</div>
         <div class="activity-desc">${a.desc}</div>
@@ -824,13 +931,24 @@ function renderActivities(){
       </div>
     </div>
   `).join('');
+  for(const a of activities){
+    const imgData = await fetchUnsplashImg(a.img, '🎈');
+    const header = document.getElementById(`act-img-${a.id}`);
+    if(header){
+      if(imgData){
+        header.innerHTML = `<img class="activity-header-img" src="${imgData.url}" alt="${a.name}" loading="lazy" style="width:100%;height:160px;object-fit:cover"/><span class="img-credit">📷 ${imgData.credit}</span>`;
+      } else {
+        header.innerHTML = `<div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem">🎈</div>`;
+      }
+    }
+  }
 }
 
-// ── RENDER GUIDES ──
-function renderGuides(){
-  document.getElementById('guides-grid').innerHTML = guides.map(g=>`
-    <div class="guide-card">
-      <div class="guide-avatar">${g.avatar}</div>
+async function renderGuides(){
+  const grid = document.getElementById('guides-grid');
+  grid.innerHTML = guides.map(g=>`
+    <div class="guide-card" id="card-${g.id}">
+      <div id="guide-img-${g.id}" style="height:180px;overflow:hidden">${skeletonImg('180px')}</div>
       <div class="guide-body">
         <div class="guide-name">${g.name}</div>
         <div class="guide-role">${g.role}</div>
@@ -845,19 +963,47 @@ function renderGuides(){
       </div>
       <div class="guide-footer">
         <button class="card-btn" style="flex:1" onclick="openBookModal('guide','${g.id}','${g.name}')">${t('book')}</button>
-        <button class="card-btn card-btn-teal" style="flex:1" onclick="showToast('💬 Contacting ${g.name}...')">${t('message')||'Message'}</button>
+        <button class="card-btn card-btn-teal" style="flex:1">Message</button>
       </div>
     </div>
   `).join('');
+  for(const g of guides){
+    const imgData = await fetchUnsplashImg(g.img, '👤');
+    const wrap = document.getElementById(`guide-img-${g.id}`);
+    if(wrap){
+      if(imgData){
+        wrap.innerHTML = `<img src="${imgData.url}" alt="${g.name}" loading="lazy" style="width:100%;height:180px;object-fit:cover;object-position:top"/><span class="img-credit">📷 ${imgData.credit}</span>`;
+      } else {
+        wrap.innerHTML = `<div style="width:100%;height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--cream-dark)">👤</div>`;
+      }
+    }
+  }
 }
+
+// ── FILTER RENDERERS ──
+function renderHotelFilters(){
+  const filters=[['all','f-all'],['riad','f-riad'],['hotel','f-hotel'],['luxury','f-luxury'],['budget','f-budget']];
+  document.getElementById('hotel-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn${hotelFilter===v?' active':''}" onclick="setHotelFilter('${v}')">${t(k)}</button>`).join('');
+}
+function renderRestFilters(){
+  const filters=[['all','f-all'],['restaurant','f-restaurants'],['cafe','f-cafes'],['club','f-clubs'],['bar','f-bars']];
+  document.getElementById('rest-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn filter-btn-teal${restFilter===v?' active':''}" onclick="setRestFilter('${v}')">${t(k)}</button>`).join('');
+}
+function renderCarFilters(){
+  const filters=[['all','f-all'],['sedan','f-sedans'],['suv','f-suv'],['scooter','f-scooters'],['bike','f-bikes']];
+  document.getElementById('car-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn filter-btn-gold${carFilter===v?' active':''}" onclick="setCarFilter('${v}')">${t(k)}</button>`).join('');
+}
+function setHotelFilter(v){hotelFilter=v;renderHotels();}
+function setRestFilter(v){restFilter=v;renderRestaurants();}
+function setCarFilter(v){carFilter=v;renderCars();}
 
 // ── MODALS ──
 function openBookModal(type, id, name){
   const esc = name.replace(/'/g,"\\'");
   let extraFields = '';
   if(type==='hotel'||type==='car'){
-    const l1 = type==='hotel'?t('check-in'):t('pickup');
-    const l2 = type==='hotel'?t('check-out'):t('return');
+    const l1=type==='hotel'?t('check-in'):t('pickup');
+    const l2=type==='hotel'?t('check-out'):t('return');
     extraFields=`<div class="form-row"><div class="form-group" style="margin:0"><label class="form-label">${l1}</label><input class="form-input" type="date"/></div><div class="form-group" style="margin:0"><label class="form-label">${l2}</label><input class="form-input" type="date"/></div></div>`;
   } else if(type==='restaurant'){
     extraFields=`<div class="form-row"><div class="form-group" style="margin:0"><label class="form-label">${t('date')}</label><input class="form-input" type="date"/></div><div class="form-group" style="margin:0"><label class="form-label">${t('time')}</label><input class="form-input" type="time" value="19:30"/></div></div>`;
@@ -886,7 +1032,7 @@ function openBookModal(type, id, name){
 }
 
 function openPlaceModal(p){
-  if(typeof p === 'string') p = JSON.parse(p);
+  if(typeof p==='string') p=JSON.parse(p);
   document.getElementById('modal-content').innerHTML = `
     <div class="modal-header" style="background:linear-gradient(135deg,#1A0F0A,#3D1A0A)">
       <div><div style="font-size:2.5rem;margin-bottom:0.5rem">${p.icon}</div>
@@ -937,25 +1083,17 @@ function openContactModal(){
 function openModal(){document.getElementById('modal-overlay').classList.add('open')}
 function closeModal(){document.getElementById('modal-overlay').classList.remove('open')}
 function closeModalOutside(e){if(e.target.id==='modal-overlay')closeModal()}
-
-function submitBooking(name){
-  closeModal();
-  showToast(t('toast-booking').replace('{n}',name));
-}
-function submitContact(){
-  closeModal();
-  showToast(t('toast-contact'));
-}
+function submitBooking(name){closeModal();showToast(t('toast-booking').replace('{n}',name));}
+function submitContact(){closeModal();showToast(t('toast-contact'));}
 function newsletterSubscribe(){showToast(t('toast-newsletter'))}
 
 // ── TOAST ──
 let toastTimer;
 function showToast(msg){
-  const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.classList.add('show');
+  const el=document.getElementById('toast');
+  el.textContent=msg;el.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(()=>el.classList.remove('show'),4500);
+  toastTimer=setTimeout(()=>el.classList.remove('show'),4500);
 }
 
 // ── SCROLL ──
