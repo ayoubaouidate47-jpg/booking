@@ -908,7 +908,7 @@ const hotels = [
   amenities:['Outdoor pool','Free WiFi','Airport shuttle','2 restaurants','Non-smoking rooms','Room service','24-hour reception','Bar','Heating','Tour desk'],
   tags:['hotel','gueliz','pool','restaurants'],
   localImages:['Le Caspien Boutique Hotel/153799205.jpg','Le Caspien Boutique Hotel/322848994.jpg','Le Caspien Boutique Hotel/40681581.jpg','Le Caspien Boutique Hotel/451983787.jpg','Le Caspien Boutique Hotel/451989746.jpg','Le Caspien Boutique Hotel/451989860.jpg','Le Caspien Boutique Hotel/467502676.jpg'],
-  img:'Le Caspien Boutique Hotel/322848994.jpg',
+  img:'Le Caspien Boutique Hotel/153799205.jpg',
   badge:'Very good',
   tip:'Best for travelers who prefer Gueliz, restaurants and shops nearby, with a calmer street and easier access to the train station.'
   },
@@ -949,18 +949,165 @@ const hotels = [
 ];
 
 const restaurants = [
-  {id:'r1',type:'restaurant',name:'Le Jardin',location:'Rue Sidi Abdelaziz, Mouassine',desc:'Romantic rooftop restaurant in a lush green garden. Traditional Moroccan cuisine elevated with modern technique.',price:25,stars:5,img:'moroccan restaurant garden rooftop romantic',opens:'12:00 – 23:00',tip:'Reserve the table by the fig tree.'},
-  {id:'r2',type:'restaurant',name:'Nomad',location:'Derb Aarjane, Medina',desc:'Stylish modern Moroccan food with spectacular rooftop views over the medina skyline. A Marrakech classic.',price:30,stars:5,img:'marrakech rooftop restaurant medina view modern',opens:'12:00 – 23:30',tip:'The lamb kefta is exceptional.'},
-  {id:'r3',type:'cafe',name:'Café de France',location:'Djemaa El-Fna Square',desc:"The iconic café overlooking the great square. Sip mint tea and watch the world's most famous plaza from above.",price:6,stars:4,img:'moroccan mint tea cafe djemaa el fna',opens:'07:00 – 23:00',tip:'Best spot to watch the square transform at dusk.'},
-  {id:'r4',type:'cafe',name:'Café Clock',location:'Derb Chtouka, Medina',desc:'Cultural café serving famous camel burgers, storytelling nights, and the best fresh juices in the entire medina.',price:10,stars:5,img:'moroccan cafe interior colorful cultural',opens:'09:00 – 24:00',tip:'Check their weekly calendar for storytelling events.'},
-  {id:'r5',type:'bar',name:'Kosybar',location:'Place des Ferblantiers',desc:'Rooftop bar overlooking a palace and stork towers. Signature cocktails meet Moroccan bites in a magical setting.',price:18,stars:5,img:'rooftop bar cocktails sunset morocco palace view',opens:'12:00 – 01:00',tip:'Watch the storks return to their nests at sunset.'},
-  {id:'r6',type:'club',name:'Pacha Marrakech',location:'Avenue Mohammed VI',desc:'The world-famous Ibiza nightclub in Marrakech. International DJs, desert-palace architecture, and VIP tables.',price:30,stars:5,img:'nightclub dj crowd lights party marrakech',opens:'23:00 – 06:00',tip:'Book VIP in advance for international DJ nights.'},
-  {id:'r7',type:'club',name:'Sky Bar 5',location:'Hivernage district',desc:'Open-air nightclub on a hotel rooftop. Pool parties under the stars, live music and 360° city views.',price:25,stars:4,img:'rooftop pool party night marrakech',opens:'21:00 – 04:00',tip:'Thursday night has the best atmosphere.'},
-  {id:'r8',type:'restaurant',name:'Al Fassia',location:'Boulevard Zerktouni, Guéliz',desc:'Entirely run by women — a Marrakech institution for 35 years. Serves the definitive Moroccan home cooking.',price:28,stars:5,img:'moroccan tagine traditional food restaurant',opens:'12:00–15:00, 19:30–23:00',tip:'Order the bastilla as a starter — unmissable.'},
-  {id:'r9',type:'restaurant',name:'Dar Yacout',location:'Rue Sidi Ahmed Soussi',desc:"Opulent 16th-century palace turned restaurant. Seven-course dinner in pure 1001 Nights splendour.",price:55,stars:5,img:'moroccan palace restaurant interior luxury dinner',opens:'19:30 – 23:30 (dinner only)',tip:'Wear something special — this is an occasion.'},
-  {id:'r10',type:'cafe',name:'Terrasse des Épices',location:'Souk Cherifa, Medina',desc:'Rooftop café with sweeping medina views. Organic Moroccan salads, fresh juices, and world-class mint tea.',price:12,stars:4,img:'marrakech terrace cafe spices view rooftop',opens:'10:00 – 23:00',tip:'Come at midday for the best light on the medina.'},
-  {id:'r11',type:'bar',name:'Grand Café de la Poste',location:'Boulevard El Mansour Eddahbi',desc:'Colonial-era Art Deco brasserie. Oysters, champagne, classic cocktails in a cinematic setting.',price:22,stars:4,img:'art deco brasserie bar elegant colonial',opens:'08:00 – 01:00',tip:'The terrace is perfect for a leisurely afternoon.'},
-  {id:'r12',type:'club',name:'Theatro',location:'Hotel Es Saadi, Hivernage',desc:"Marrakech's most glamorous nightclub inside a former theatre. Lavish decor and international resident DJs.",price:35,stars:5,img:'glamorous theater nightclub interior marrakech',opens:'22:00 – 05:00',tip:'Dress code is strictly enforced — elegant only.'},
+
+  {
+  id:'r1',
+  type:'restaurant',
+  name:'Le Jardin',
+  location:'Rue Sidi Abdelaziz, Mouassine',
+  desc:'Romantic rooftop restaurant in a lush green garden. Traditional Moroccan cuisine elevated with modern technique.',
+  price:25,
+  stars:5,
+  img:'moroccan restaurant garden rooftop romantic',
+  opens:'12:00 – 23:00',
+  tip:'Reserve the table by the fig tree.'
+  },
+
+  {
+  id:'r2',
+  type:'restaurant',
+  name:'Nomad',
+  location:'Derb Aarjane, Medina',
+  desc:'Stylish modern Moroccan food with spectacular rooftop views over the medina skyline. A Marrakech classic.',
+  price:30,
+  stars:5,
+  img:'marrakech rooftop restaurant medina view modern',
+  opens:'12:00 – 23:30',
+  tip:'The lamb kefta is exceptional.'
+  },
+
+  {
+  id:'r3',
+  type:'cafe',
+  name:'Café de France',
+  location:'Djemaa El-Fna Square',
+  desc:"The iconic café overlooking the great square. Sip mint tea and watch the world's most famous plaza from above.",
+  price:6,
+  stars:4,
+  img:'moroccan mint tea cafe djemaa el fna',
+  opens:'07:00 – 23:00',
+  tip:'Best spot to watch the square transform at dusk.'
+  },
+
+  {
+  id:'r4',
+  type:'cafe',
+  name:'Café Clock',
+  location:'Derb Chtouka, Medina',
+  desc:'Cultural café serving famous camel burgers, storytelling nights, and the best fresh juices in the entire medina.',
+  price:10,
+  stars:5,
+  img:'moroccan cafe interior colorful cultural',
+  opens:'09:00 – 24:00',tip:'Check their weekly calendar for storytelling events.'
+  },
+
+  {
+  id:'r5',
+  type:'bar',
+  name:'Kosy bar',
+  location:'Place des Ferblantiers',
+  desc:'A beautiful place where souls meet for a drink, a meal, and often an unforgettable sunset over Marrakech.',
+  price:18,
+  stars:5,
+  img:'KOSYBAR/3453535.jpg',
+  localImages:['KOSYBAR/1334333.jpg','KOSYBAR/1343334.jpg','KOSYBAR/23343243.jpg','KOSYBAR/3442234.jpg','KOSYBAR/3453535.jpg'],
+  opens:'12:00 – 01:00',
+  tip:'Watch the storks return to their nests at sunset.'
+  },
+
+  {
+  id:'r6',
+  type:'club',
+  name:'Pacha Marrakech',
+  location:'Avenue Mohammed VI',
+  desc:'The world-famous Ibiza nightclub in Marrakech. International DJs, desert-palace architecture, and VIP tables.',
+  price:30,
+  stars:5,
+  img:'nightclub dj crowd lights party marrakech',
+  opens:'23:00 – 06:00',
+  tip:'Book VIP in advance for international DJ nights.'
+  },
+
+  {
+  id:'r7',
+  type:'bar',
+  name:'SKY5 Marrakech',
+  location:'Marrakech',
+  desc:'Panoramic restaurant lounge with more than 2,000 m2 of terrace space, three modern atmospheres, international cuisine, signature cocktails, festive shows, shisha service and pool parties from midday to sunset.',
+  price:30,
+  stars:5,
+  img:'SKY 5/3566467.jpg',
+  localImages:['SKY 5/3566467.jpg','SKY 5/58585686.jpg','SKY 5/5858998.jpg','SKY 5/58777778.jpg','SKY 5/657898990.jpg'],
+  opens:'Pool party: 12:00 - sunset / Lounge: evening',
+  tip:'Go for the pool party in the afternoon, then stay for cocktails, shows and the warm lounge atmosphere.'
+  },
+
+  {
+  id:'r8',
+  type:'restaurant',
+  name:'Al Fassia',
+  location:'Boulevard Zerktouni, Guéliz',
+  desc:'Entirely run by women — a Marrakech institution for 35 years. Serves the definitive Moroccan home cooking.',
+  price:28,
+  stars:5,
+  img:'moroccan tagine traditional food restaurant',
+  opens:'12:00–15:00, 19:30–23:00',
+  tip:'Order the bastilla as a starter — unmissable.'
+  },
+
+  {
+  id:'r9',
+  type:'restaurant',
+  name:'Dar Yacout',
+  location:'Rue Sidi Ahmed Soussi',
+  desc:"Opulent 16th-century palace turned restaurant. Seven-course dinner in pure 1001 Nights splendour.",
+  price:55,
+  stars:5,
+  img:'moroccan palace restaurant interior luxury dinner',
+  opens:'19:30 – 23:30 (dinner only)',
+  tip:'Wear something special — this is an occasion.'
+  },
+
+  {
+  id:'r10',
+  type:'cafe',
+  name:'Terrasse des Épices',
+  location:'Souk Cherifa, Medina',
+  desc:'Rooftop café with sweeping medina views. Organic Moroccan salads, fresh juices, and world-class mint tea.',
+  price:12,
+  stars:4,
+  img:'marrakech terrace cafe spices view rooftop',
+  opens:'10:00 – 23:00',
+  tip:'Come at midday for the best light on the medina.'
+  },
+
+  {
+  id:'r11',
+  type:'club',
+  name:'555 Famous Club Marrakech',
+  location:'Agdal district',
+  desc:'One of Marrakech’s top nightclubs, with world-DJ energy, international artists, showgirls, dancers and performers every night in a festive Agdal atmosphere.',
+  price:35,
+  stars:5,
+  img:'555 famous club/555-famous-club-maarakech.jpg',
+  localImages:['555 famous club/121716523.jpg','555 famous club/245454546.jpg','555 famous club/4536575.jpg','555 famous club/555-famous-club-maarakech.jpg','555 famous club/83109543.jpg'],
+  opens:'Nightly',
+  tip:'Book the VIP area for private groups, corporate events or a more exclusive club night.'
+  },
+
+  {
+  id:'r12',
+  type:'club',
+  name:'Theatro',
+  location:'Hotel Es Saadi, Hivernage',
+  desc:"Marrakech's most glamorous nightclub inside a former theatre. Lavish decor and international resident DJs.",
+  price:30,
+  stars:5,
+  img:'theatro/119655137.jpg',
+  localImages:['theatro/119655137.jpg','theatro/13425455.jpg','theatro/154992233.jpg','theatro/16496147.jpg','theatro/25545566.jpg'],
+  opens:'22:00 – 05:00',
+  tip:'Dress code is strictly enforced — elegant only.'
+  },
 ];
 
 const places = [
