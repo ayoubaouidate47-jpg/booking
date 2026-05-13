@@ -15,19 +15,19 @@
   --text:#2C1810;--text-muted:#6B4C3A;--border:rgba(184,134,11,0.2);
 }
 body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
-.top-bar{background:#DEC0BA;padding:8px 2rem}
+.top-bar{background:#d4b2ab;padding:8px 2rem}
 .top-bar-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;flex-wrap:wrap}
-.currency-widget{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(240,192,64,0.2);border-radius:4px;padding:5px 12px}
+.currency-widget{display:flex;align-items:center;gap:8px;background:rgba(157, 15, 15, 0.06);border:1px solid rgba(0, 0, 0, 0.544);border-radius:4px;padding:5px 12px}
 .currency-label{font-size:0.72rem;color:black;text-transform:uppercase;letter-spacing:1px}
-.currency-amount{background:transparent;border:none;color:var(--gold);font-family:'Jost';font-size:0.85rem;font-weight:600;width:60px;outline:none;text-align:center}
+.currency-amount{background:transparent;border:none;color:white;font-family:'Jost';font-size:0.85rem;font-weight:600;width:60px;outline:none;text-align:center}
 .currency-amount::-webkit-inner-spin-button{-webkit-appearance:none}
 .currency-sep{color:rgba(0,0,0,0.3);font-size:0.9rem}
-.currency-select{background:transparent;border:none;color:var(--gold);font-family:'Jost';font-size:0.82rem;font-weight:600;outline:none;cursor:pointer}
+.currency-select{background:transparent;border:none;color:white;font-family:'Jost';font-size:0.82rem;font-weight:600;outline:none;cursor:pointer}
 .currency-select option{background:#1A0F0A;color:#fff}
 .currency-result{font-size:0.82rem;color:black;min-width:80px}
 .lang-switcher{position:relative;display:inline-block}
-.lang-btn{display:none;background:transparent;border:none;color:rgba(0,0,0,0.5);font-family:'Jost';font-size:0.75rem;font-weight:600;letter-spacing:1px;padding:5px 10px;cursor:pointer;transition:all 0.2s;text-transform:uppercase}
-.lang-btn.active{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.15);border:1px solid rgba(184,134,11,0.3);border-radius:4px;color:#5a2e10}
+.lang-btn{display:none;background:transparent;border:none;color:white;font-family:'Jost';font-size:0.75rem;font-weight:600;letter-spacing:1px;padding:5px 10px;cursor:pointer;transition:all 0.2s;text-transform:uppercase}
+.lang-btn.active{display:flex;align-items:center;gap:5px;background:white;border:1px solid rgba(184,134,11,0.3);border-radius:4px;color:#5a2e10}
 .lang-dropdown{display:none;position:absolute;top:110%;right:0;background:#1A0F0A;border:1px solid rgba(240,192,64,0.2);border-radius:4px;overflow:hidden;z-index:999;min-width:70px}
 .lang-dropdown.open{display:block}
 .lang-dropdown .lang-btn{display:block;width:100%;text-align:center;color:rgba(255,255,255,0.6);padding:8px 14px}
@@ -352,15 +352,6 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
       </select>
       <span class="currency-result" id="conv-result">≈ 9.20 EUR</span>
     </div>
-    <div class="lang-switcher" id="lang-switcher">
-      <button class="lang-btn active" id="active-lang" onclick="toggleLangDropdown()">EN ▾</button>
-      <div class="lang-dropdown" id="lang-dropdown">
-        <button class="lang-btn" onclick="setLang('en');toggleLangDropdown()">EN</button>
-        <button class="lang-btn" onclick="setLang('fr');toggleLangDropdown()">FR</button>
-        <button class="lang-btn" onclick="setLang('ar');toggleLangDropdown()">AR</button>
-        <button class="lang-btn" onclick="setLang('es');toggleLangDropdown()">ES</button>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -378,8 +369,18 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
       <li><a onclick="scrollToId('map')" data-i="nav-map">Map</a></li>
       <li><a class="nav-cta" onclick="openContactModal()" data-i="nav-contact">Contact</a></li>
     </ul>
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn active" id="active-lang" onclick="toggleLangDropdown()">EN ▾</button>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <button class="lang-btn" onclick="setLang('en');toggleLangDropdown()">EN</button>
+        <button class="lang-btn" onclick="setLang('fr');toggleLangDropdown()">FR</button>
+        <button class="lang-btn" onclick="setLang('ar');toggleLangDropdown()">AR</button>
+        <button class="lang-btn" onclick="setLang('es');toggleLangDropdown()">ES</button>
+      </div>
+    </div>
   </div>
 </nav>
+ 
 
 <!-- HERO -->
 <section class="hero">
