@@ -15,23 +15,24 @@
   --text:#2C1810;--text-muted:#6B4C3A;--border:rgba(184,134,11,0.2);
 }
 body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
-.info-banner{background:var(--terracotta);color:#fff;text-align:center;padding:10px;font-size:0.82rem;font-weight:500}
-.info-banner span{margin:0 1.2rem}
-.top-bar{background:#0D0705;padding:8px 2rem}
+.top-bar{background:#DEC0BA;padding:8px 2rem}
 .top-bar-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;flex-wrap:wrap}
 .currency-widget{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(240,192,64,0.2);border-radius:4px;padding:5px 12px}
-.currency-label{font-size:0.72rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px}
-.currency-amount{background:transparent;border:none;color:var(--gold-bright);font-family:'Jost';font-size:0.85rem;font-weight:600;width:60px;outline:none;text-align:center}
+.currency-label{font-size:0.72rem;color:black;text-transform:uppercase;letter-spacing:1px}
+.currency-amount{background:transparent;border:none;color:var(--gold);font-family:'Jost';font-size:0.85rem;font-weight:600;width:60px;outline:none;text-align:center}
 .currency-amount::-webkit-inner-spin-button{-webkit-appearance:none}
-.currency-sep{color:rgba(255,255,255,0.2);font-size:0.9rem}
-.currency-select{background:transparent;border:none;color:var(--gold-bright);font-family:'Jost';font-size:0.82rem;font-weight:600;outline:none;cursor:pointer}
+.currency-sep{color:rgba(0,0,0,0.3);font-size:0.9rem}
+.currency-select{background:transparent;border:none;color:var(--gold);font-family:'Jost';font-size:0.82rem;font-weight:600;outline:none;cursor:pointer}
 .currency-select option{background:#1A0F0A;color:#fff}
-.currency-result{font-size:0.82rem;color:rgba(255,255,255,0.7);min-width:80px}
-.lang-switcher{display:flex;gap:2px;background:rgba(255,255,255,0.05);border:1px solid rgba(240,192,64,0.2);border-radius:4px;overflow:hidden}
-.lang-btn{background:transparent;border:none;color:rgba(255,255,255,0.5);font-family:'Jost';font-size:0.75rem;font-weight:600;letter-spacing:1px;padding:5px 10px;cursor:pointer;transition:all 0.2s;text-transform:uppercase}
-.lang-btn.active{background:var(--gold);color:var(--deep)}
-.lang-btn:hover:not(.active){color:var(--gold-bright)}
-nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold)}
+.currency-result{font-size:0.82rem;color:black;min-width:80px}
+.lang-switcher{position:relative;display:inline-block}
+.lang-btn{display:none;background:transparent;border:none;color:rgba(0,0,0,0.5);font-family:'Jost';font-size:0.75rem;font-weight:600;letter-spacing:1px;padding:5px 10px;cursor:pointer;transition:all 0.2s;text-transform:uppercase}
+.lang-btn.active{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.15);border:1px solid rgba(184,134,11,0.3);border-radius:4px;color:#5a2e10}
+.lang-dropdown{display:none;position:absolute;top:110%;right:0;background:#1A0F0A;border:1px solid rgba(240,192,64,0.2);border-radius:4px;overflow:hidden;z-index:999;min-width:70px}
+.lang-dropdown.open{display:block}
+.lang-dropdown .lang-btn{display:block;width:100%;text-align:center;color:rgba(255,255,255,0.6);padding:8px 14px}
+.lang-dropdown .lang-btn:hover{background:rgba(240,192,64,0.1);color:var(--gold-bright)}
+.nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold)}
 .nav-inner{max-width:1400px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:65px}
 .nav-logo{font-family:'Cinzel Decorative',serif;font-size:1.3rem;color:var(--gold-bright);letter-spacing:2px;cursor:pointer}
 .nav-logo span{color:var(--terracotta-light)}
@@ -41,7 +42,7 @@ nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0
 .nav-cta{background:var(--terracotta)!important;color:#fff!important;border-radius:4px;height:36px!important;padding:0 1.2rem!important;margin-left:0.75rem}
 .nav-cta:hover{background:var(--terracotta-light)!important}
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--deep)}
-.hero-pattern{position:absolute;inset:0;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpolygon points='40,2 78,20 78,60 40,78 2,60 2,20' fill='none' stroke='%23F0C040' stroke-width='1'/%3E%3Cpolygon points='40,14 66,27 66,53 40,66 14,53 14,27' fill='none' stroke='%23F0C040' stroke-width='0.5'/%3E%3C/svg%3E")}
+.hero-pattern{position:absolute;inset:0;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpolygon points='40,2 78,20 78,60 40,78 2,60 2,20' fill='none' stroke='%23F0C040' stroke-width='1'/%3E%3C/svg%3E")}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1A0F0A 0%,#3D1A0A 40%,#1A2A20 100%)}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35}
 .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:900px}
@@ -54,12 +55,14 @@ nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0
 .btn-primary:hover{background:var(--terracotta-light);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--gold-bright);padding:13px 32px;border:1px solid var(--gold);font-family:'Jost';font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:3px;transition:all 0.3s}
 .btn-outline:hover{background:rgba(184,134,11,0.1);transform:translateY(-2px)}
+
+/* ── SECTION BASE ── */
 .section{padding:5rem 2rem}
 .section-inner{max-width:1400px;margin:0 auto}
 .section-tag{font-size:0.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--terracotta);font-weight:600;margin-bottom:0.6rem;display:flex;align-items:center;gap:10px}
 .section-tag::after{content:'';width:30px;height:1px;background:var(--terracotta)}
 .section-title{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,3vw,2.5rem);color:var(--deep);margin-bottom:0.75rem;line-height:1.2}
-.section-desc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-muted);max-width:600px;line-height:1.8;margin-bottom:2.5rem}
+.section-desc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-muted);max-width:600px;line-height:1.8;margin-bottom:1.5rem}
 .section-dark{background:var(--deep)}
 .section-dark .section-title{color:var(--gold-bright)}
 .section-dark .section-desc{color:rgba(255,255,255,0.55)}
@@ -69,119 +72,216 @@ nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0
 .ornament-line{display:flex;align-items:center;gap:1.5rem;justify-content:center}
 .ornament-line::before,.ornament-line::after{content:'';flex:1;max-width:180px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
 .ornament-diamond{color:var(--gold);font-size:1.1rem}
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.75rem}
-.card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);transition:all 0.3s;border:1px solid var(--border)}
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,0.13)}
 
-/* ── REAL IMAGE STYLES ── */
-.card-img{width:100%;height:200px;object-fit:cover;display:block;transition:transform 0.4s}
-.card:hover .card-img{transform:scale(1.04)}
-.card-img-wrap{position:relative;overflow:hidden;height:200px}
-.card-img-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3.2rem;position:relative;background:linear-gradient(135deg,#F5E6CC,#D4A96B)}
-.card-badge{position:absolute;top:10px;left:10px;background:var(--terracotta);color:#fff;font-size:0.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:3px;z-index:2}
-.img-credit{position:absolute;bottom:4px;right:6px;font-size:0.6rem;color:rgba(255,255,255,0.55);background:rgba(0,0,0,0.3);padding:1px 5px;border-radius:2px;z-index:2}
-
-.card-body{padding:1.25rem}
-.card-name{font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:var(--deep);margin-bottom:0.4rem}
-.card-location{font-size:0.78rem;color:var(--text-muted);margin-bottom:0.6rem}
-.card-desc{font-size:0.84rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.75rem}
-.card-stars{color:var(--gold-light);font-size:0.9rem;margin-bottom:0.4rem}
-.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.75rem;border-top:1px solid var(--border)}
-.card-price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--terracotta)}
-.card-price span{font-size:0.75rem;font-weight:400;color:var(--text-muted)}
-.card-price-sub{font-size:0.7rem;color:var(--text-muted);margin-top:1px}
-.card-btn{background:var(--terracotta);color:#fff;border:none;padding:7px 16px;border-radius:4px;font-family:'Jost';font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s}
-.card-btn:hover{background:var(--terracotta-light)}
-.card-btn-teal{background:var(--teal)}.card-btn-teal:hover{background:var(--teal-light)}
-.card-btn-gold{background:var(--gold);color:#1A0F0A}.card-btn-gold:hover{background:var(--gold-light)}
-.amenities{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0.75rem}
-.amenity{font-size:0.72rem;color:var(--text-muted);display:flex;align-items:center;gap:3px}
-.amenity::before{content:'✦';color:var(--gold);font-size:0.55rem}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0.75rem}
-.tag{font-size:0.67rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:2px;border:1px solid}
-.tag-terra{color:var(--terracotta);border-color:var(--terracotta);background:var(--terracotta-pale)}
-.tag-teal{color:var(--teal);border-color:var(--teal);background:var(--teal-pale)}
+/* ── FILTER BAR ── */
 .filter-bar{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2rem}
 .filter-btn{background:#fff;border:1px solid var(--border);color:var(--text-muted);padding:7px 18px;border-radius:30px;font-family:'Jost';font-size:0.8rem;font-weight:500;cursor:pointer;transition:all 0.3s}
 .filter-btn:hover,.filter-btn.active{background:var(--terracotta);color:#fff;border-color:var(--terracotta)}
 .filter-btn-teal:hover,.filter-btn-teal.active{background:var(--teal);border-color:var(--teal);color:#fff}
 .filter-btn-gold:hover,.filter-btn-gold.active{background:var(--gold);border-color:var(--gold);color:var(--deep)}
 
-/* ── PLACE CARDS WITH REAL IMAGES ── */
-.place-card{position:relative;border-radius:8px;overflow:hidden;height:260px;cursor:pointer;transition:all 0.4s}
-.place-bg-img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
-.place-card:hover .place-bg-img{transform:scale(1.06)}
-.place-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4.5rem;transition:transform 0.4s}
-.place-card:hover .place-bg{transform:scale(1.06)}
-.place-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,15,10,0.95) 0%,rgba(26,15,10,0.3) 60%,transparent 100%);opacity:0.72;transition:opacity 0.3s}
-.place-card:hover .place-overlay{opacity:1}
-.place-content{position:absolute;bottom:0;left:0;right:0;padding:1.25rem;color:#fff}
-.place-name{font-family:'Cinzel Decorative',serif;font-size:1rem;margin-bottom:0.2rem}
-.place-detail{font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.5}
-.place-link{margin-top:0.6rem;display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-bright);cursor:pointer}
+/* ══════════════════════════════════════════
+   CAROUSEL SYSTEM
+══════════════════════════════════════════ */
+.carousel-wrapper{position:relative}
+.carousel-track-outer{overflow:hidden;border-radius:12px}
+.carousel-track{
+  display:flex;
+  gap:1.5rem;
+  transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  will-change:transform;
+}
+/* Each slide fills exact width computed by JS */
+.carousel-slide{
+  flex-shrink:0;
+  cursor:pointer;
+  position:relative;
+}
 
-/* ── ACTIVITY CARDS WITH REAL IMAGES ── */
-.activity-card{background:var(--deep);border-radius:8px;overflow:hidden;border:1px solid rgba(240,192,64,0.15);transition:all 0.3s}
-.activity-card:hover{transform:translateY(-5px);border-color:var(--gold)}
-.activity-header{height:160px;position:relative;overflow:hidden}
-.activity-header-img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
-.activity-card:hover .activity-header-img{transform:scale(1.06)}
-.activity-header-fallback{height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
-.activity-body{padding:1.25rem}
-.activity-name{font-family:'Cinzel Decorative',serif;font-size:0.88rem;color:var(--gold-bright);margin-bottom:0.4rem}
-.activity-desc{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:0.75rem}
-.activity-footer{display:flex;justify-content:space-between;align-items:center;padding-top:0.75rem;border-top:1px solid rgba(240,192,64,0.12)}
-.activity-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold-bright);font-weight:600}
-.activity-duration{font-size:0.72rem;color:rgba(255,255,255,0.45)}
+/* Nav arrows */
+.carousel-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1.25rem;
+}
+.carousel-arrows{display:flex;gap:0.6rem}
+.carousel-arrow{
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--border);
+  background:#fff;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;
+  justify-content:center;transition:all 0.25s;color:var(--text);
+}
+.carousel-arrow:hover{background:var(--terracotta);color:#fff;border-color:var(--terracotta)}
+.carousel-arrow-dark{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.7)}
+.carousel-arrow-dark:hover{background:var(--gold-bright);color:var(--deep);border-color:var(--gold-bright)}
+.carousel-counter{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-muted);font-style:italic}
+.carousel-counter-dark{color:rgba(255,255,255,0.4)}
 
-/* ── GUIDE CARDS ── */
-.guide-card{background:#fff;border-radius:8px;overflow:hidden;border:1px solid var(--border);transition:all 0.3s;display:flex;flex-direction:column}
-.guide-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.1)}
-.guide-avatar-img{width:100%;height:180px;object-fit:cover;object-position:top}
-.guide-avatar{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--cream-dark)}
+/* Dots */
+.carousel-dots{display:flex;gap:6px;justify-content:center;margin-top:1.25rem}
+.carousel-dot{width:6px;height:6px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.3s;border:none;padding:0}
+.carousel-dot.active{width:22px;border-radius:3px;background:var(--terracotta)}
+.carousel-dot-gold.active{background:var(--gold-bright)}
+.carousel-dot-teal.active{background:var(--teal)}
+
+/* ── HOTEL CARD (Carousel) ── */
+.hotel-card{
+  background:#fff;border-radius:12px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.08);
+  border:1px solid var(--border);
+  transition:box-shadow 0.3s,transform 0.3s;
+}
+.hotel-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.15);transform:translateY(-4px)}
+.hotel-img-wrap{position:relative;height:240px;overflow:hidden;background:linear-gradient(135deg,#F5E6CC,#D4A96B)}
+.hotel-img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.hotel-card:hover .hotel-img{transform:scale(1.06)}
+.hotel-badge{position:absolute;top:12px;left:12px;background:var(--terracotta);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:3px}
+.img-credit{position:absolute;bottom:4px;right:6px;font-size:0.6rem;color:rgba(255,255,255,0.6);background:rgba(0,0,0,0.35);padding:1px 5px;border-radius:2px}
+.hotel-body{padding:1.4rem}
+.hotel-name{font-family:'Cinzel Decorative',serif;font-size:0.95rem;color:var(--deep);margin-bottom:0.3rem}
+.hotel-loc{font-size:0.78rem;color:var(--text-muted);margin-bottom:0.5rem}
+.hotel-stars{color:var(--gold-light);font-size:0.88rem;margin-bottom:0.6rem}
+.hotel-desc{font-size:0.83rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.8rem;display:-webkit-box;webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.hotel-amenities{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0.9rem}
+.amenity-pill{font-size:0.68rem;color:var(--text-muted);background:var(--cream);padding:3px 8px;border-radius:20px;border:1px solid var(--border)}
+.hotel-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.8rem;border-top:1px solid var(--border)}
+.price-main{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--terracotta)}
+.price-main span{font-size:0.75rem;color:var(--text-muted);font-family:'Jost';font-weight:400}
+.price-sub{font-size:0.7rem;color:var(--text-muted);margin-top:1px}
+.card-btn{background:var(--terracotta);color:#fff;border:none;padding:8px 18px;border-radius:5px;font-family:'Jost';font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s}
+.card-btn:hover{background:var(--terracotta-light);transform:translateY(-1px)}
+.card-btn-teal{background:var(--teal)}.card-btn-teal:hover{background:var(--teal-light)}
+.card-btn-gold{background:var(--gold);color:var(--deep)}.card-btn-gold:hover{background:var(--gold-light)}
+
+/* ── RESTAURANT CARD ── */
+.rest-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid var(--border);transition:all 0.3s}
+.rest-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.13);transform:translateY(-4px)}
+.rest-img-wrap{position:relative;height:200px;overflow:hidden;background:linear-gradient(135deg,#F8E8D8,#D4906A)}
+.rest-img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.rest-card:hover .rest-img{transform:scale(1.06)}
+.rest-type-badge{position:absolute;top:10px;left:10px;background:var(--teal);color:#fff;font-size:0.68rem;font-weight:700;padding:3px 9px;border-radius:3px;text-transform:uppercase;letter-spacing:1px}
+.rest-body{padding:1.25rem}
+.rest-name{font-family:'Cinzel Decorative',serif;font-size:0.88rem;color:var(--deep);margin-bottom:0.3rem}
+.rest-loc{font-size:0.76rem;color:var(--text-muted);margin-bottom:0.4rem}
+.rest-stars{color:var(--gold-light);font-size:0.85rem;margin-bottom:0.5rem}
+.rest-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.5rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rest-hours{font-size:0.74rem;color:var(--teal);font-weight:600;margin-bottom:0.8rem}
+.rest-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.75rem;border-top:1px solid var(--border)}
+
+/* ── PLACE CARD (tourism carousel) ── */
+.place-card{border-radius:12px;overflow:hidden;height:320px;position:relative;transition:all 0.4s}
+.place-card:hover{transform:scale(1.02)}
+.place-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.place-card:hover .place-bg-img{transform:scale(1.08)}
+.place-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem}
+.place-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,15,10,0.95) 0%,rgba(26,15,10,0.2) 60%,transparent 100%)}
+.place-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem}
+.place-name{font-family:'Cinzel Decorative',serif;font-size:1.05rem;color:#fff;margin-bottom:0.4rem}
+.place-snippet{font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.5;margin-bottom:0.75rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.place-cta{display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-bright);background:transparent;border:1px solid rgba(240,192,64,0.4);padding:5px 12px;border-radius:3px;cursor:pointer;transition:all 0.3s}
+.place-cta:hover{background:rgba(240,192,64,0.15)}
+
+/* ── CAR CARD ── */
+.car-card{background:rgba(255,255,255,0.04);border:1px solid rgba(240,192,64,0.15);border-radius:12px;overflow:hidden;transition:all 0.3s}
+.car-card:hover{border-color:var(--gold-bright);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.3)}
+.car-img-wrap{position:relative;height:220px;overflow:hidden;background:rgba(0,0,0,0.3)}
+.car-img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.car-card:hover .car-img{transform:scale(1.06)}
+.car-badge{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--deep);font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:3px}
+.car-body{padding:1.25rem}
+.car-name{font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:var(--gold-bright);margin-bottom:0.4rem}
+.car-desc{font-size:0.81rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:0.85rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.car-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:0.9rem}
+.car-spec{background:rgba(255,255,255,0.05);padding:6px 10px;border-radius:5px;font-size:0.72rem;color:rgba(255,255,255,0.5)}
+.car-spec strong{color:rgba(255,255,255,0.85);display:block;font-size:0.78rem}
+.car-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.8rem;border-top:1px solid rgba(240,192,64,0.12)}
+.car-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold-bright);font-weight:600}
+.car-price span{font-size:0.72rem;color:rgba(255,255,255,0.4);font-family:'Jost';font-weight:400}
+.car-price-sub{font-size:0.68rem;color:rgba(255,255,255,0.35)}
+
+/* ── ACTIVITY CARD ── */
+.act-card{background:rgba(255,255,255,0.04);border:1px solid rgba(240,192,64,0.15);border-radius:12px;overflow:hidden;transition:all 0.3s}
+.act-card:hover{border-color:var(--gold-bright);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.3)}
+.act-img-wrap{position:relative;height:200px;overflow:hidden;background:rgba(0,0,0,0.3)}
+.act-img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.act-card:hover .act-img{transform:scale(1.06)}
+.act-body{padding:1.25rem}
+.act-name{font-family:'Cinzel Decorative',serif;font-size:0.88rem;color:var(--gold-bright);margin-bottom:0.4rem}
+.act-desc{font-size:0.81rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:0.75rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.act-meta{display:flex;gap:1rem;margin-bottom:0.8rem}
+.act-meta-item{font-size:0.73rem;color:rgba(255,255,255,0.4)}
+.act-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.75rem;border-top:1px solid rgba(240,192,64,0.12)}
+.act-price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-bright);font-weight:600}
+.act-price span{font-size:0.7rem;color:rgba(255,255,255,0.4);font-family:'Jost';font-weight:400}
+
+/* ── GUIDE CARD ── */
+.guide-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:all 0.3s;display:flex;flex-direction:column}
+.guide-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.12);transform:translateY(-4px)}
+.guide-img-wrap{height:200px;overflow:hidden;background:var(--cream-dark);position:relative}
+.guide-img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.5s}
+.guide-card:hover .guide-img{transform:scale(1.05)}
 .guide-body{padding:1.25rem;flex:1}
 .guide-name{font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:var(--deep);margin-bottom:0.2rem}
-.guide-role{font-size:0.75rem;color:var(--terracotta);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.6rem}
-.guide-languages{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.75rem}
-.guide-lang{font-size:0.68rem;background:var(--teal-pale);color:var(--teal);padding:2px 7px;border-radius:2px;font-weight:600}
-.guide-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;padding:0.75rem 1.25rem;background:var(--cream);border-top:1px solid var(--border)}
+.guide-role{font-size:0.72rem;color:var(--terracotta);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.6rem}
+.guide-langs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.7rem}
+.guide-lang{font-size:0.67rem;background:var(--teal-pale);color:var(--teal);padding:2px 7px;border-radius:2px;font-weight:600}
+.guide-specs{font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.75rem}
+.guide-stats{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.5rem;padding:0.75rem 1.25rem;background:var(--cream);border-top:1px solid var(--border)}
 .guide-stat{text-align:center}
-.guide-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--terracotta)}
-.guide-stat-label{font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+.guide-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--terracotta)}
+.guide-stat-label{font-size:0.63rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px}
 .guide-footer{padding:0.75rem 1.25rem;border-top:1px solid var(--border);display:flex;gap:0.6rem}
-.car-specs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:0.75rem}
-.car-spec{background:var(--cream);padding:6px 10px;border-radius:4px;font-size:0.74rem;color:var(--text-muted)}
-.car-spec strong{color:var(--deep);display:block;font-size:0.8rem}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--deep);padding:3.5rem 2rem}
+.stats-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.stat-num{font-family:'Cinzel Decorative',serif;font-size:2.2rem;color:var(--gold-bright);margin-bottom:0.4rem}
+.stat-label{font-size:0.75rem;color:rgba(255,255,255,0.45);letter-spacing:2px;text-transform:uppercase}
+
+/* ── MAP ── */
 .map-container{width:100%;height:480px;background:var(--cream-dark);border-radius:10px;position:relative;overflow:hidden;border:2px solid var(--gold)}
 .map-iframe{width:100%;height:100%;border:none}
 .map-pins-legend{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.25rem;justify-content:center}
 .map-pin{display:flex;align-items:center;gap:7px;background:#fff;padding:7px 14px;border-radius:4px;font-size:0.8rem;font-weight:500;border:1px solid var(--border)}
 .pin-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
-.stats-bar{background:var(--deep);padding:3.5rem 2rem}
-.stats-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
-.stat-num{font-family:'Cinzel Decorative',serif;font-size:2.2rem;color:var(--gold-bright);margin-bottom:0.4rem}
-.stat-label{font-size:0.75rem;color:rgba(255,255,255,0.45);letter-spacing:2px;text-transform:uppercase}
-.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:0.75rem}
-.wa-btn{width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;border:none;font-size:1.6rem}
-.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
-.wa-tooltip{background:var(--deep);color:#fff;padding:8px 14px;border-radius:6px;font-size:0.8rem;font-weight:500;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,0.2);display:none}
-.wa-float:hover .wa-tooltip{display:block}
+
+/* ── MODAL ── */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)}
 .modal-overlay.open{display:flex}
-.modal{background:#fff;border-radius:12px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto}
+.modal{background:#fff;border-radius:14px;width:100%;max-width:580px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,0.3)}
 .modal-header{padding:1.75rem 1.75rem 1rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start}
-.modal-title{font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--deep)}
-.modal-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted)}
+.modal-title{font-family:'Cinzel Decorative',serif;font-size:1.15rem;color:var(--deep)}
+.modal-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-muted);line-height:1;padding:4px}
+.modal-close:hover{color:var(--terracotta)}
 .modal-body{padding:1.75rem}
+
+/* Info Modal */
+.info-modal-img{width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:1.25rem}
+.info-modal-desc{font-family:'Cormorant Garamond',serif;font-size:1.08rem;line-height:1.85;color:var(--text);margin-bottom:1.25rem}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;margin-bottom:1.25rem}
+.info-box{background:var(--cream);padding:0.9rem;border-radius:8px;border-left:3px solid var(--terracotta)}
+.info-box.gold{border-left-color:var(--gold)}
+.info-box-label{font-size:0.67rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.info-box-val{font-size:0.88rem;color:var(--deep)}
+.info-amenities{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
+.info-pill{font-size:0.72rem;background:var(--cream);color:var(--text-muted);padding:4px 10px;border-radius:20px;border:1px solid var(--border)}
+.info-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
+.info-tag{font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:3px;background:var(--terracotta-pale);color:var(--terracotta);border:1px solid var(--terracotta)}
+
+/* Booking form */
 .form-group{margin-bottom:1.1rem}
-.form-label{display:block;font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px}
-.form-input{width:100%;padding:9px 13px;border:1px solid var(--border);border-radius:4px;font-family:'Jost';font-size:0.88rem;color:var(--deep);background:#fff;transition:border-color 0.3s;outline:none}
+.form-label{display:block;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px}
+.form-input{width:100%;padding:9px 13px;border:1px solid var(--border);border-radius:5px;font-family:'Jost';font-size:0.88rem;color:var(--deep);background:#fff;transition:border-color 0.3s;outline:none}
 .form-input:focus{border-color:var(--terracotta)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-submit{width:100%;padding:13px;background:var(--terracotta);color:#fff;border:none;border-radius:4px;font-family:'Jost';font-size:0.88rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background 0.3s;margin-top:0.5rem}
+.form-submit{width:100%;padding:13px;background:var(--terracotta);color:#fff;border:none;border-radius:5px;font-family:'Jost';font-size:0.88rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background 0.3s;margin-top:0.5rem}
 .form-submit:hover{background:var(--terracotta-light)}
-.toast{position:fixed;bottom:5rem;right:2rem;background:var(--teal);color:#fff;padding:0.9rem 1.25rem;border-radius:6px;font-size:0.88rem;font-weight:500;z-index:3000;box-shadow:0 8px 28px rgba(0,0,0,0.18);display:none;align-items:center;gap:8px;max-width:360px}
-.toast.show{display:flex}
+
+/* Tabs in modal */
+.modal-tabs{display:flex;gap:0;margin-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.modal-tab{background:none;border:none;border-bottom:2px solid transparent;padding:8px 16px;font-family:'Jost';font-size:0.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:all 0.25s;margin-bottom:-1px}
+.modal-tab.active{color:var(--terracotta);border-bottom-color:var(--terracotta)}
+.modal-tab-content{display:none}.modal-tab-content.active{display:block}
+
+/* ── NEWSLETTER ── */
 .newsletter{background:linear-gradient(135deg,#1A0F0A,#3D1A0A);padding:4.5rem 2rem;text-align:center;border-top:1px solid rgba(184,134,11,0.2);border-bottom:1px solid rgba(184,134,11,0.2)}
 .newsletter-title{font-family:'Cinzel Decorative',serif;font-size:clamp(1.4rem,3vw,2rem);color:var(--gold-bright);margin-bottom:0.75rem}
 .newsletter-sub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(255,255,255,0.55);font-style:italic;margin-bottom:1.75rem}
@@ -190,6 +290,8 @@ nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0
 .newsletter-input::placeholder{color:rgba(255,255,255,0.28)}
 .newsletter-btn{background:var(--terracotta);color:#fff;border:none;padding:13px 24px;font-family:'Jost';font-size:0.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background 0.3s}
 .newsletter-btn:hover{background:var(--terracotta-light)}
+
+/* ── FOOTER ── */
 footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;border-top:1px solid rgba(184,134,11,0.25)}
 .footer-inner{max-width:1400px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
@@ -201,11 +303,23 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
 .footer-links a:hover{color:var(--gold-bright)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.78rem}
 .footer-contact-item{font-size:0.8rem;display:flex;align-items:center;gap:7px;color:rgba(255,255,255,0.45);margin-bottom:0.5rem}
-#hotels,#restaurants,#tourism,#cars,#map,#activities,#guides{scroll-margin-top:65px}
 
-/* skeleton loader */
+/* ── WHATSAPP ── */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:0.75rem}
+.wa-btn{width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;border:none;font-size:1.6rem}
+.wa-btn:hover{transform:scale(1.1)}
+.wa-tooltip{background:var(--deep);color:#fff;padding:8px 14px;border-radius:6px;font-size:0.8rem;font-weight:500;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,0.2);display:none}
+.wa-float:hover .wa-tooltip{display:block}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:5rem;right:2rem;background:var(--teal);color:#fff;padding:0.9rem 1.25rem;border-radius:8px;font-size:0.88rem;font-weight:500;z-index:3000;box-shadow:0 8px 28px rgba(0,0,0,0.18);display:none;align-items:center;gap:8px;max-width:360px}
+.toast.show{display:flex}
+
+/* ── SKELETON ── */
 .img-skeleton{width:100%;height:100%;background:linear-gradient(90deg,#f0e8d8 25%,#faf5ee 50%,#f0e8d8 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+#hotels,#restaurants,#tourism,#cars,#map,#activities,#guides{scroll-margin-top:65px}
 
 @media(max-width:768px){
   .nav-links{display:none}
@@ -213,11 +327,11 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
   .footer-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .top-bar-inner{justify-content:center}
+  .info-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -236,16 +350,20 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
       </select>
       <span class="currency-result" id="conv-result">≈ 9.20 EUR</span>
     </div>
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('ar')">AR</button>
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn active" id="active-lang" onclick="toggleLangDropdown()">EN ▾</button>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <button class="lang-btn" onclick="setLang('en');toggleLangDropdown()">EN</button>
+        <button class="lang-btn" onclick="setLang('fr');toggleLangDropdown()">FR</button>
+        <button class="lang-btn" onclick="setLang('ar');toggleLangDropdown()">AR</button>
+        <button class="lang-btn" onclick="setLang('es');toggleLangDropdown()">ES</button>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- NAV -->
-<nav>
+<nav class="nav">
   <div class="nav-inner">
     <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Marrakech <span>Easier</span></div>
     <ul class="nav-links">
@@ -294,7 +412,19 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
     <h2 class="section-title" id="title-hotels">Hotels &amp; Riads</h2>
     <p class="section-desc" id="desc-hotels">From traditional riads hidden in the medina to luxury resorts with Atlas views — find your perfect home in the Red City.</p>
     <div class="filter-bar" id="hotel-filters"></div>
-    <div class="cards-grid" id="hotels-grid"></div>
+    <div class="carousel-nav">
+      <div class="carousel-counter" id="hotel-counter">1 / 9</div>
+      <div class="carousel-arrows">
+        <button class="carousel-arrow" onclick="carouselPrev('hotels-c')">←</button>
+        <button class="carousel-arrow" onclick="carouselNext('hotels-c')">→</button>
+      </div>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track-outer" id="hotels-c-outer">
+        <div class="carousel-track" id="hotels-c"></div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="hotels-c-dots"></div>
   </div>
 </section>
 
@@ -307,7 +437,19 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
     <h2 class="section-title" id="title-dine">Dine, Sip &amp; Dance</h2>
     <p class="section-desc" id="desc-dine">From fragrant tagines in century-old courtyards to rooftop cocktails at sunset — every meal is a celebration.</p>
     <div class="filter-bar" id="rest-filters"></div>
-    <div class="cards-grid" id="restaurants-grid"></div>
+    <div class="carousel-nav">
+      <div class="carousel-counter" id="rest-counter">1 / 12</div>
+      <div class="carousel-arrows">
+        <button class="carousel-arrow" onclick="carouselPrev('rest-c')">←</button>
+        <button class="carousel-arrow" onclick="carouselNext('rest-c')">→</button>
+      </div>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track-outer" id="rest-c-outer">
+        <div class="carousel-track" id="rest-c"></div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="rest-c-dots"></div>
   </div>
 </section>
 
@@ -319,7 +461,19 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
     <div class="section-tag" id="tag-discover">Discover</div>
     <h2 class="section-title" id="title-places">Iconic Places</h2>
     <p class="section-desc" id="desc-places">Seven centuries of history, art, and architecture — from the electric Djemaa El-Fna to the tranquil Majorelle Garden.</p>
-    <div id="tourism-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.75rem"></div>
+    <div class="carousel-nav">
+      <div class="carousel-counter" id="tourism-counter">1 / 9</div>
+      <div class="carousel-arrows">
+        <button class="carousel-arrow" onclick="carouselPrev('tourism-c')">←</button>
+        <button class="carousel-arrow" onclick="carouselNext('tourism-c')">→</button>
+      </div>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track-outer" id="tourism-c-outer">
+        <div class="carousel-track" id="tourism-c"></div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="tourism-c-dots"></div>
   </div>
 </section>
 
@@ -332,7 +486,19 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
     <h2 class="section-title" id="title-cars">Car &amp; Bike Rentals</h2>
     <p class="section-desc" id="desc-cars" style="color:rgba(255,255,255,0.5)">Explore at your own pace — sedans for the city, rugged 4x4s for Atlas adventures, and scooters for the medina.</p>
     <div class="filter-bar" id="car-filters"></div>
-    <div class="cards-grid" id="cars-grid"></div>
+    <div class="carousel-nav">
+      <div class="carousel-counter carousel-counter-dark" id="cars-counter">1 / 8</div>
+      <div class="carousel-arrows">
+        <button class="carousel-arrow carousel-arrow-dark" onclick="carouselPrev('cars-c')">←</button>
+        <button class="carousel-arrow carousel-arrow-dark" onclick="carouselNext('cars-c')">→</button>
+      </div>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track-outer" id="cars-c-outer">
+        <div class="carousel-track" id="cars-c"></div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="cars-c-dots"></div>
   </div>
 </section>
 
@@ -365,7 +531,19 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
     <div class="section-tag" id="tag-activities">Thrills &amp; Culture</div>
     <h2 class="section-title" id="title-activities">Book an Activity</h2>
     <p class="section-desc" id="desc-activities" style="color:rgba(255,255,255,0.5)">Soar above the Atlas, race quads across Agafay, or dance under the desert stars.</p>
-    <div class="cards-grid" id="activities-grid"></div>
+    <div class="carousel-nav">
+      <div class="carousel-counter carousel-counter-dark" id="act-counter">1 / 8</div>
+      <div class="carousel-arrows">
+        <button class="carousel-arrow carousel-arrow-dark" onclick="carouselPrev('act-c')">←</button>
+        <button class="carousel-arrow carousel-arrow-dark" onclick="carouselNext('act-c')">→</button>
+      </div>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track-outer" id="act-c-outer">
+        <div class="carousel-track" id="act-c"></div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="act-c-dots"></div>
   </div>
 </section>
 
@@ -377,7 +555,19 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
     <div class="section-tag" id="tag-guides">Your Local Experts</div>
     <h2 class="section-title" id="title-guides">Guides &amp; Chauffeurs</h2>
     <p class="section-desc" id="desc-guides">Unlock the real Marrakech with a local expert — professional guides and private chauffeurs at your service.</p>
-    <div class="cards-grid" id="guides-grid"></div>
+    <div class="carousel-nav">
+      <div class="carousel-counter" id="guides-counter">1 / 4</div>
+      <div class="carousel-arrows">
+        <button class="carousel-arrow" onclick="carouselPrev('guides-c')">←</button>
+        <button class="carousel-arrow" onclick="carouselNext('guides-c')">→</button>
+      </div>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track-outer" id="guides-c-outer">
+        <div class="carousel-track" id="guides-c"></div>
+      </div>
+    </div>
+    <div class="carousel-dots" id="guides-c-dots"></div>
   </div>
 </section>
 
@@ -437,7 +627,7 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
   </div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
+<!-- WHATSAPP -->
 <div class="wa-float">
   <div class="wa-tooltip" id="wa-tooltip">Chat with us on WhatsApp</div>
   <button class="wa-btn" onclick="window.open('https://wa.me/212645297934?text=Hello%20Marrakech%20Easier!','_blank')" title="WhatsApp">💬</button>
@@ -452,260 +642,244 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
 <div class="toast" id="toast"></div>
 
 <script>
-// ── UNSPLASH CONFIG ──
+// ══════════════════════════════════════════
+// CONFIG & DATA
+// ══════════════════════════════════════════
 const UNSPLASH_KEY = 'rSzmn2j7UedbUHuC_6RfZMMPqwJ4pCup_xJ_UjwasKo';
-
-// Image cache to avoid repeat requests
 const imgCache = {};
+const rates = {MAD:1,EUR:0.092,USD:0.099,GBP:0.079};
+let lang = 'en';
+let hotelFilter = 'all';
+let restFilter = 'all';
+let carFilter = 'all';
 
-async function fetchUnsplashImg(query, fallbackEmoji) {
-  if (imgCache[query]) return imgCache[query];
-  try {
-    const res = await fetch(
-      `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=3&orientation=landscape&client_id=${UNSPLASH_KEY}`
-    );
-    const data = await res.json();
-    if (data.results && data.results.length > 0) {
-      const idx = Math.floor(Math.random() * Math.min(3, data.results.length));
-      const img = data.results[idx];
-      const result = {
-        url: img.urls.regular,
-        thumb: img.urls.small,
-        credit: img.user.name,
-        creditLink: img.user.links.html
-      };
-      imgCache[query] = result;
-      return result;
-    }
-  } catch(e) {}
-  return null;
-}
+// Carousel state
+const carouselState = {};
 
-function imgTag(url, alt, credit, extraClass='') {
-  return `<img class="card-img${extraClass?' '+extraClass:''}" src="${url}" alt="${alt}" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F5E6CC,#D4A96B)\'></div>'"  />${credit?`<span class="img-credit">📷 ${credit}</span>`:''}`;
-}
+const hotels = [
+  {id:'h1',type:'riad',tier:'luxury',name:'Riad El Cadi',location:'Medina, Mouassine',desc:'A stunning 12th-century palace with 12 unique suites. Original zellige floors, carved plaster, jasmine courtyard. One of the most authentic heritage stays in the medina.',price:280,stars:5,amenities:['Rooftop terrace','Hammam','Pool','Breakfast','WiFi'],tags:['riad','heritage'],img:'marrakech riad interior courtyard zellige',badge:'Heritage',tip:'Request the suite overlooking the jasmine garden.'},
+  {id:'h2',type:'hotel',tier:'luxury',name:'La Mamounia',location:'Avenue Bab Jdid',desc:'The legendary palace hotel. Winston Churchill painted its gardens. Pure Art Deco grandeur in the heart of Marrakech, a true icon.',price:650,stars:5,amenities:['3 pools','Spa','4 restaurants','Casino','Tennis'],tags:['hotel','iconic'],img:'luxury moroccan palace hotel pool garden',badge:'Legendary',tip:'Book the Winston Churchill suite for an unforgettable stay.'},
+  {id:'h3',type:'riad',tier:'mid',name:'Riad Yasmine',location:'Derb Sidi Ahmed',desc:'A romantic 6-room riad with its iconic blue mosaic pool. Instagram-famous and blissfully quiet, perfect for couples.',price:120,stars:4,amenities:['Pool','Breakfast','Terrace','Hammam'],tags:['riad','romantic'],img:'blue mosaic pool riad marrakech',badge:'Boutique',tip:'Book early — only 6 rooms, always sold out.'},
+  {id:'h4',type:'riad',tier:'budget',name:'Riad Dar Zitoun',location:'Mellah district',desc:'Family-run riad in the historic Jewish quarter. Authentic hospitality and homemade breakfasts served on the rooftop.',price:65,stars:3,amenities:['Terrace','Breakfast','WiFi'],tags:['riad','budget'],img:'moroccan riad courtyard fountain traditional',badge:'Local Charm',tip:'Ask the owner for his personal medina tour recommendations.'},
+  {id:'h5',type:'hotel',tier:'luxury',name:'Royal Mansour',location:'Rue Abou Abbas El Sebti',desc:'53 private riads within a walled medina, each with its own courtyard and pool. The most exclusive address in all of Morocco.',price:1200,stars:5,amenities:['Private pool','Butler','3 restaurants','Spa','Library'],tags:['hotel','ultra-luxury'],img:'royal luxury moroccan hotel private villa pool',badge:'Ultra Luxury',tip:'Arrive by traditional carriage for the full experience.'},
+  {id:'h6',type:'hotel',tier:'mid',name:'Nobu Hotel Marrakech',location:'Avenue Mohammed VI, Guéliz',desc:'Japanese minimalism meets Moroccan craft. Famous for its world-class Nobu restaurant and stunning rooftop pool.',price:320,stars:5,amenities:['Rooftop pool','Nobu restaurant','Spa','Gym'],tags:['hotel','design'],img:'modern luxury hotel rooftop pool morocco architecture',badge:'Design Hotel',tip:'The rooftop bar at sunset is unmissable.'},
+  {id:'h7',type:'riad',tier:'mid',name:'Riad BE Marrakech',location:'Bab Doukkala, Medina',desc:'Beautifully restored 19th-century riad with a serene rooftop and stylishly decorated rooms. Excellent location near souks.',price:150,stars:4,amenities:['Rooftop','Hammam','Pool','Breakfast'],tags:['riad','boutique'],img:'riad marrakech rooftop terrace view medina',badge:'Boutique Riad',tip:'The rooftop is quietest in the early morning.'},
+  {id:'h8',type:'hotel',tier:'luxury',name:'Mandarin Oriental',location:'Route du Golf, Palmeraie',desc:'Set amid 20 hectares of lush gardens in the Palmeraie with the Atlas as a dramatic backdrop. The ultimate resort.',price:550,stars:5,amenities:['5 pools','Spa','6 restaurants','Tennis','Golf'],tags:['hotel','resort'],img:'palm tree resort pool atlas mountains morocco luxury',badge:'Resort',tip:'Rent a bicycle to explore the palm grove estate.'},
+  {id:'h9',type:'riad',tier:'budget',name:'Riad Kniza',location:'Near Bab Doukkala',desc:"An 18th-century palace-riad with one of Marrakech's finest antique collections. UNESCO recommended. Exceptional value.",price:90,stars:4,amenities:['Pool','Restaurant','Hammam','Library','Antiques'],tags:['riad','heritage'],img:'historic riad interior morocco zellige antique',badge:'Historic',tip:'Visit the antique collection even if not staying here.'},
+];
 
-// ── TRANSLATIONS ──
+const restaurants = [
+  {id:'r1',type:'restaurant',name:'Le Jardin',location:'Rue Sidi Abdelaziz, Mouassine',desc:'Romantic rooftop restaurant in a lush green garden. Traditional Moroccan cuisine elevated with modern technique.',price:25,stars:5,img:'moroccan restaurant garden rooftop romantic',opens:'12:00 – 23:00',tip:'Reserve the table by the fig tree.'},
+  {id:'r2',type:'restaurant',name:'Nomad',location:'Derb Aarjane, Medina',desc:'Stylish modern Moroccan food with spectacular rooftop views over the medina skyline. A Marrakech classic.',price:30,stars:5,img:'marrakech rooftop restaurant medina view modern',opens:'12:00 – 23:30',tip:'The lamb kefta is exceptional.'},
+  {id:'r3',type:'cafe',name:'Café de France',location:'Djemaa El-Fna Square',desc:"The iconic café overlooking the great square. Sip mint tea and watch the world's most famous plaza from above.",price:6,stars:4,img:'moroccan mint tea cafe djemaa el fna',opens:'07:00 – 23:00',tip:'Best spot to watch the square transform at dusk.'},
+  {id:'r4',type:'cafe',name:'Café Clock',location:'Derb Chtouka, Medina',desc:'Cultural café serving famous camel burgers, storytelling nights, and the best fresh juices in the entire medina.',price:10,stars:5,img:'moroccan cafe interior colorful cultural',opens:'09:00 – 24:00',tip:'Check their weekly calendar for storytelling events.'},
+  {id:'r5',type:'bar',name:'Kosybar',location:'Place des Ferblantiers',desc:'Rooftop bar overlooking a palace and stork towers. Signature cocktails meet Moroccan bites in a magical setting.',price:18,stars:5,img:'rooftop bar cocktails sunset morocco palace view',opens:'12:00 – 01:00',tip:'Watch the storks return to their nests at sunset.'},
+  {id:'r6',type:'club',name:'Pacha Marrakech',location:'Avenue Mohammed VI',desc:'The world-famous Ibiza nightclub in Marrakech. International DJs, desert-palace architecture, and VIP tables.',price:30,stars:5,img:'nightclub dj crowd lights party marrakech',opens:'23:00 – 06:00',tip:'Book VIP in advance for international DJ nights.'},
+  {id:'r7',type:'club',name:'Sky Bar 5',location:'Hivernage district',desc:'Open-air nightclub on a hotel rooftop. Pool parties under the stars, live music and 360° city views.',price:25,stars:4,img:'rooftop pool party night marrakech',opens:'21:00 – 04:00',tip:'Thursday night has the best atmosphere.'},
+  {id:'r8',type:'restaurant',name:'Al Fassia',location:'Boulevard Zerktouni, Guéliz',desc:'Entirely run by women — a Marrakech institution for 35 years. Serves the definitive Moroccan home cooking.',price:28,stars:5,img:'moroccan tagine traditional food restaurant',opens:'12:00–15:00, 19:30–23:00',tip:'Order the bastilla as a starter — unmissable.'},
+  {id:'r9',type:'restaurant',name:'Dar Yacout',location:'Rue Sidi Ahmed Soussi',desc:"Opulent 16th-century palace turned restaurant. Seven-course dinner in pure 1001 Nights splendour.",price:55,stars:5,img:'moroccan palace restaurant interior luxury dinner',opens:'19:30 – 23:30 (dinner only)',tip:'Wear something special — this is an occasion.'},
+  {id:'r10',type:'cafe',name:'Terrasse des Épices',location:'Souk Cherifa, Medina',desc:'Rooftop café with sweeping medina views. Organic Moroccan salads, fresh juices, and world-class mint tea.',price:12,stars:4,img:'marrakech terrace cafe spices view rooftop',opens:'10:00 – 23:00',tip:'Come at midday for the best light on the medina.'},
+  {id:'r11',type:'bar',name:'Grand Café de la Poste',location:'Boulevard El Mansour Eddahbi',desc:'Colonial-era Art Deco brasserie. Oysters, champagne, classic cocktails in a cinematic setting.',price:22,stars:4,img:'art deco brasserie bar elegant colonial',opens:'08:00 – 01:00',tip:'The terrace is perfect for a leisurely afternoon.'},
+  {id:'r12',type:'club',name:'Theatro',location:'Hotel Es Saadi, Hivernage',desc:"Marrakech's most glamorous nightclub inside a former theatre. Lavish decor and international resident DJs.",price:35,stars:5,img:'glamorous theater nightclub interior marrakech',opens:'22:00 – 05:00',tip:'Dress code is strictly enforced — elegant only.'},
+];
+
+const places = [
+  {name:'Djemaa El-Fna',icon:'🎪',color:'#C1440E',img:'djemaa el fna marrakech square evening',desc:"The heart of Marrakech. Snake charmers, storytellers, musicians, and the world's greatest open-air food market after dark.",hours:'24h / Souks 09:00–20:00',tip:'Visit at sunset for the magic hour when the food stalls ignite'},
+  {name:'Majorelle Garden',icon:'💙',color:'#1A5BAB',img:'majorelle garden blue ysl marrakech',desc:'Cobalt-blue garden by Jacques Majorelle, restored by Yves Saint Laurent. Home to the iconic YSL Museum and Berber museum.',hours:'08:00 – 17:30',tip:'Buy tickets online to skip the queues — always busy'},
+  {name:'Koutoubia Mosque',icon:'🕌',color:'#3D7A40',img:'koutoubia mosque marrakech minaret sunset',desc:'The most perfect Moorish architecture in Morocco. The 70-metre minaret has inspired minarets from Seville to Rabat.',hours:'Exterior 24h (non-Muslim visitors exterior only)',tip:'Best photographed at golden hour from the gardens'},
+  {name:"Sa'adian Tombs",icon:'⚱️',color:'#B8860B',img:'saadian tombs marrakech gold interior',desc:'Magnificent Saadian dynasty tombs, walled up in 1792 and not rediscovered until 1917. Extraordinary carved plaster.',hours:'09:00 – 17:00 daily',tip:'Arrive early to avoid tour groups'},
+  {name:'Bahia Palace',icon:'🏛️',color:'#7C3AED',img:'bahia palace marrakech interior courtyard carved',desc:'19th-century palace of breathtaking scale. 8 hectares, 150 rooms of carved plaster and painted cedar.',hours:'09:00 – 17:00 daily',tip:'Free with the Marrakech Museum pass'},
+  {name:'El Badi Palace',icon:'🏚️',color:'#9B4400',img:'el badi palace ruins marrakech storks',desc:'Once the most magnificent palace in the world — today a vast romantic ruin with storks nesting in the battlements.',hours:'09:00 – 17:00 daily',tip:'Climb the ramparts for panoramic views over the medina'},
+  {name:'Souks of the Medina',icon:'🛍️',color:'#D4A017',img:'marrakech souk medina spices market colorful',desc:"One thousand years of trade. The world's most labyrinthine marketplace — leather, spices, lanterns, carpets.",hours:'09:00 – 20:00',tip:"Getting lost is the point — hire a guide for the first visit"},
+  {name:'Menara Gardens',icon:'🫒',color:'#2A7A50',img:'menara gardens marrakech atlas mountains reflection',desc:'Ancient olive groves with a reflecting pool and snow-capped Atlas backdrop. Ideal for peaceful morning walks.',hours:'Sunrise – Sunset',tip:'Visit Oct–Apr for spectacular Atlas snow views'},
+  {name:'Mellah (Jewish Quarter)',icon:'✡️',color:'#6B4C3A',img:'marrakech mellah jewish quarter historic architecture',desc:"Marrakech's historic Jewish quarter, once home to a vibrant community. Beautiful synagogues and artisan workshops.",hours:'09:00 – 18:00',tip:'Visit the Lazama Synagogue — a hidden gem'},
+];
+
+const cars = [
+  {id:'c1',type:'sedan',name:'Dacia Logan',desc:'Reliable, economical city car. Perfect for Marrakech city drives and day trips to Ourika Valley and Asni.',price:30,seats:5,fuel:'Petrol',transmission:'Manual',img:'dacia logan white sedan car',badge:'Best Value'},
+  {id:'c2',type:'sedan',name:'Renault Clio',desc:'Comfortable compact with A/C. Great for Guéliz to medina runs and airport transfers. Easy to park.',price:35,seats:5,fuel:'Petrol',transmission:'Auto',img:'renault clio compact city car',badge:'Popular'},
+  {id:'c3',type:'suv',name:'Porsche Macan',desc:'Luxury meets performance. The ideal Morocco adventurer — built for piste roads to Agafay and the Draa Valley.',price:250,seats:5,fuel:'Diesel',transmission:'Auto',img:'porsche macan suv luxury morocco',badge:'Adventure Ready'},
+  {id:'c4',type:'suv',name:'Toyota Land Cruiser',desc:'Go absolutely anywhere — Atlas passes, Sahara edges, and everywhere between. The legend of Moroccan roads.',price:130,seats:7,fuel:'Diesel',transmission:'Auto',img:'toyota land cruiser 4x4 desert offroad',badge:'Premium 4x4'},
+  {id:'c5',type:'scooter',name:'Yamaha 125cc',desc:'Zip through medina streets where no car can go. For experienced city riders who know the rhythm of the roads.',price:28,seats:2,fuel:'Petrol',transmission:'Automatic',img:'yamaha scooter 125 city urban',badge:'City Cruiser'},
+  {id:'c6',type:'bike',name:'Honda X-ADV',desc:'Explore the palmeraie on two wheels. Adventure motorcycle with panniers, helmet, and detailed trail map.',price:50,seats:1,fuel:'Petrol',transmission:'DCT Auto',img:'honda xadv adventure motorcycle trail',badge:'Moto Adventure'},
+  {id:'c7',type:'sedan',name:'Volkswagen Golf',desc:'Travel in comfort and style. Premium compact with full A/C, leather seats, and integrated GPS navigation.',price:70,seats:5,fuel:'Petrol',transmission:'Auto',img:'volkswagen golf 8 silver modern car',badge:'Premium Sedan'},
+  {id:'c8',type:'suv',name:'Jeep Wrangler',desc:'Iconic American off-roader. Take it to Agafay, Oukaïmeden, or beyond the paved roads into legend.',price:100,seats:4,fuel:'Petrol',transmission:'Manual 4x4',img:'jeep wrangler offroad desert red morocco',badge:'Iconic 4x4'},
+];
+
+const activities = [
+  {id:'a1',name:'Hot Air Balloon',desc:'Soar above Marrakech at sunrise. Watch the city wake up from 1,000 feet. Champagne breakfast in the fields included.',price:180,duration:'3–4 hrs',time:'Dawn',img:'hot air balloon morocco sunrise atlas mountains',tip:'Dress warmly — it gets cold at altitude'},
+  {id:'a2',name:'Agafay Desert Dinner',desc:'Stone desert sunset dinner party. Gnawa music, camels, a sky full of stars, and a night you will never forget.',price:95,duration:'Half day',time:'16:00–22:00',img:'agafay desert dinner morocco sunset camel stars',tip:'Bring a light jacket for the desert night air'},
+  {id:'a3',name:'Quad Biking Agafay',desc:'Race across the rocky lunar landscape of Agafay. No experience needed — pure adrenaline for beginners and pros alike.',price:65,duration:'2 hrs',time:'09:00 / 15:00',img:'quad biking agafay desert morocco landscape',tip:'The 3pm slot has the best light for photos'},
+  {id:'a4',name:'Atlas Trekking',desc:'Full-day guided hike through Berber villages with a home-cooked lunch. Breathtaking views, genuine cultural exchange.',price:55,duration:'Full day',time:'07:00–18:00',img:'atlas mountains trekking morocco berber village',tip:'Bring good hiking boots and sun cream'},
+  {id:'a5',name:'Hammam & Spa',desc:'Traditional hammam with black soap kessa scrub, ghassoul clay mask, and a 60-minute argan oil massage.',price:45,duration:'2 hrs',time:'By appt.',img:'moroccan hammam spa traditional black soap',tip:'Book at least 24 hours in advance'},
+  {id:'a6',name:'Cooking Class',desc:'Learn to make authentic tagine, harira soup and bastilla with a local chef, starting with a spice market tour.',price:70,duration:'4 hrs',time:'09:00 / 16:00',img:'moroccan cooking class tagine chef spices',tip:'Wear comfortable clothes you can get spices on'},
+  {id:'a7',name:'Sunset Rooftop Party',desc:'Exclusive rooftop DJ event with craft cocktails and 360° medina views. The most beautiful happy hour in the city.',price:40,duration:'Evening',time:'18:00–24:00',img:'marrakech rooftop sunset party dj cocktails view',tip:'Arrive before 18:30 to secure the best terrace spot'},
+  {id:'a8',name:'Horse Riding Palmeraie',desc:'Canter through 30,000 palms at golden hour. Sunset rides are specially recommended — pure magic.',price:55,duration:'2 hrs',time:'09:00 / 16:30',img:'horse riding palmeraie marrakech palm trees golden',tip:'The 16:30 sunset ride is the most popular — book ahead'},
+];
+
+const guides = [
+  {id:'g1',name:'Hassan El Mansouri',role:'Licensed City Guide',img:'moroccan man guide medina traditional djellaba',languages:['Arabic','French','English','Spanish'],experience:12,reviews:247,rating:4.9,specialties:['Medina history','Architecture','Souks','Gastronomy'],price:60,priceType:'half day',desc:'Hassan knows every lane of the medina. Born in the old city, he brings history to life with passion and deep knowledge.'},
+  {id:'g2',name:'Fatima Ouardirhi',role:'Cultural Heritage Expert',img:'moroccan woman professional guide smiling',languages:['Arabic','French','English'],experience:8,reviews:189,rating:5.0,specialties:["Palaces","Women's history","Crafts","Photo spots"],price:75,priceType:'half day',desc:"Fatima specializes in the stories that standard guides miss — women's history, craft traditions, and the medina's hidden courtyards."},
+  {id:'g3',name:'Youssef Aït Brahim',role:'Mountain & Adventure Guide',img:'mountain guide atlas hiking morocco outdoor',languages:['Amazigh','Arabic','French','English'],experience:15,reviews:312,rating:4.8,specialties:['Atlas treks','Agafay','Berber culture','Off-road'],price:90,priceType:'full day',desc:"Youssef is from the Atlas Mountains. He knows every trail, every Berber village, and will introduce you to his family's home."},
+  {id:'g4',name:'Mohamed — Chauffeur',role:'Private Chauffeur',img:'professional chauffeur driver luxury car suit',languages:['Arabic','French','English'],experience:10,reviews:203,rating:4.9,specialties:['Airport transfers','Day trips','Luxury cars','Discretion'],price:50,priceType:'3 hours',desc:'Mohamed provides seamless, punctual private transport in a luxury vehicle. Available for airport runs, day trips, and multi-day hire.'},
+];
+
+// ══════════════════════════════════════════
+// TRANSLATIONS
+// ══════════════════════════════════════════
 const T = {
   en:{
-    'hero-badge':'✦ The Red City Awaits ✦',
-    'hero-sub':"Your complete guide to the magic of Morocco's imperial city. Hotels, cuisine, culture & unforgettable adventures.",
+    'hero-badge':'✦ The Red City Awaits ✦','hero-sub':"Your complete guide to the magic of Morocco's imperial city.",
     'hero-btn1':'Book Your Stay','hero-btn2':'Discover Marrakech',
     'stat1':'Hotels & Riads','stat2':'Restaurants','stat3':'Activities','stat4':'Happy Travelers',
     'tag-accommodation':'Accommodation','title-hotels':'Hotels & Riads',
-    'desc-hotels':'From traditional riads hidden in the medina to luxury resorts with Atlas views — find your perfect home in the Red City.',
+    'desc-hotels':'From traditional riads hidden in the medina to luxury resorts with Atlas views.',
     'f-all':'All','f-riad':'Riads','f-hotel':'Hotels','f-luxury':'Luxury','f-budget':'Budget',
     'tag-cuisine':'Cuisine & Nightlife','title-dine':'Dine, Sip & Dance',
-    'desc-dine':'From fragrant tagines in century-old courtyards to rooftop cocktails at sunset — every meal is a celebration.',
+    'desc-dine':'From fragrant tagines in century-old courtyards to rooftop cocktails at sunset.',
     'f-restaurants':'Restaurants','f-cafes':'Cafés','f-clubs':'Clubs','f-bars':'Bars',
     'tag-discover':'Discover','title-places':'Iconic Places',
-    'desc-places':'Seven centuries of history, art, and architecture — from the electric Djemaa El-Fna to the tranquil Majorelle Garden.',
+    'desc-places':'Seven centuries of history, art, and architecture.',
     'tag-rentals':'Get Around','title-cars':'Car & Bike Rentals',
-    'desc-cars':'Explore at your own pace — sedans for the city, rugged 4x4s for Atlas adventures, and scooters for the medina.',
+    'desc-cars':'Explore at your own pace — sedans, 4x4s, and scooters.',
     'f-sedans':'Sedans','f-suv':'SUV / 4x4','f-scooters':'Scooters','f-bikes':'Bikes',
-    'tag-map':'Navigate','title-map':'Map of Marrakech','desc-map':'Explore the vibrant medina, the chic Guéliz district, and the lush Palmeraie — all on one interactive map.',
+    'tag-map':'Navigate','title-map':'Map of Marrakech','desc-map':'Explore the medina, Guéliz, and the Palmeraie.',
     'pin-hotels':'Hotels & Riads','pin-restaurants':'Restaurants','pin-sites':'Tourist Sites','pin-activities':'Activities','pin-cars':'Car Rentals',
     'tag-activities':'Thrills & Culture','title-activities':'Book an Activity',
     'desc-activities':'Soar above the Atlas, race quads across Agafay, or dance under the desert stars.',
     'tag-guides':'Your Local Experts','title-guides':'Guides & Chauffeurs',
-    'desc-guides':'Unlock the real Marrakech with a local expert — professional guides and private chauffeurs at your service.',
-    'nl-title':'Stay Inspired','nl-sub':'The best of Marrakech delivered to your inbox — tips, deals & hidden gems.',
-    'nl-btn':'Subscribe','footer-desc':'Your trusted companion for discovering the magic of Marrakech. We connect travelers with the best experiences the Red City has to offer — since 2019.',
+    'desc-guides':'Unlock the real Marrakech with a local expert.',
+    'nl-title':'Stay Inspired','nl-sub':'The best of Marrakech delivered to your inbox.','nl-btn':'Subscribe',
+    'footer-desc':'Your trusted companion for discovering the magic of Marrakech.',
     'ft-services':'Services','ft-discover':'Discover','ft-info':'Information',
     'fs1':'Hotel Booking','fs2':'Restaurant Reservations','fs3':'Activity Packages','fs4':'Private Transfers','fs5':'Car Rentals',
     'fi1':'About Us','fi2':'Travel Tips','fi3':'Visa Information','fi4':'Weather Guide','fi5':'Emergency Contacts',
     'nav-hotels':'Hotels','nav-dine':'Dine','nav-explore':'Explore','nav-rentals':'Rentals',
     'nav-activities':'Activities','nav-guides':'Guides','nav-map':'Map','nav-contact':'Contact',
-    'wa-tooltip':'Chat with us on WhatsApp',
-    'ib1':'✈ Free concierge for all bookings','ib2':'📞 +212 656556742','ib3':'🕐 Open 24/7',
-    'lbl-convert':'Convert',
-    'book':'Book','reserve':'Reserve','rent':'Rent',
+    'wa-tooltip':'Chat with us on WhatsApp','lbl-convert':'Convert',
+    'book':'Book Now','reserve':'Reserve','rent':'Rent Now','view-info':'View Details',
     'check-in':'Check-in','check-out':'Check-out','pickup':'Pick-up Date','return':'Return Date',
     'date':'Date','time':'Time','participants':'Participants','pref-date':'Preferred Date',
     'full-name':'Full Name','special-req':'Special Requests','confirm-booking':'✦ Confirm Booking',
     'team-confirm':'Our team confirms within 2 hours via email and WhatsApp.',
-    'opening-hours':'Opening Hours','pro-tip':'Pro Tip','explore-nearby':'Explore Nearby Activities →',
+    'opening-hours':'Opening Hours','pro-tip':'Pro Tip','tab-info':'Info','tab-book':'Book',
     'contact-team':'Contact Our Team','name':'Name','subject':'Subject','message':'Message','send':'Send Message',
     'general-enquiry':'General Enquiry','booking-help':'Booking Help','trip-planning':'Trip Planning',
-    'discover-link':'Discover more →',
-    'seats':'seats','insurance':'Insurance incl.',
-    'toast-booking':'Booking for "{n}" received! We\'ll confirm within 2 hours.',
-    'toast-newsletter':'✦ Welcome! Check your inbox 📩',
-    'toast-contact':'Message sent! We\'ll be in touch soon.',
+    'seats':'seats','insurance':'Insurance incl.','per-night':'/night','per-person':'/person','per-day':'/day',
+    'toast-booking':'Booking for "{n}" received! We\'ll confirm within 2 hours.','toast-newsletter':'✦ Welcome! Check your inbox 📩','toast-contact':'Message sent! We\'ll be in touch soon.',
+    'amenities':'Amenities','tags':'Categories','specs':'Specs','specialties':'Specialties','languages':'Languages',
   },
   fr:{
-    'hero-badge':'✦ La Ville Rouge Vous Attend ✦',
-    'hero-sub':"Votre guide complet pour découvrir la magie de la cité impériale du Maroc. Hôtels, cuisine, culture & aventures inoubliables.",
+    'hero-badge':'✦ La Ville Rouge Vous Attend ✦','hero-sub':"Votre guide complet pour découvrir la magie de la cité impériale.",
     'hero-btn1':'Réserver votre séjour','hero-btn2':'Découvrir Marrakech',
     'stat1':'Hôtels & Riads','stat2':'Restaurants','stat3':'Activités','stat4':'Voyageurs satisfaits',
-    'tag-accommodation':'Hébergement','title-hotels':'Hôtels & Riads',
-    'desc-hotels':"Des riads traditionnels cachés dans la médina aux resorts de luxe avec vue sur l'Atlas.",
+    'tag-accommodation':'Hébergement','title-hotels':'Hôtels & Riads','desc-hotels':"Des riads traditionnels aux resorts de luxe.",
     'f-all':'Tout','f-riad':'Riads','f-hotel':'Hôtels','f-luxury':'Luxe','f-budget':'Économique',
-    'tag-cuisine':'Cuisine & Nuit','title-dine':'Dîner, Boire & Danser',
-    'desc-dine':"Des tajines parfumés dans des cours centenaires aux cocktails sur les toits au coucher du soleil.",
+    'tag-cuisine':'Cuisine & Nuit','title-dine':'Dîner, Boire & Danser','desc-dine':"Des tajines parfumés aux cocktails sur les toits.",
     'f-restaurants':'Restaurants','f-cafes':'Cafés','f-clubs':'Clubs','f-bars':'Bars',
-    'tag-discover':'Découvrir','title-places':'Lieux Emblématiques',
-    'desc-places':"Sept siècles d'histoire, d'art et d'architecture.",
-    'tag-rentals':'Se déplacer','title-cars':'Location de Voitures & Vélos',
-    'desc-cars':'Explorez à votre rythme — berlines, 4x4 et scooters.',
+    'tag-discover':'Découvrir','title-places':'Lieux Emblématiques','desc-places':"Sept siècles d'histoire.",
+    'tag-rentals':'Se déplacer','title-cars':'Location de Voitures','desc-cars':'Berlines, 4x4 et scooters.',
     'f-sedans':'Berlines','f-suv':'SUV / 4x4','f-scooters':'Scooters','f-bikes':'Vélos',
-    'tag-map':'Navigation','title-map':'Carte de Marrakech','desc-map':'Explorez la médina, Guéliz et la Palmeraie.',
-    'pin-hotels':'Hôtels & Riads','pin-restaurants':'Restaurants','pin-sites':'Sites touristiques','pin-activities':'Activités','pin-cars':'Location de voitures',
-    'tag-activities':'Aventures & Culture','title-activities':'Réserver une activité',
-    'desc-activities':"Survolez l'Atlas, pilotez des quads à Agafay, dansez sous les étoiles.",
-    'tag-guides':'Vos experts locaux','title-guides':'Guides & Chauffeurs',
-    'desc-guides':'Découvrez le vrai Marrakech avec un expert local à vos côtés.',
-    'nl-title':'Restez inspiré','nl-sub':'Le meilleur de Marrakech livré dans votre boîte mail.',
-    'nl-btn':"S'abonner",'footer-desc':'Votre compagnon de confiance pour découvrir la magie de Marrakech.',
+    'tag-map':'Navigation','title-map':'Carte de Marrakech','desc-map':'Médina, Guéliz et Palmeraie.',
+    'pin-hotels':'Hôtels & Riads','pin-restaurants':'Restaurants','pin-sites':'Sites touristiques','pin-activities':'Activités','pin-cars':'Location',
+    'tag-activities':'Aventures & Culture','title-activities':'Réserver une activité','desc-activities':"Survolez l'Atlas, quads à Agafay.",
+    'tag-guides':'Experts locaux','title-guides':'Guides & Chauffeurs','desc-guides':'Découvrez le vrai Marrakech.',
+    'nl-title':'Restez inspiré','nl-sub':'Le meilleur de Marrakech dans votre boîte mail.','nl-btn':"S'abonner",
+    'footer-desc':'Votre compagnon de confiance pour Marrakech.',
     'ft-services':'Services','ft-discover':'Découvrir','ft-info':'Informations',
-    'fs1':'Réservation hôtel','fs2':'Réservation restaurant','fs3':'Forfaits activités','fs4':'Transferts privés','fs5':'Location de voitures',
-    'fi1':'À propos','fi2':'Conseils voyage','fi3':'Informations visa','fi4':'Guide météo','fi5':"Contacts d'urgence",
+    'fs1':'Réservation hôtel','fs2':'Réservation restaurant','fs3':'Forfaits activités','fs4':'Transferts privés','fs5':'Location voitures',
+    'fi1':'À propos','fi2':'Conseils voyage','fi3':'Infos visa','fi4':'Météo','fi5':"Urgences",
     'nav-hotels':'Hôtels','nav-dine':'Dîner','nav-explore':'Explorer','nav-rentals':'Locations',
     'nav-activities':'Activités','nav-guides':'Guides','nav-map':'Carte','nav-contact':'Contact',
-    'wa-tooltip':'Chattez avec nous sur WhatsApp',
-    'ib1':'✈ Conciergerie gratuite pour toutes réservations','ib2':'📞 +212 645 297 934','ib3':'🕐 Ouvert 24h/24',
-    'lbl-convert':'Convertir',
-    'book':'Réserver','reserve':'Réserver','rent':'Louer',
-    'check-in':'Arrivée','check-out':'Départ','pickup':'Date de prise','return':'Retour',
+    'wa-tooltip':'Chattez sur WhatsApp','lbl-convert':'Convertir',
+    'book':'Réserver','reserve':'Réserver','rent':'Louer','view-info':'Voir détails',
+    'check-in':'Arrivée','check-out':'Départ','pickup':'Prise en charge','return':'Retour',
     'date':'Date','time':'Heure','participants':'Participants','pref-date':'Date souhaitée',
-    'full-name':'Nom complet','special-req':'Demandes spéciales','confirm-booking':'✦ Confirmer la réservation',
-    'team-confirm':'Notre équipe confirmera sous 2 heures par email et WhatsApp.',
-    'opening-hours':'Horaires','pro-tip':'Conseil Pro','explore-nearby':'Explorer les activités proches →',
-    'contact-team':'Contacter notre équipe','name':'Nom','subject':'Sujet','message':'Message','send':'Envoyer',
-    'general-enquiry':'Enquête générale','booking-help':'Aide réservation','trip-planning':'Planification voyage',
-    'discover-link':'Découvrir →',
-    'seats':'places','insurance':'Assurance incluse',
-    'toast-booking':'Demande pour "{n}" reçue! Confirmation sous 2h.',
-    'toast-newsletter':'✦ Bienvenue! Vérifiez votre boîte mail 📩',
-    'toast-contact':'Message envoyé! Nous vous contacterons bientôt.',
+    'full-name':'Nom complet','special-req':'Demandes spéciales','confirm-booking':'✦ Confirmer',
+    'team-confirm':'Confirmation sous 2h par email et WhatsApp.',
+    'opening-hours':'Horaires','pro-tip':'Conseil Pro','tab-info':'Info','tab-book':'Réserver',
+    'contact-team':'Contactez-nous','name':'Nom','subject':'Sujet','message':'Message','send':'Envoyer',
+    'general-enquiry':'Enquête générale','booking-help':'Aide réservation','trip-planning':'Planification',
+    'seats':'places','insurance':'Assurance incluse','per-night':'/nuit','per-person':'/pers.','per-day':'/jour',
+    'toast-booking':'Demande pour "{n}" reçue!','toast-newsletter':'✦ Bienvenue! Vérifiez votre boîte 📩','toast-contact':'Message envoyé!',
+    'amenities':'Équipements','tags':'Catégories','specs':'Spécifications','specialties':'Spécialités','languages':'Langues',
   },
   ar:{
-    'hero-badge':'✦ مدينة الورد في انتظارك ✦',
-    'hero-sub':"دليلك الشامل لاكتشاف سحر المدينة الإمبراطورية المغربية. فنادق، مطبخ، ثقافة ومغامرات لا تُنسى.",
+    'hero-badge':'✦ مدينة الورد في انتظارك ✦','hero-sub':"دليلك الشامل لاكتشاف سحر المدينة الإمبراطورية المغربية.",
     'hero-btn1':'احجز إقامتك','hero-btn2':'اكتشف مراكش',
     'stat1':'فنادق وريادات','stat2':'مطاعم','stat3':'أنشطة','stat4':'مسافر سعيد',
-    'tag-accommodation':'الإقامة','title-hotels':'الفنادق والريادات',
-    'desc-hotels':'من الريادات التقليدية المخفية في المدينة القديمة إلى المنتجعات الفاخرة مع إطلالات على جبال الأطلس.',
+    'tag-accommodation':'الإقامة','title-hotels':'الفنادق والريادات','desc-hotels':'من الريادات التقليدية إلى المنتجعات الفاخرة.',
     'f-all':'الكل','f-riad':'ريادات','f-hotel':'فنادق','f-luxury':'فاخر','f-budget':'اقتصادي',
-    'tag-cuisine':'المطبخ والحياة الليلية','title-dine':'تناول الطعام والشراب والرقص',
-    'desc-dine':'من الطاجين العطر في الساحات القديمة إلى الكوكتيلات على الأسطح عند الغروب.',
+    'tag-cuisine':'المطبخ والحياة الليلية','title-dine':'تناول الطعام والرقص','desc-dine':'من الطاجين إلى الكوكتيلات على الأسطح.',
     'f-restaurants':'مطاعم','f-cafes':'مقاهي','f-clubs':'نوادي','f-bars':'بارات',
-    'tag-discover':'اكتشف','title-places':'أماكن شهيرة',
-    'desc-places':'سبعة قرون من التاريخ والفن والعمارة.',
-    'tag-rentals':'التنقل','title-cars':'تأجير السيارات والدراجات',
-    'desc-cars':'استكشف بوتيرتك الخاصة — سيارات وسيارات دفع رباعي ودراجات نارية.',
+    'tag-discover':'اكتشف','title-places':'أماكن شهيرة','desc-places':'سبعة قرون من التاريخ.',
+    'tag-rentals':'التنقل','title-cars':'تأجير السيارات','desc-cars':'سيارات، دفع رباعي، ودراجات.',
     'f-sedans':'سيارات','f-suv':'دفع رباعي','f-scooters':'سكوتر','f-bikes':'دراجات',
-    'tag-map':'التنقل','title-map':'خريطة مراكش','desc-map':'استكشف المدينة القديمة وكيليز والنخيل.',
-    'pin-hotels':'فنادق وريادات','pin-restaurants':'مطاعم','pin-sites':'مواقع سياحية','pin-activities':'أنشطة','pin-cars':'تأجير سيارات',
-    'tag-activities':'المغامرات والثقافة','title-activities':'احجز نشاطاً',
-    'desc-activities':'حلق فوق جبال الأطلس، اركب الرباعي في أغافاي، ارقص تحت نجوم الصحراء.',
-    'tag-guides':'خبراؤك المحليون','title-guides':'المرشدون والسائقون',
-    'desc-guides':'اكتشف مراكش الحقيقية مع خبير محلي بجانبك.',
-    'nl-title':'ابق متألقاً','nl-sub':'أفضل ما في مراكش يصل إلى بريدك الإلكتروني.',
-    'nl-btn':'اشترك','footer-desc':'رفيقك الموثوق لاكتشاف سحر مراكش.',
+    'tag-map':'التنقل','title-map':'خريطة مراكش','desc-map':'المدينة القديمة وكيليز والنخيل.',
+    'pin-hotels':'فنادق','pin-restaurants':'مطاعم','pin-sites':'مواقع سياحية','pin-activities':'أنشطة','pin-cars':'تأجير',
+    'tag-activities':'المغامرات والثقافة','title-activities':'احجز نشاطاً','desc-activities':'حلق فوق الأطلس، ارقص تحت النجوم.',
+    'tag-guides':'خبراؤك المحليون','title-guides':'المرشدون والسائقون','desc-guides':'اكتشف مراكش الحقيقية.',
+    'nl-title':'ابق متألقاً','nl-sub':'أفضل ما في مراكش يصل إليك.','nl-btn':'اشترك',
+    'footer-desc':'رفيقك الموثوق لاكتشاف سحر مراكش.',
     'ft-services':'الخدمات','ft-discover':'اكتشف','ft-info':'معلومات',
     'fs1':'حجز فندق','fs2':'حجز مطعم','fs3':'باقات الأنشطة','fs4':'النقل الخاص','fs5':'تأجير سيارات',
-    'fi1':'من نحن','fi2':'نصائح السفر','fi3':'معلومات التأشيرة','fi4':'دليل الطقس','fi5':'جهات الطوارئ',
+    'fi1':'من نحن','fi2':'نصائح السفر','fi3':'التأشيرة','fi4':'الطقس','fi5':'الطوارئ',
     'nav-hotels':'فنادق','nav-dine':'مطاعم','nav-explore':'استكشف','nav-rentals':'تأجير',
     'nav-activities':'أنشطة','nav-guides':'مرشدون','nav-map':'خريطة','nav-contact':'اتصل',
-    'wa-tooltip':'تحدث معنا على واتساب',
-    'ib1':'✈ خدمة الكونسيرج مجانية لجميع الحجوزات','ib2':'📞 +212 645 297 934','ib3':'🕐 مفتوح 24/7',
-    'lbl-convert':'تحويل',
-    'book':'احجز','reserve':'احجز','rent':'استأجر',
+    'wa-tooltip':'تحدث معنا','lbl-convert':'تحويل',
+    'book':'احجز','reserve':'احجز','rent':'استأجر','view-info':'عرض التفاصيل',
     'check-in':'تسجيل الوصول','check-out':'تسجيل المغادرة','pickup':'تاريخ الاستلام','return':'تاريخ الإعادة',
-    'date':'التاريخ','time':'الوقت','participants':'عدد المشاركين','pref-date':'التاريخ المفضل',
+    'date':'التاريخ','time':'الوقت','participants':'المشاركون','pref-date':'التاريخ المفضل',
     'full-name':'الاسم الكامل','special-req':'طلبات خاصة','confirm-booking':'✦ تأكيد الحجز',
-    'team-confirm':'سيتم التأكيد خلال ساعتين عبر البريد الإلكتروني وواتساب.',
-    'opening-hours':'ساعات العمل','pro-tip':'نصيحة','explore-nearby':'استكشف الأنشطة القريبة →',
-    'contact-team':'تواصل مع فريقنا','name':'الاسم','subject':'الموضوع','message':'الرسالة','send':'إرسال',
+    'team-confirm':'سيتم التأكيد خلال ساعتين.',
+    'opening-hours':'ساعات العمل','pro-tip':'نصيحة','tab-info':'معلومات','tab-book':'احجز',
+    'contact-team':'تواصل معنا','name':'الاسم','subject':'الموضوع','message':'الرسالة','send':'إرسال',
     'general-enquiry':'استفسار عام','booking-help':'مساعدة الحجز','trip-planning':'تخطيط الرحلة',
-    'discover-link':'اكتشف →',
-    'seats':'مقاعد','insurance':'تأمين شامل',
-    'toast-booking':'تم استلام طلب الحجز "{n}"!',
-    'toast-newsletter':'✦ مرحباً! تحقق من بريدك الإلكتروني 📩',
-    'toast-contact':'تم إرسال رسالتك! سنتواصل معك قريباً.',
-  }
+    'seats':'مقاعد','insurance':'تأمين شامل','per-night':'/ليلة','per-person':'/شخص','per-day':'/يوم',
+    'toast-booking':'تم استلام طلب "{n}"!','toast-newsletter':'✦ مرحباً 📩','toast-contact':'تم إرسال رسالتك!',
+    'amenities':'المرافق','tags':'التصنيفات','specs':'المواصفات','specialties':'التخصصات','languages':'اللغات',
+  },
+  es:{
+    'hero-badge':'✦ La Ciudad Roja Te Espera ✦','hero-sub':"Tu guía completa para descubrir la magia de Marrakech.",
+    'hero-btn1':'Reserva tu estancia','hero-btn2':'Descubre Marrakech',
+    'stat1':'Hoteles y Riads','stat2':'Restaurantes','stat3':'Actividades','stat4':'Viajeros felices',
+    'tag-accommodation':'Alojamiento','title-hotels':'Hoteles y Riads','desc-hotels':'Desde riads hasta lujosos resorts.',
+    'f-all':'Todo','f-riad':'Riads','f-hotel':'Hoteles','f-luxury':'Lujo','f-budget':'Económico',
+    'tag-cuisine':'Gastronomía y Noche','title-dine':'Comer, Beber y Bailar','desc-dine':'Tagines aromáticos y cócteles en azoteas.',
+    'f-restaurants':'Restaurantes','f-cafes':'Cafés','f-clubs':'Clubs','f-bars':'Bares',
+    'tag-discover':'Descubrir','title-places':'Lugares Emblemáticos','desc-places':'Siete siglos de historia.',
+    'tag-rentals':'Moverse','title-cars':'Alquiler de Coches','desc-cars':'Sedanes, 4x4 y scooters.',
+    'f-sedans':'Sedanes','f-suv':'SUV / 4x4','f-scooters':'Scooters','f-bikes':'Bicis',
+    'tag-map':'Navegar','title-map':'Mapa de Marrakech','desc-map':'Medina, Guéliz y Palmeraie.',
+    'pin-hotels':'Hoteles y Riads','pin-restaurants':'Restaurantes','pin-sites':'Sitios turísticos','pin-activities':'Actividades','pin-cars':'Alquiler',
+    'tag-activities':'Aventura y Cultura','title-activities':'Reserva una Actividad','desc-activities':'Vuela sobre el Atlas, quads en Agafay.',
+    'tag-guides':'Tus Expertos Locales','title-guides':'Guías y Chóferes','desc-guides':'Descubre el verdadero Marrakech.',
+    'nl-title':'Mantente Inspirado','nl-sub':'Lo mejor de Marrakech en tu bandeja.','nl-btn':'Suscribirse',
+    'footer-desc':'Tu compañero de confianza para Marrakech.',
+    'ft-services':'Servicios','ft-discover':'Descubrir','ft-info':'Información',
+    'fs1':'Reserva hotel','fs2':'Reserva restaurante','fs3':'Actividades','fs4':'Traslados','fs5':'Alquiler coches',
+    'fi1':'Sobre nosotros','fi2':'Consejos','fi3':'Visado','fi4':'Clima','fi5':'Emergencias',
+    'nav-hotels':'Hoteles','nav-dine':'Comer','nav-explore':'Explorar','nav-rentals':'Alquileres',
+    'nav-activities':'Actividades','nav-guides':'Guías','nav-map':'Mapa','nav-contact':'Contacto',
+    'wa-tooltip':'Chatea en WhatsApp','lbl-convert':'Convertir',
+    'book':'Reservar','reserve':'Reservar','rent':'Alquilar','view-info':'Ver detalles',
+    'check-in':'Entrada','check-out':'Salida','pickup':'Recogida','return':'Devolución',
+    'date':'Fecha','time':'Hora','participants':'Participantes','pref-date':'Fecha preferida',
+    'full-name':'Nombre completo','special-req':'Peticiones especiales','confirm-booking':'✦ Confirmar',
+    'team-confirm':'Confirmamos en 2 horas.',
+    'opening-hours':'Horario','pro-tip':'Consejo Pro','tab-info':'Info','tab-book':'Reservar',
+    'contact-team':'Contáctanos','name':'Nombre','subject':'Asunto','message':'Mensaje','send':'Enviar',
+    'general-enquiry':'Consulta general','booking-help':'Ayuda reservas','trip-planning':'Planificación',
+    'seats':'plazas','insurance':'Seguro incl.','per-night':'/noche','per-person':'/persona','per-day':'/día',
+    'toast-booking':'¡Reserva de "{n}" recibida!','toast-newsletter':'✦ ¡Bienvenido! 📩','toast-contact':'¡Mensaje enviado!',
+    'amenities':'Servicios','tags':'Categorías','specs':'Especificaciones','specialties':'Especialidades','languages':'Idiomas',
+  },
 };
+function t(k){ return T[lang][k] || k; }
 
-// ── DATA ──
-const hotels = [
-  {id:'h1',type:'riad',tier:'luxury',name:'Riad El Cadi',location:'Medina, Mouassine',desc:'A stunning 12th-century palace with 12 unique suites. Original zellige floors, carved plaster, jasmine courtyard.',price:280,stars:5,amenities:['Rooftop terrace','Hammam','Pool','Breakfast'],tags:['riad','heritage'],img:'marrakech riad interior courtyard',badge:'Heritage'},
-  {id:'h2',type:'hotel',tier:'luxury',name:'La Mamounia',location:'Avenue Bab Jdid',desc:'The legendary palace hotel. Winston Churchill painted its gardens. Pure Art Deco grandeur.',price:650,stars:5,amenities:['3 pools','Spa','4 restaurants','Casino'],tags:['hotel','iconic'],img:'luxury moroccan palace hotel pool',badge:'Legendary'},
-  {id:'h3',type:'riad',tier:'mid',name:'Riad Yasmine',location:'Derb Sidi Ahmed',desc:'A romantic 6-room riad with its iconic blue mosaic pool. Instagram-famous and blissfully quiet.',price:120,stars:4,amenities:['Pool','Breakfast','Terrace','Hammam'],tags:['riad','romantic'],img:'blue mosaic pool riad marrakech',badge:'Boutique'},
-  {id:'h4',type:'riad',tier:'budget',name:'Riad Dar Zitoun',location:'Mellah district',desc:'Family-run riad in the historic Jewish quarter. Authentic hospitality and homemade breakfasts.',price:65,stars:3,amenities:['Terrace','Breakfast','WiFi'],tags:['riad','budget'],img:'moroccan riad courtyard fountain',badge:'Local Charm'},
-  {id:'h5',type:'hotel',tier:'luxury',name:'Royal Mansour',location:'Rue Abou Abbas El Sebti',desc:'53 private riads within a walled medina, each with its own courtyard and pool. The most exclusive address.',price:1200,stars:5,amenities:['Private pool','Butler','3 restaurants','Spa'],tags:['hotel','ultra-luxury'],img:'royal luxury moroccan hotel suite',badge:'Ultra Luxury'},
-  {id:'h6',type:'hotel',tier:'mid',name:'Nobu Hotel Marrakech',location:'Avenue Mohammed VI, Guéliz',desc:'Japanese minimalism meets Moroccan craft. Famous for its Nobu restaurant and rooftop pool.',price:320,stars:5,amenities:['Rooftop pool','Nobu restaurant','Spa','Gym'],tags:['hotel','design'],img:'modern luxury hotel rooftop pool morocco',badge:'Design Hotel'},
-  {id:'h7',type:'riad',tier:'mid',name:'Riad BE Marrakech',location:'Bab Doukkala, Medina',desc:'Beautifully restored 19th-century riad with a serene rooftop and stylishly decorated rooms.',price:150,stars:4,amenities:['Rooftop','Hammam','Pool','Breakfast'],tags:['riad','boutique'],img:'riad marrakech rooftop terrace',badge:'Boutique Riad'},
-  {id:'h8',type:'hotel',tier:'luxury',name:'Mandarin Oriental',location:'Route du Golf, Palmeraie',desc:'Set amid 20 hectares of lush gardens in the Palmeraie with the Atlas as a backdrop.',price:550,stars:5,amenities:['5 pools','Spa','6 restaurants','Tennis'],tags:['hotel','resort'],img:'palm tree resort pool atlas mountains morocco',badge:'Resort'},
-  {id:'h9',type:'riad',tier:'budget',name:'Riad Kniza',location:'Near Bab Doukkala',desc:"An 18th-century palace-riad with one of Marrakech's finest antique collections. UNESCO recommended.",price:90,stars:4,amenities:['Pool','Restaurant','Hammam','Library'],tags:['riad','heritage'],img:'historic riad interior morocco zellige',badge:'Historic'},
-];
-
-const restaurants = [
-  {id:'r1',type:'restaurant',name:'Le Jardin',location:'Rue Sidi Abdelaziz, Mouassine',desc:'Romantic rooftop restaurant in a lush garden. Traditional Moroccan cuisine with modern flair.',price:25,stars:5,img:'moroccan restaurant garden rooftop',opens:'12:00 – 23:00'},
-  {id:'r2',type:'restaurant',name:'Nomad',location:'Derb Aarjane, Medina',desc:'Stylish modern Moroccan food with rooftop views over the medina.',price:30,stars:5,img:'marrakech rooftop restaurant medina view',opens:'12:00 – 23:30'},
-  {id:'r3',type:'cafe',name:'Café de France',location:'Djemaa El-Fna Square',desc:"The iconic café overlooking the great square. Sip mint tea and watch the world's most famous plaza.",price:6,stars:4,img:'moroccan mint tea cafe marrakech',opens:'07:00 – 23:00'},
-  {id:'r4',type:'cafe',name:'Café Clock',location:'Derb Chtouka, Medina',desc:'Cultural café serving camel burgers, storytelling nights, and the best fresh juices in the medina.',price:10,stars:5,img:'moroccan cafe interior colorful',opens:'09:00 – 24:00'},
-  {id:'r5',type:'bar',name:'Kosybar',location:'Place des Ferblantiers',desc:'Rooftop bar overlooking a palace and stork towers. Signature cocktails meet Moroccan bites.',price:18,stars:5,img:'rooftop bar cocktails sunset morocco',opens:'12:00 – 01:00'},
-  {id:'r6',type:'club',name:'Pacha Marrakech',location:'Avenue Mohammed VI',desc:'The world-famous Ibiza nightclub in Marrakech. International DJs, desert-palace architecture.',price:30,stars:5,img:'nightclub dj crowd lights party',opens:'23:00 – 06:00'},
-  {id:'r7',type:'club',name:'Sky Bar 5',location:'Hivernage district',desc:'Open-air nightclub on a hotel rooftop. Pool parties, live music.',price:25,stars:4,img:'rooftop pool party night',opens:'21:00 – 04:00'},
-  {id:'r8',type:'restaurant',name:'Al Fassia',location:'Boulevard Zerktouni, Guéliz',desc:'Entirely run by women — a Marrakech institution for 35 years. Definitive Moroccan home cooking.',price:28,stars:5,img:'moroccan tagine traditional food',opens:'12:00–15:00, 19:30–23:00'},
-  {id:'r9',type:'restaurant',name:'Dar Yacout',location:'Rue Sidi Ahmed Soussi',desc:"Opulent 16th-century palace turned restaurant. Seven-course dinner in pure 1001 Nights splendour.",price:55,stars:5,img:'moroccan palace restaurant interior luxury',opens:'19:30 – 23:30 (dinner only)'},
-  {id:'r10',type:'cafe',name:'Terrasse des Épices',location:'Souk Cherifa, Medina',desc:'Rooftop café with sweeping medina views. Organic Moroccan salads, fresh juices, and world-class mint tea.',price:12,stars:4,img:'marrakech terrace cafe spices view',opens:'10:00 – 23:00'},
-  {id:'r11',type:'bar',name:'Grand Café de la Poste',location:'Boulevard El Mansour Eddahbi',desc:'Colonial-era Art Deco brasserie. Oysters, champagne, classic cocktails.',price:22,stars:4,img:'art deco brasserie bar elegant',opens:'08:00 – 01:00'},
-  {id:'r12',type:'club',name:'Theatro',location:'Hotel Es Saadi, Hivernage',desc:"Marrakech's most glamorous nightclub inside a former theatre. Lavish decor and international DJs.",price:35,stars:5,img:'glamorous theater nightclub interior',opens:'22:00 – 05:00'},
-];
-
-const places = [
-  {name:'Djemaa El-Fna',icon:'🎪',color:'#C1440E',img:'djemaa el fna marrakech square',desc:"The heart of Marrakech. Snake charmers, storytellers, musicians, and the world's greatest open-air food market after dark.",hours:'24h / Souks 09:00–20:00',tip:'Visit at sunset for the magic hour'},
-  {name:'Majorelle Garden',icon:'💙',color:'#1A5BAB',img:'majorelle garden blue marrakech',desc:'Cobalt-blue garden by Jacques Majorelle, restored by Yves Saint Laurent. Home to the iconic YSL Museum.',hours:'08:00 – 17:30',tip:'Buy tickets online to skip queues'},
-  {name:'Koutoubia Mosque',icon:'🕌',color:'#3D7A40',img:'koutoubia mosque marrakech minaret',desc:'The most perfect Moorish architecture in Morocco. The 70-metre minaret has inspired minarets from Seville to Rabat.',hours:'Exterior 24h',tip:'Best photographed at golden hour'},
-  {name:"Sa'adian Tombs",icon:'⚱️',color:'#B8860B',img:'saadian tombs marrakech gold',desc:'Magnificent Saadian dynasty tombs, walled up in 1792 and not rediscovered until 1917.',hours:'09:00 – 17:00 daily',tip:'Arrive early to avoid tour groups'},
-  {name:'Bahia Palace',icon:'🏛️',color:'#7C3AED',img:'bahia palace marrakech interior courtyard',desc:'19th-century palace of breathtaking scale. 8 hectares, 150 rooms of carved plaster and painted cedar.',hours:'09:00 – 17:00 daily',tip:'Free with the Marrakech Museum pass'},
-  {name:'El Badi Palace',icon:'🏚️',color:'#9B4400',img:'el badi palace ruins marrakech',desc:'Once the most magnificent palace in the world — today a vast romantic ruin with storks in the battlements.',hours:'09:00 – 17:00 daily',tip:'Climb the walls for panoramic views'},
-  {name:'Souks of the Medina',icon:'🛍️',color:'#D4A017',img:'marrakech souk medina spices market',desc:"One thousand years of trade. The world's most labyrinthine marketplace — leather, spices, lanterns, carpets.",hours:'09:00 – 20:00',tip:'Getting lost is the point'},
-  {name:'Menara Gardens',icon:'🫒',color:'#2A7A50',img:'menara gardens marrakech atlas mountains',desc:'Ancient olive groves with a reflecting pool and snow-capped Atlas backdrop.',hours:'Sunrise – Sunset',tip:'Visit Oct–Apr for Atlas snow views'},
-  {name:'Mellah (Jewish Quarter)',icon:'✡️',color:'#6B4C3A',img:'marrakech mellah jewish quarter historic',desc:"Marrakech's historic Jewish quarter, once home to a vibrant community. Beautiful synagogues and artisan workshops.",hours:'09:00 – 18:00',tip:'Visit the Lazama Synagogue'},
-];
-
-const cars = [
-  {id:'c1',type:'sedan',name:'Dacia Logan',desc:'Reliable, economical city car. Perfect for Marrakech and day trips to Ourika.',price:30,seats:5,fuel:'Petrol',transmission:'Manual',img:'dacia logan white car',badge:'Best Value'},
-  {id:'c2',type:'sedan',name:'Renault Clio',desc:'Comfortable compact with A/C. Great for Guéliz to medina and airport transfers.',price:30,seats:5,fuel:'Petrol',transmission:'Auto',img:'renault clio compact car',badge:'Popular'},
-  {id:'c3',type:'suv',name:'Porsche Macan',desc:'The ideal Morocco adventurer. Built for piste roads to Agafay and the Draa Valley.',price:250,seats:5,fuel:'Diesel',transmission:'Manual',img:'porsche macan suv luxury',badge:'Adventure Ready'},
-  {id:'c4',type:'suv',name:'Toyota Land Cruiser',desc:'Go anywhere — Atlas passes, Sahara edges, and everywhere between.',price:130,seats:7,fuel:'Diesel',transmission:'Auto',img:'toyota land cruiser 4x4 desert',badge:'Premium 4x4'},
-  {id:'c5',type:'scooter',name:'Yamaha 125cc',desc:'Zip through medina streets where no car can go. For experienced city riders.',price:28,seats:2,fuel:'Petrol',transmission:'Automatic',img:'yamaha scooter 125 city',badge:'City Cruiser'},
-  {id:'c6',type:'bike',name:'X ADV Honda',desc:'Explore the palmeraie on two wheels. Includes helmet, lock, and cycling map.',price:50,seats:1,fuel:'—',transmission:'21 gears',img:'honda xadv adventure motorcycle',badge:'Eco Rider'},
-  {id:'c7',type:'sedan',name:'Volkswagen Golf',desc:'Travel in style. Premium sedan with A/C, leather, and GPS.',price:110,seats:5,fuel:'Petrol',transmission:'Auto',img:'volkswagen golf 8 silver car',badge:'Premium Sedan'},
-  {id:'c8',type:'suv',name:'Jeep Wrangler',desc:'Iconic off-roader. Take it to Agafay, Oukaïmeden, or beyond the paved roads.',price:100,seats:4,fuel:'Petrol',transmission:'Manual 4x4',img:'jeep wrangler offroad desert',badge:'Iconic 4x4'},
-];
-
-const activities = [
-  {id:'a1',name:'Hot Air Balloon',desc:'Soar above Marrakech at sunrise. Champagne breakfast included.',price:180,duration:'3–4 hrs',time:'Dawn',img:'hot air balloon morocco sunrise atlas'},
-  {id:'a2',name:'Agafay Desert Dinner',desc:'Stone desert sunset dinner, Gnawa music, camels, starlit sky.',price:95,duration:'Half day',time:'16:00–22:00',img:'agafay desert dinner morocco sunset camel'},
-  {id:'a3',name:'Quad Biking Agafay',desc:'Race across rocky lunar landscape. No experience needed.',price:65,duration:'2 hrs',time:'09:00 / 15:00',img:'quad biking desert agafay morocco'},
-  {id:'a4',name:'Atlas Trekking',desc:'Full-day guided hike with Berber village lunch.',price:55,duration:'Full day',time:'07:00–18:00',img:'atlas mountains trekking morocco berber'},
-  {id:'a5',name:'Hammam & Spa',desc:'Traditional hammam with black soap, ghassoul, and argan massage.',price:45,duration:'2 hrs',time:'By appt.',img:'moroccan hammam spa traditional'},
-  {id:'a6',name:'Cooking Class',desc:'Learn tagine, harira & bastilla with a local chef + market tour.',price:70,duration:'4 hrs',time:'09:00 / 16:00',img:'moroccan cooking class tagine chef'},
-  {id:'a7',name:'Sunset Rooftop Party',desc:'Exclusive rooftop DJ event, cocktails, 360° medina views.',price:40,duration:'Evening',time:'18:00–24:00',img:'marrakech rooftop sunset party cocktails'},
-  {id:'a8',name:'Horse Riding Palmeraie',desc:'Canter through 30,000 palms. Sunset rides specially recommended.',price:55,duration:'2 hrs',time:'09:00 / 16:30',img:'horse riding palmeraie marrakech palm trees'},
-];
-
-const guides = [
-  {id:'g1',name:'Hassan El Mansouri',role:'Licensed City Guide',img:'moroccan man guide traditional',languages:['Arabic','French','English','Spanish'],experience:12,reviews:247,rating:4.9,specialties:['Medina history','Architecture','Souks','Gastronomy'],price:60,priceType:'half day'},
-  {id:'g2',name:'Fatima Ouardirhi',role:'Cultural Heritage Expert',img:'moroccan woman guide smiling',languages:['Arabic','French','English'],experience:8,reviews:189,rating:5.0,specialties:["Palaces","Women's history","Crafts","Photo spots"],price:75,priceType:'half day'},
-  {id:'g3',name:'Youssef Aït Brahim',role:'Mountain & Adventure Guide',img:'mountain guide hiking morocco atlas',languages:['Amazigh','Arabic','French','English'],experience:15,reviews:312,rating:4.8,specialties:['Atlas treks','Agafay','Berber culture','Off-road'],price:90,priceType:'full day'},
-  {id:'g4',name:'Mohamed — Chauffeur',role:'Private Chauffeur',img:'professional chauffeur driver car',languages:['Arabic','French','English'],experience:10,reviews:203,rating:4.9,specialties:['Airport transfers','Day trips','Luxury cars','Discretion'],price:50,priceType:'3 hours'},
-];
-
-// ── STATE ──
-let lang = 'en';
-let hotelFilter = 'all';
-let restFilter = 'all';
-let carFilter = 'all';
-const rates = {MAD:1,EUR:0.092,USD:0.099,GBP:0.079};
-
-function t(key){ return T[lang][key] || key; }
-
-// ── CURRENCY ──
+// ══════════════════════════════════════════
+// CURRENCY
+// ══════════════════════════════════════════
 function convertCurrency(){
   const amt = parseFloat(document.getElementById('conv-amount').value)||0;
   const from = document.getElementById('conv-from').value;
@@ -713,344 +887,553 @@ function convertCurrency(){
   const r = (amt / rates[from]) * rates[to];
   document.getElementById('conv-result').textContent = `≈ ${r<10?r.toFixed(2):Math.round(r)} ${to}`;
 }
+async function loadLiveRates(){
+  try{
+    const res = await fetch('https://v6.exchangerate-api.com/v6/1a29cc210e2b001690dac1fa/latest/MAD');
+    const data = await res.json();
+    if(data.conversion_rates){ rates.EUR=data.conversion_rates.EUR; rates.USD=data.conversion_rates.USD; rates.GBP=data.conversion_rates.GBP; convertCurrency(); }
+  } catch(e){}
+}
 
-// ── LANGUAGE ──
+// ══════════════════════════════════════════
+// LANGUAGE
+// ══════════════════════════════════════════
+function toggleLangDropdown(){ document.getElementById('lang-dropdown').classList.toggle('open'); }
+document.addEventListener('click', e=>{ if(!document.getElementById('lang-switcher').contains(e.target)) document.getElementById('lang-dropdown').classList.remove('open'); });
 function setLang(l){
   lang = l;
+  document.getElementById('active-lang').textContent = l.toUpperCase() + ' ▾';
   document.documentElement.lang = l;
   document.documentElement.dir = l==='ar'?'rtl':'ltr';
   document.body.style.fontFamily = l==='ar'?"'Tajawal',sans-serif":"'Jost',sans-serif";
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
-  const ids = ['hero-badge','hero-sub','hero-btn1','hero-btn2','stat1','stat2','stat3','stat4',
+  const ids=['hero-badge','hero-sub','hero-btn1','hero-btn2','stat1','stat2','stat3','stat4',
     'tag-accommodation','title-hotels','desc-hotels','tag-cuisine','title-dine','desc-dine',
     'tag-discover','title-places','desc-places','tag-rentals','title-cars','desc-cars',
     'tag-map','title-map','desc-map','pin-hotels','pin-restaurants','pin-sites','pin-activities','pin-cars',
     'tag-activities','title-activities','desc-activities','tag-guides','title-guides','desc-guides',
     'nl-title','nl-sub','nl-btn','footer-desc','ft-services','ft-discover','ft-info',
-    'fs1','fs2','fs3','fs4','fs5','fi1','fi2','fi3','fi4','fi5',
-    'wa-tooltip','ib1','ib2','ib3','lbl-convert'];
-  ids.forEach(id=>{
-    const el = document.getElementById(id);
-    if(el && T[lang][id]) el.textContent = T[lang][id];
-  });
-  document.querySelectorAll('[data-i]').forEach(el=>{
-    const key = el.getAttribute('data-i');
-    if(T[lang][key]) el.textContent = T[lang][key];
-  });
-  renderHotels(); renderRestaurants(); renderCars(); renderActivities(); renderGuides(); renderTourism();
+    'fs1','fs2','fs3','fs4','fs5','fi1','fi2','fi3','fi4','fi5','wa-tooltip','lbl-convert'];
+  ids.forEach(id=>{ const el=document.getElementById(id); if(el&&T[lang][id]) el.textContent=T[lang][id]; });
+  document.querySelectorAll('[data-i]').forEach(el=>{ const k=el.getAttribute('data-i'); if(T[lang][k]) el.textContent=T[lang][k]; });
+  renderAll();
 }
 
-// ── HELPERS ──
-function stars(n){return '★'.repeat(n)}
-
-function skeletonImg(height='200px'){
-  return `<div class="img-skeleton" style="height:${height}"></div>`;
+// ══════════════════════════════════════════
+// UNSPLASH
+// ══════════════════════════════════════════
+async function fetchImg(query){
+  if(imgCache[query]) return imgCache[query];
+  try{
+    const res = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=5&orientation=landscape&client_id=${UNSPLASH_KEY}`);
+    const data = await res.json();
+    if(data.results&&data.results.length>0){
+      const idx = Math.floor(Math.random()*Math.min(4,data.results.length));
+      const img = data.results[idx];
+      const result = {url:img.urls.regular,thumb:img.urls.small,credit:img.user.name};
+      imgCache[query] = result;
+      return result;
+    }
+  }catch(e){}
+  return null;
 }
 
-// ── RENDER WITH REAL IMAGES ──
+// ══════════════════════════════════════════
+// CAROUSEL ENGINE
+// ══════════════════════════════════════════
+function getSlideWidth(trackId){
+  const outer = document.getElementById(trackId+'-outer');
+  if(!outer) return 320;
+  const w = outer.clientWidth;
+  if(w < 600) return w - 32;
+  if(w < 900) return (w - 1*24) / 2;
+  if(w < 1200) return (w - 2*24) / 3;
+  return (w - 3*24) / 4;
+}
+
+function getVisibleCount(trackId){
+  const outer = document.getElementById(trackId+'-outer');
+  if(!outer) return 1;
+  const w = outer.clientWidth;
+  if(w < 600) return 1;
+  if(w < 900) return 2;
+  if(w < 1200) return 3;
+  return 4;
+}
+
+function initCarousel(id, total, counterEl, dotsEl, dotClass=''){
+  carouselState[id] = {idx:0, total};
+  renderDots(id, dotsEl, dotClass);
+  updateCarousel(id, counterEl, dotsEl);
+}
+
+function renderDots(id, dotsEl, dotClass=''){
+  const el = document.getElementById(dotsEl);
+  if(!el) return;
+  const st = carouselState[id];
+  el.innerHTML = Array.from({length:st.total},(_,i)=>
+    `<button class="carousel-dot${dotClass?' '+dotClass:''} ${i===st.idx?'active':''}" onclick="goToSlide('${id}','${dotsEl}','${document.getElementById(dotsEl+'_counter_ref')?.textContent||''}',${i})"></button>`
+  ).join('');
+}
+
+function updateCarousel(id, counterEl, dotsEl){
+  const st = carouselState[id];
+  const track = document.getElementById(id);
+  if(!track) return;
+  const slideW = getSlideWidth(id);
+  const offset = st.idx * (slideW + 24);
+  track.style.transform = `translateX(-${offset}px)`;
+  // Update slide widths
+  track.querySelectorAll('.carousel-slide').forEach(s=>{ s.style.width = slideW+'px'; s.style.minWidth = slideW+'px'; });
+  // Counter
+  const vis = getVisibleCount(id);
+  const shown = Math.min(st.idx + vis, st.total);
+  if(counterEl){ const el=document.getElementById(counterEl); if(el) el.textContent = `${st.idx+1}–${shown} / ${st.total}`; }
+  // Dots
+  if(dotsEl){ const el=document.getElementById(dotsEl); if(el){ el.querySelectorAll('.carousel-dot').forEach((d,i)=>{ d.classList.toggle('active',i===st.idx); }); } }
+}
+
+function carouselNext(id){
+  const st = carouselState[id];
+  if(!st) return;
+  const vis = getVisibleCount(id);
+  const maxIdx = Math.max(0, st.total - vis);
+  st.idx = st.idx >= maxIdx ? 0 : Math.min(st.idx+1, maxIdx);
+  const refs = carouselRefs[id];
+  if(refs) updateCarousel(id, refs.counter, refs.dots);
+}
+function carouselPrev(id){
+  const st = carouselState[id];
+  if(!st) return;
+  const vis = getVisibleCount(id);
+  const maxIdx = Math.max(0, st.total - vis);
+  st.idx = st.idx <= 0 ? maxIdx : st.idx - 1;
+  const refs = carouselRefs[id];
+  if(refs) updateCarousel(id, refs.counter, refs.dots);
+}
+function goToSlide(id, dotsEl, _, idx){
+  const st = carouselState[id];
+  if(!st) return;
+  st.idx = idx;
+  const refs = carouselRefs[id];
+  if(refs) updateCarousel(id, refs.counter, refs.dots);
+}
+
+// Store counter/dots refs per carousel
+const carouselRefs = {};
+
+function setupCarousel(id, total, counterEl, dotsEl, dotClass=''){
+  carouselRefs[id] = {counter:counterEl, dots:dotsEl};
+  initCarousel(id, total, counterEl, dotsEl, dotClass);
+}
+
+// Rebuild dots with goToSlide
+function buildDots(id, total, dotsEl, dotClass=''){
+  const el = document.getElementById(dotsEl);
+  if(!el) return;
+  const st = carouselState[id];
+  el.innerHTML = Array.from({length:total},(_,i)=>
+    `<button class="carousel-dot${dotClass?' carousel-dot-'+dotClass:''} ${i===(st?st.idx:0)?'active':''}" onclick="goToSlide('${id}','${dotsEl}','',${i})"></button>`
+  ).join('');
+}
+
+// Skeleton img
+function skImg(h='200px'){return `<div class="img-skeleton" style="height:${h};width:100%"></div>`;}
+
+// ══════════════════════════════════════════
+// HOTEL FILTERS
+// ══════════════════════════════════════════
+function renderHotelFilters(){
+  const f=[['all','f-all'],['riad','f-riad'],['hotel','f-hotel'],['luxury','f-luxury'],['budget','f-budget']];
+  document.getElementById('hotel-filters').innerHTML=f.map(([v,k])=>`<button class="filter-btn${hotelFilter===v?' active':''}" onclick="setHF('${v}')">${t(k)}</button>`).join('');
+}
+function renderRestFilters(){
+  const f=[['all','f-all'],['restaurant','f-restaurants'],['cafe','f-cafes'],['club','f-clubs'],['bar','f-bars']];
+  document.getElementById('rest-filters').innerHTML=f.map(([v,k])=>`<button class="filter-btn filter-btn-teal${restFilter===v?' active':''}" onclick="setRF('${v}')">${t(k)}</button>`).join('');
+}
+function renderCarFilters(){
+  const f=[['all','f-all'],['sedan','f-sedans'],['suv','f-suv'],['scooter','f-scooters'],['bike','f-bikes']];
+  document.getElementById('car-filters').innerHTML=f.map(([v,k])=>`<button class="filter-btn filter-btn-gold${carFilter===v?' active':''}" onclick="setCF('${v}')">${t(k)}</button>`).join('');
+}
+function setHF(v){hotelFilter=v;renderHotels();}
+function setRF(v){restFilter=v;renderRestaurants();}
+function setCF(v){carFilter=v;renderCars();}
+
+// ══════════════════════════════════════════
+// RENDER HOTELS
+// ══════════════════════════════════════════
 async function renderHotels(){
   renderHotelFilters();
   const data = hotelFilter==='all'?hotels:hotels.filter(h=>h.type===hotelFilter||h.tier===hotelFilter);
-  const grid = document.getElementById('hotels-grid');
-  // First render with skeletons
-  grid.innerHTML = data.map(h=>`
-    <div class="card" id="card-${h.id}">
-      <div class="card-img-wrap">
-        ${skeletonImg()}
-        <div class="card-badge">${h.badge}</div>
-      </div>
-      <div class="card-body">
-        <div class="tags">${h.tags.map(tg=>`<span class="tag tag-terra">${tg}</span>`).join('')}</div>
-        <div class="card-name">${h.name}</div>
-        <div class="card-location">📍 ${h.location}</div>
-        <div class="card-stars">${stars(h.stars)}</div>
-        <div class="card-desc">${h.desc}</div>
-        <div class="amenities">${h.amenities.map(a=>`<span class="amenity">${a}</span>`).join('')}</div>
-        <div class="card-footer">
-          <div>
-            <div class="card-price">MAD ${h.price*10}<span> / night</span></div>
-            <div class="card-price-sub">≈ €${h.price} · $${Math.round(h.price*1.08)}</div>
+  const track = document.getElementById('hotels-c');
+  const slideW = getSlideWidth('hotels-c');
+  track.innerHTML = data.map(h=>`
+    <div class="carousel-slide hotel-card" style="width:${slideW}px;min-width:${slideW}px" onclick="openInfoModal('hotel','${h.id}')">
+      <div class="hotel-img-wrap" id="hi-${h.id}">${skImg()}<div class="hotel-badge">${h.badge}</div></div>
+      <div class="hotel-body">
+        <div class="hotel-name">${h.name}</div>
+        <div class="hotel-loc">📍 ${h.location}</div>
+        <div class="hotel-stars">${'★'.repeat(h.stars)}</div>
+        <div class="hotel-desc">${h.desc}</div>
+        <div class="hotel-amenities">${h.amenities.slice(0,3).map(a=>`<span class="amenity-pill">${a}</span>`).join('')}</div>
+        <div class="hotel-footer">
+          <div class="price-block">
+            <div class="price-main">MAD ${h.price*10}<span>${t('per-night')}</span></div>
+            <div class="price-sub">≈ €${h.price}</div>
           </div>
-          <button class="card-btn" onclick="openBookModal('hotel','${h.id}','${h.name}')">${t('book')}</button>
+          <button class="card-btn" onclick="event.stopPropagation();openInfoModal('hotel','${h.id}')">${t('view-info')}</button>
         </div>
       </div>
     </div>
   `).join('');
-  // Then load images async
+  setupCarousel('hotels-c', data.length, 'hotel-counter', 'hotels-c-dots', '');
+  buildDots('hotels-c', data.length, 'hotels-c-dots', '');
   for(const h of data){
-    const imgData = await fetchUnsplashImg(h.img, '🏨');
-    const wrap = document.querySelector(`#card-${h.id} .card-img-wrap`);
+    const img = await fetchImg(h.img);
+    const wrap = document.getElementById(`hi-${h.id}`);
     if(wrap){
-      const badge = wrap.querySelector('.card-badge').outerHTML;
-      if(imgData){
-        wrap.innerHTML = `<img class="card-img" src="${imgData.url}" alt="${h.name}" loading="lazy"/>${badge}<span class="img-credit">📷 ${imgData.credit}</span>`;
-      } else {
-        wrap.innerHTML = `<div style="width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F5E6CC,#D4A96B)">🏨</div>${badge}`;
-      }
+      const badge = `<div class="hotel-badge">${h.badge}</div>`;
+      if(img){ wrap.innerHTML=`<img class="hotel-img" src="${img.url}" alt="${h.name}" loading="lazy"/>${badge}<span class="img-credit">📷 ${img.credit}</span>`; }
+      else { wrap.innerHTML=`<div style="width:100%;height:240px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#F5E6CC,#D4A96B)">🏨</div>${badge}`; }
     }
   }
 }
 
+// ══════════════════════════════════════════
+// RENDER RESTAURANTS
+// ══════════════════════════════════════════
 async function renderRestaurants(){
   renderRestFilters();
   const data = restFilter==='all'?restaurants:restaurants.filter(r=>r.type===restFilter);
-  const typeEmoji={restaurant:'🍴',cafe:'☕',bar:'🍸',club:'🎵'};
-  const grid = document.getElementById('restaurants-grid');
-  grid.innerHTML = data.map(r=>`
-    <div class="card" id="card-${r.id}">
-      <div class="card-img-wrap" style="height:160px">
-        ${skeletonImg('160px')}
-        <div class="card-badge">${typeEmoji[r.type]} ${r.type.charAt(0).toUpperCase()+r.type.slice(1)}</div>
-      </div>
-      <div class="card-body">
-        <div class="card-name">${r.name}</div>
-        <div class="card-location">📍 ${r.location}</div>
-        <div class="card-stars">${stars(r.stars)}</div>
-        <div class="card-desc">${r.desc}</div>
-        <div style="font-size:0.75rem;color:var(--teal);font-weight:600;margin-bottom:0.6rem">🕐 ${r.opens}</div>
-        <div class="card-footer">
-          <div class="card-price">~€${r.price}<span> / person</span></div>
-          <button class="card-btn card-btn-teal" onclick="openBookModal('restaurant','${r.id}','${r.name}')">${t('reserve')}</button>
+  const track = document.getElementById('rest-c');
+  const slideW = getSlideWidth('rest-c');
+  const emoji={restaurant:'🍴',cafe:'☕',bar:'🍸',club:'🎵'};
+  track.innerHTML = data.map(r=>`
+    <div class="carousel-slide rest-card" style="width:${slideW}px;min-width:${slideW}px" onclick="openInfoModal('restaurant','${r.id}')">
+      <div class="rest-img-wrap" id="ri-${r.id}">${skImg('200px')}<div class="rest-type-badge">${emoji[r.type]} ${r.type}</div></div>
+      <div class="rest-body">
+        <div class="rest-name">${r.name}</div>
+        <div class="rest-loc">📍 ${r.location}</div>
+        <div class="rest-stars">${'★'.repeat(r.stars)}</div>
+        <div class="rest-desc">${r.desc}</div>
+        <div class="rest-hours">🕐 ${r.opens}</div>
+        <div class="rest-footer">
+          <div class="price-main" style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--teal)">~€${r.price}<span style="font-size:0.72rem;color:var(--text-muted);font-family:'Jost'">${t('per-person')}</span></div>
+          <button class="card-btn card-btn-teal" onclick="event.stopPropagation();openInfoModal('restaurant','${r.id}')">${t('view-info')}</button>
         </div>
       </div>
     </div>
   `).join('');
+  setupCarousel('rest-c', data.length, 'rest-counter', 'rest-c-dots', 'teal');
+  buildDots('rest-c', data.length, 'rest-c-dots', 'teal');
   for(const r of data){
-    const imgData = await fetchUnsplashImg(r.img, '🍽️');
-    const wrap = document.querySelector(`#card-${r.id} .card-img-wrap`);
+    const img = await fetchImg(r.img);
+    const wrap = document.getElementById(`ri-${r.id}`);
     if(wrap){
-      const badge = wrap.querySelector('.card-badge').outerHTML;
-      if(imgData){
-        wrap.innerHTML = `<img class="card-img" src="${imgData.url}" alt="${r.name}" loading="lazy" style="height:160px;object-fit:cover;width:100%"/>${badge}<span class="img-credit">📷 ${imgData.credit}</span>`;
-      } else {
-        wrap.innerHTML = `<div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F8E8D8,#D4906A)">🍽️</div>${badge}`;
-      }
+      const badge=`<div class="rest-type-badge">${emoji[r.type]} ${r.type}</div>`;
+      if(img){ wrap.innerHTML=`<img class="rest-img" src="${img.url}" alt="${r.name}" loading="lazy" style="height:200px"/>${badge}<span class="img-credit">📷 ${img.credit}</span>`; }
+      else { wrap.innerHTML=`<div style="width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F8E8D8,#D4906A)">🍽️</div>${badge}`; }
     }
   }
 }
 
+// ══════════════════════════════════════════
+// RENDER TOURISM
+// ══════════════════════════════════════════
 async function renderTourism(){
-  const grid = document.getElementById('tourism-grid');
-  grid.innerHTML = places.map((p,i)=>`
-    <div class="place-card" id="place-${i}" onclick="openPlaceModal(${JSON.stringify(p).replace(/"/g,'&quot;')})">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,${p.color}22,${p.color}44);display:flex;align-items:center;justify-content:center;font-size:4.5rem" class="place-bg-fallback">${p.icon}</div>
+  const track = document.getElementById('tourism-c');
+  const slideW = getSlideWidth('tourism-c');
+  track.innerHTML = places.map((p,i)=>`
+    <div class="carousel-slide place-card" style="width:${slideW}px;min-width:${slideW}px" id="pc-${i}" onclick="openInfoModal('place',${i})">
+      <div class="place-fallback" style="background:linear-gradient(135deg,${p.color}22,${p.color}55)">${p.icon}</div>
       <div class="place-overlay"></div>
       <div class="place-content">
         <div class="place-name">${p.name}</div>
-        <div class="place-detail">${p.desc.substring(0,85)}...</div>
-        <div class="place-link">${t('discover-link')}</div>
+        <div class="place-snippet">${p.desc}</div>
+        <button class="place-cta" onclick="event.stopPropagation();openInfoModal('place',${i})">Discover →</button>
       </div>
     </div>
   `).join('');
+  setupCarousel('tourism-c', places.length, 'tourism-counter', 'tourism-c-dots', '');
+  buildDots('tourism-c', places.length, 'tourism-c-dots', '');
   for(let i=0;i<places.length;i++){
-    const p = places[i];
-    const imgData = await fetchUnsplashImg(p.img, p.icon);
-    const card = document.getElementById(`place-${i}`);
-    if(card && imgData){
-      const fallback = card.querySelector('.place-bg-fallback');
-      if(fallback){
-        const img = document.createElement('img');
-        img.className = 'place-bg-img';
-        img.src = imgData.url;
-        img.alt = p.name;
-        img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover';
-        card.insertBefore(img, card.firstChild);
-        fallback.style.display='none';
-      }
+    const img = await fetchImg(places[i].img);
+    const card = document.getElementById(`pc-${i}`);
+    if(card&&img){
+      const imgEl = document.createElement('img');
+      imgEl.className='place-bg-img'; imgEl.src=img.url; imgEl.alt=places[i].name;
+      const fallback = card.querySelector('.place-fallback');
+      if(fallback){ fallback.style.display='none'; card.insertBefore(imgEl, card.firstChild); }
     }
   }
 }
 
+// ══════════════════════════════════════════
+// RENDER CARS
+// ══════════════════════════════════════════
 async function renderCars(){
   renderCarFilters();
   const data = carFilter==='all'?cars:cars.filter(c=>c.type===carFilter);
-  const grid = document.getElementById('cars-grid');
-  grid.innerHTML = data.map(c=>`
-    <div class="card" id="card-${c.id}" style="border-color:rgba(240,192,64,0.2)">
-      <div class="card-img-wrap">
-        ${skeletonImg()}
-        <div class="card-badge">${c.badge}</div>
-      </div>
-      <div class="card-body">
-        <div class="card-name">${c.name}</div>
-        <div class="card-desc">${c.desc}</div>
-        <div class="car-specs">
-          <div class="car-spec">🪑 <strong>${c.seats}</strong>${t('seats')}</div>
+  const track = document.getElementById('cars-c');
+  const slideW = getSlideWidth('cars-c');
+  track.innerHTML = data.map(c=>`
+    <div class="carousel-slide car-card" style="width:${slideW}px;min-width:${slideW}px" onclick="openInfoModal('car','${c.id}')">
+      <div class="car-img-wrap" id="ci-${c.id}">${skImg('220px')}<div class="car-badge">${c.badge}</div></div>
+      <div class="car-body">
+        <div class="car-name">${c.name}</div>
+        <div class="car-desc">${c.desc}</div>
+        <div class="car-specs-grid">
+          <div class="car-spec">🪑 <strong>${c.seats} ${t('seats')}</strong></div>
           <div class="car-spec">⛽ <strong>${c.fuel}</strong></div>
           <div class="car-spec">⚙️ <strong>${c.transmission}</strong></div>
           <div class="car-spec">✅ <strong>${t('insurance')}</strong></div>
         </div>
-        <div class="card-footer">
+        <div class="car-footer">
           <div>
-            <div class="card-price" style="color:var(--terracotta)">MAD ${c.price*10}<span>/day</span></div>
-            <div class="card-price-sub">≈ €${Math.round(c.price*0.092*10)/10}</div>
+            <div class="car-price">MAD ${c.price*10}<span>${t('per-day')}</span></div>
+            <div class="car-price-sub">≈ €${Math.round(c.price*0.092*10)/10}</div>
           </div>
-          <button class="card-btn card-btn-gold" onclick="openBookModal('car','${c.id}','${c.name}')">${t('rent')}</button>
+          <button class="card-btn card-btn-gold" onclick="event.stopPropagation();openInfoModal('car','${c.id}')">${t('view-info')}</button>
         </div>
       </div>
     </div>
   `).join('');
+  setupCarousel('cars-c', data.length, 'cars-counter', 'cars-c-dots', 'gold');
+  buildDots('cars-c', data.length, 'cars-c-dots', 'gold');
   for(const c of data){
-    const imgData = await fetchUnsplashImg(c.img, '🚗');
-    const wrap = document.querySelector(`#card-${c.id} .card-img-wrap`);
+    const img = await fetchImg(c.img);
+    const wrap = document.getElementById(`ci-${c.id}`);
     if(wrap){
-      const badge = wrap.querySelector('.card-badge').outerHTML;
-      if(imgData){
-        wrap.innerHTML = `<img class="card-img" src="${imgData.url}" alt="${c.name}" loading="lazy"/>${badge}<span class="img-credit">📷 ${imgData.credit}</span>`;
-      } else {
-        wrap.innerHTML = `<div style="width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#1A0F0A,#3D1A0A)">🚗</div>${badge}`;
-      }
+      const badge=`<div class="car-badge">${c.badge}</div>`;
+      if(img){ wrap.innerHTML=`<img class="car-img" src="${img.url}" alt="${c.name}" loading="lazy"/>${badge}<span class="img-credit">📷 ${img.credit}</span>`; }
+      else { wrap.innerHTML=`<div style="width:100%;height:220px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:rgba(0,0,0,0.4)">🚗</div>${badge}`; }
     }
   }
 }
 
+// ══════════════════════════════════════════
+// RENDER ACTIVITIES
+// ══════════════════════════════════════════
 async function renderActivities(){
-  const grid = document.getElementById('activities-grid');
-  grid.innerHTML = activities.map(a=>`
-    <div class="activity-card" id="card-${a.id}">
-      <div class="activity-header" id="act-img-${a.id}">
-        ${skeletonImg('160px')}
-      </div>
-      <div class="activity-body">
-        <div class="activity-name">${a.name}</div>
-        <div class="activity-desc">${a.desc}</div>
-        <div class="activity-footer">
-          <div>
-            <div class="activity-price">€${a.price}<span style="font-size:0.72rem;color:rgba(255,255,255,0.4)">/person</span></div>
-            <div class="activity-duration">⏱ ${a.duration} · 🕐 ${a.time}</div>
-          </div>
-          <button class="card-btn" onclick="openBookModal('activity','${a.id}','${a.name}')">${t('book')}</button>
+  const track = document.getElementById('act-c');
+  const slideW = getSlideWidth('act-c');
+  track.innerHTML = activities.map(a=>`
+    <div class="carousel-slide act-card" style="width:${slideW}px;min-width:${slideW}px" onclick="openInfoModal('activity','${a.id}')">
+      <div class="act-img-wrap" id="ai-${a.id}">${skImg('200px')}</div>
+      <div class="act-body">
+        <div class="act-name">${a.name}</div>
+        <div class="act-desc">${a.desc}</div>
+        <div class="act-meta">
+          <div class="act-meta-item">⏱ ${a.duration}</div>
+          <div class="act-meta-item">🕐 ${a.time}</div>
+        </div>
+        <div class="act-footer">
+          <div class="act-price">€${a.price}<span>${t('per-person')}</span></div>
+          <button class="card-btn" onclick="event.stopPropagation();openInfoModal('activity','${a.id}')">${t('view-info')}</button>
         </div>
       </div>
     </div>
   `).join('');
+  setupCarousel('act-c', activities.length, 'act-counter', 'act-c-dots', 'gold');
+  buildDots('act-c', activities.length, 'act-c-dots', 'gold');
   for(const a of activities){
-    const imgData = await fetchUnsplashImg(a.img, '🎈');
-    const header = document.getElementById(`act-img-${a.id}`);
-    if(header){
-      if(imgData){
-        header.innerHTML = `<img class="activity-header-img" src="${imgData.url}" alt="${a.name}" loading="lazy" style="width:100%;height:160px;object-fit:cover"/><span class="img-credit">📷 ${imgData.credit}</span>`;
-      } else {
-        header.innerHTML = `<div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem">🎈</div>`;
-      }
+    const img = await fetchImg(a.img);
+    const wrap = document.getElementById(`ai-${a.id}`);
+    if(wrap){
+      if(img){ wrap.innerHTML=`<img class="act-img" src="${img.url}" alt="${a.name}" loading="lazy" style="height:200px"/><span class="img-credit">📷 ${img.credit}</span>`; }
+      else { wrap.innerHTML=`<div style="height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:rgba(0,0,0,0.4)">🎈</div>`; }
     }
   }
 }
 
+// ══════════════════════════════════════════
+// RENDER GUIDES
+// ══════════════════════════════════════════
 async function renderGuides(){
-  const grid = document.getElementById('guides-grid');
-  grid.innerHTML = guides.map(g=>`
-    <div class="guide-card" id="card-${g.id}">
-      <div id="guide-img-${g.id}" style="height:180px;overflow:hidden">${skeletonImg('180px')}</div>
+  const track = document.getElementById('guides-c');
+  const slideW = getSlideWidth('guides-c');
+  track.innerHTML = guides.map(g=>`
+    <div class="carousel-slide guide-card" style="width:${slideW}px;min-width:${slideW}px" onclick="openInfoModal('guide','${g.id}')">
+      <div class="guide-img-wrap" id="gi-${g.id}">${skImg('200px')}</div>
       <div class="guide-body">
         <div class="guide-name">${g.name}</div>
         <div class="guide-role">${g.role}</div>
-        <div class="guide-languages">${g.languages.map(l=>`<span class="guide-lang">${l}</span>`).join('')}</div>
-        <div class="amenities">${g.specialties.map(s=>`<span class="amenity">${s}</span>`).join('')}</div>
+        <div class="guide-langs">${g.languages.map(l=>`<span class="guide-lang">${l}</span>`).join('')}</div>
+        <div class="guide-specs">${g.specialties.slice(0,3).join(' · ')}</div>
       </div>
       <div class="guide-stats">
         <div class="guide-stat"><div class="guide-stat-val">${g.rating}⭐</div><div class="guide-stat-label">Rating</div></div>
         <div class="guide-stat"><div class="guide-stat-val">${g.reviews}</div><div class="guide-stat-label">Reviews</div></div>
-        <div class="guide-stat"><div class="guide-stat-val">${g.experience}</div><div class="guide-stat-label">Years</div></div>
+        <div class="guide-stat"><div class="guide-stat-val">${g.experience}y</div><div class="guide-stat-label">Exp.</div></div>
         <div class="guide-stat"><div class="guide-stat-val">€${g.price}</div><div class="guide-stat-label">${g.priceType}</div></div>
       </div>
       <div class="guide-footer">
-        <button class="card-btn" style="flex:1" onclick="openBookModal('guide','${g.id}','${g.name}')">${t('book')}</button>
-        <button class="card-btn card-btn-teal" style="flex:1">Message</button>
+        <button class="card-btn" style="flex:1" onclick="event.stopPropagation();openInfoModal('guide','${g.id}')">${t('view-info')}</button>
+        <button class="card-btn card-btn-teal" style="flex:1" onclick="event.stopPropagation();openBookModal('guide','${g.id}','${g.name}')">${t('book')}</button>
       </div>
     </div>
   `).join('');
+  setupCarousel('guides-c', guides.length, 'guides-counter', 'guides-c-dots', '');
+  buildDots('guides-c', guides.length, 'guides-c-dots', '');
   for(const g of guides){
-    const imgData = await fetchUnsplashImg(g.img, '👤');
-    const wrap = document.getElementById(`guide-img-${g.id}`);
+    const img = await fetchImg(g.img);
+    const wrap = document.getElementById(`gi-${g.id}`);
     if(wrap){
-      if(imgData){
-        wrap.innerHTML = `<img src="${imgData.url}" alt="${g.name}" loading="lazy" style="width:100%;height:180px;object-fit:cover;object-position:top"/><span class="img-credit">📷 ${imgData.credit}</span>`;
-      } else {
-        wrap.innerHTML = `<div style="width:100%;height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--cream-dark)">👤</div>`;
-      }
+      if(img){ wrap.innerHTML=`<img class="guide-img" src="${img.url}" alt="${g.name}" loading="lazy"/><span class="img-credit">📷 ${img.credit}</span>`; }
+      else { wrap.innerHTML=`<div style="height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--cream-dark)">👤</div>`; }
     }
   }
 }
 
-// ── FILTER RENDERERS ──
-function renderHotelFilters(){
-  const filters=[['all','f-all'],['riad','f-riad'],['hotel','f-hotel'],['luxury','f-luxury'],['budget','f-budget']];
-  document.getElementById('hotel-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn${hotelFilter===v?' active':''}" onclick="setHotelFilter('${v}')">${t(k)}</button>`).join('');
+function renderAll(){
+  renderHotels(); renderRestaurants(); renderTourism(); renderCars(); renderActivities(); renderGuides();
 }
-function renderRestFilters(){
-  const filters=[['all','f-all'],['restaurant','f-restaurants'],['cafe','f-cafes'],['club','f-clubs'],['bar','f-bars']];
-  document.getElementById('rest-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn filter-btn-teal${restFilter===v?' active':''}" onclick="setRestFilter('${v}')">${t(k)}</button>`).join('');
-}
-function renderCarFilters(){
-  const filters=[['all','f-all'],['sedan','f-sedans'],['suv','f-suv'],['scooter','f-scooters'],['bike','f-bikes']];
-  document.getElementById('car-filters').innerHTML=filters.map(([v,k])=>`<button class="filter-btn filter-btn-gold${carFilter===v?' active':''}" onclick="setCarFilter('${v}')">${t(k)}</button>`).join('');
-}
-function setHotelFilter(v){hotelFilter=v;renderHotels();}
-function setRestFilter(v){restFilter=v;renderRestaurants();}
-function setCarFilter(v){carFilter=v;renderCars();}
 
-// ── MODALS ──
-function openBookModal(type, id, name){
-  const esc = name.replace(/'/g,"\\'");
-  let extraFields = '';
-  if(type==='hotel'||type==='car'){
-    const l1=type==='hotel'?t('check-in'):t('pickup');
-    const l2=type==='hotel'?t('check-out'):t('return');
-    extraFields=`<div class="form-row"><div class="form-group" style="margin:0"><label class="form-label">${l1}</label><input class="form-input" type="date"/></div><div class="form-group" style="margin:0"><label class="form-label">${l2}</label><input class="form-input" type="date"/></div></div>`;
-  } else if(type==='restaurant'){
-    extraFields=`<div class="form-row"><div class="form-group" style="margin:0"><label class="form-label">${t('date')}</label><input class="form-input" type="date"/></div><div class="form-group" style="margin:0"><label class="form-label">${t('time')}</label><input class="form-input" type="time" value="19:30"/></div></div>`;
-  } else if(type==='activity'||type==='guide'){
-    extraFields=`<div class="form-row"><div class="form-group" style="margin:0"><label class="form-label">${t('pref-date')}</label><input class="form-input" type="date"/></div><div class="form-group" style="margin:0"><label class="form-label">${t('participants')}</label><select class="form-input"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option></select></div></div>`;
-  }
-  document.getElementById('modal-content').innerHTML = `
-    <div class="modal-header">
-      <div>
-        <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--terracotta);margin-bottom:3px">${type}</div>
-        <div class="modal-title">${name}</div>
+// ══════════════════════════════════════════
+// INFO MODAL — shows full details + booking tab
+// ══════════════════════════════════════════
+function openInfoModal(type, id){
+  let item, imgQuery='', bookType=type, bookId=id, bookName='';
+
+  if(type==='hotel'){ item=hotels.find(h=>h.id===id); imgQuery=item?.img; bookName=item?.name; }
+  else if(type==='restaurant'){ item=restaurants.find(r=>r.id===id); imgQuery=item?.img; bookName=item?.name; }
+  else if(type==='place'){ item=places[id]; imgQuery=item?.img; bookType='activity'; }
+  else if(type==='car'){ item=cars.find(c=>c.id===id); imgQuery=item?.img; bookName=item?.name; }
+  else if(type==='activity'){ item=activities.find(a=>a.id===id); imgQuery=item?.img; bookName=item?.name; }
+  else if(type==='guide'){ item=guides.find(g=>g.id===id); imgQuery=item?.img; bookName=item?.name; }
+
+  if(!item) return;
+  bookName = bookName || item.name || '';
+
+  // Build detail section based on type
+  let details='', imgId='modal-main-img';
+
+  if(type==='hotel'){
+    details = `
+      <div class="info-tags">${item.tags.map(tg=>`<span class="info-tag">${tg}</span>`).join('')}</div>
+      <div class="info-grid">
+        <div class="info-box"><div class="info-box-label">Price</div><div class="info-box-val">MAD ${item.price*10} / night &nbsp;≈ €${item.price}</div></div>
+        <div class="info-box gold"><div class="info-box-label">Rating</div><div class="info-box-val">${'★'.repeat(item.stars)} (${item.stars}/5)</div></div>
       </div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group"><label class="form-label">${t('full-name')}</label><input class="form-input" type="text" placeholder="${t('full-name')}"/></div>
-      <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="your@email.com"/></div>
-      <div class="form-group"><label class="form-label">WhatsApp</label><input class="form-input" type="tel" placeholder="+212 645 297 934"/></div>
-      ${extraFields}
-      <div class="form-group"><label class="form-label">${t('special-req')}</label><textarea class="form-input" rows="2" placeholder="..."></textarea></div>
-      <button class="form-submit" onclick="submitBooking('${esc}')">${t('confirm-booking')}</button>
-      <p style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:0.75rem">${t('team-confirm')}</p>
-    </div>
-  `;
-  openModal();
-}
+      <div class="info-box-label" style="margin-bottom:8px">${t('amenities')}</div>
+      <div class="info-amenities">${item.amenities.map(a=>`<span class="info-pill">${a}</span>`).join('')}</div>
+      <div class="info-box" style="border-left-color:var(--gold);margin-bottom:0"><div class="info-box-label">${t('pro-tip')}</div><div class="info-box-val">${item.tip||''}</div></div>
+    `;
+  } else if(type==='restaurant'){
+    const em={restaurant:'🍴',cafe:'☕',bar:'🍸',club:'🎵'};
+    details = `
+      <div class="info-grid">
+        <div class="info-box"><div class="info-box-label">Category</div><div class="info-box-val">${em[item.type]} ${item.type}</div></div>
+        <div class="info-box gold"><div class="info-box-label">Avg. spend</div><div class="info-box-val">~€${item.price} / person</div></div>
+        <div class="info-box"><div class="info-box-label">${t('opening-hours')}</div><div class="info-box-val">🕐 ${item.opens}</div></div>
+        <div class="info-box gold"><div class="info-box-label">Rating</div><div class="info-box-val">${'★'.repeat(item.stars)}</div></div>
+      </div>
+      <div class="info-box" style="border-left-color:var(--gold);margin-bottom:0"><div class="info-box-label">${t('pro-tip')}</div><div class="info-box-val">${item.tip||''}</div></div>
+    `;
+  } else if(type==='place'){
+    details = `
+      <div class="info-grid">
+        <div class="info-box"><div class="info-box-label">${t('opening-hours')}</div><div class="info-box-val">${item.hours}</div></div>
+        <div class="info-box gold"><div class="info-box-label">${t('pro-tip')}</div><div class="info-box-val">${item.tip}</div></div>
+      </div>
+    `;
+  } else if(type==='car'){
+    details = `
+      <div class="info-grid">
+        <div class="info-box"><div class="info-box-label">Price</div><div class="info-box-val">MAD ${item.price*10}/day &nbsp;≈ €${Math.round(item.price*0.092*10)/10}</div></div>
+        <div class="info-box gold"><div class="info-box-label">Category</div><div class="info-box-val">${item.badge}</div></div>
+        <div class="info-box"><div class="info-box-label">Engine</div><div class="info-box-val">${item.fuel} · ${item.transmission}</div></div>
+        <div class="info-box gold"><div class="info-box-label">Seats</div><div class="info-box-val">${item.seats} ${t('seats')}</div></div>
+      </div>
+      <div class="info-pill">${t('insurance')}</div>
+    `;
+  } else if(type==='activity'){
+    details = `
+      <div class="info-grid">
+        <div class="info-box"><div class="info-box-label">Price</div><div class="info-box-val">€${item.price} / person</div></div>
+        <div class="info-box gold"><div class="info-box-label">Duration</div><div class="info-box-val">⏱ ${item.duration}</div></div>
+        <div class="info-box"><div class="info-box-label">Time</div><div class="info-box-val">🕐 ${item.time}</div></div>
+      </div>
+      <div class="info-box" style="border-left-color:var(--gold)"><div class="info-box-label">${t('pro-tip')}</div><div class="info-box-val">${item.tip||'Book in advance during high season.'}</div></div>
+    `;
+  } else if(type==='guide'){
+    details = `
+      <div class="info-grid">
+        <div class="info-box"><div class="info-box-label">Rate</div><div class="info-box-val">€${item.price} / ${item.priceType}</div></div>
+        <div class="info-box gold"><div class="info-box-label">Rating</div><div class="info-box-val">${item.rating} ⭐ (${item.reviews} reviews)</div></div>
+        <div class="info-box"><div class="info-box-label">Experience</div><div class="info-box-val">${item.experience} years</div></div>
+      </div>
+      <div class="info-box-label" style="margin-bottom:8px">${t('languages')}</div>
+      <div class="info-amenities">${item.languages.map(l=>`<span class="info-pill">${l}</span>`).join('')}</div>
+      <div class="info-box-label" style="margin-bottom:8px">${t('specialties')}</div>
+      <div class="info-amenities">${item.specialties.map(s=>`<span class="info-pill">${s}</span>`).join('')}</div>
+    `;
+  }
 
-function openPlaceModal(p){
-  if(typeof p==='string') p=JSON.parse(p);
+  // Build booking form fields
+  let bookFields='';
+  if(type==='hotel'||type==='car'){
+    const l1=type==='hotel'?t('check-in'):t('pickup'), l2=type==='hotel'?t('check-out'):t('return');
+    bookFields=`<div class="form-row"><div class="form-group" style="margin:0"><label class="form-label">${l1}</label><input class="form-input" type="date"/></div><div class="form-group" style="margin:0"><label class="form-label">${l2}</label><input class="form-input" type="date"/></div></div>`;
+  } else if(type==='restaurant'){
+    bookFields=`<div class="form-row"><div class="form-group" style="margin:0"><label class="form-label">${t('date')}</label><input class="form-input" type="date"/></div><div class="form-group" style="margin:0"><label class="form-label">${t('time')}</label><input class="form-input" type="time" value="19:30"/></div></div>`;
+  } else {
+    bookFields=`<div class="form-row"><div class="form-group" style="margin:0"><label class="form-label">${t('pref-date')}</label><input class="form-input" type="date"/></div><div class="form-group" style="margin:0"><label class="form-label">${t('participants')}</label><select class="form-input"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option></select></div></div>`;
+  }
+
+  const esc = bookName.replace(/'/g,"\\'");
+  const typeLabel = type.charAt(0).toUpperCase()+type.slice(1);
+  const displayName = item.name || item.name || places[id]?.name || '';
+
   document.getElementById('modal-content').innerHTML = `
-    <div class="modal-header" style="background:linear-gradient(135deg,#1A0F0A,#3D1A0A)">
-      <div><div style="font-size:2.5rem;margin-bottom:0.5rem">${p.icon}</div>
-      <div class="modal-title" style="color:var(--gold-bright)">${p.name}</div></div>
+    <div class="modal-header" style="background:linear-gradient(135deg,#1A0F0A,#2a1508)">
+      <div>
+        <div style="font-size:0.65rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px">${typeLabel}</div>
+        <div class="modal-title" style="color:#fff">${displayName}</div>
+      </div>
       <button class="modal-close" onclick="closeModal()" style="color:rgba(255,255,255,0.5)">✕</button>
     </div>
+    <div style="display:flex;gap:0;border-bottom:1px solid var(--border);padding:0 1.75rem;background:#fff">
+      <button class="modal-tab active" id="mtab-info" onclick="switchTab('info')">${t('tab-info')}</button>
+      <button class="modal-tab" id="mtab-book" onclick="switchTab('book')">${t('tab-book')}</button>
+    </div>
     <div class="modal-body">
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.8;margin-bottom:1.25rem">${p.desc}</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem">
-        <div style="background:var(--cream);padding:0.9rem;border-radius:6px;border-left:3px solid var(--terracotta)">
-          <div style="font-size:0.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px">${t('opening-hours')}</div>
-          <div style="font-size:0.88rem;color:var(--deep)">${p.hours}</div>
+      <div id="tab-info" class="modal-tab-content active">
+        <div id="${imgId}" style="width:100%;height:200px;background:linear-gradient(135deg,#F5E6CC,#D4A96B);border-radius:8px;overflow:hidden;margin-bottom:1.25rem;position:relative">
+          ${skImg('200px')}
         </div>
-        <div style="background:var(--cream);padding:0.9rem;border-radius:6px;border-left:3px solid var(--gold)">
-          <div style="font-size:0.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px">${t('pro-tip')}</div>
-          <div style="font-size:0.88rem;color:var(--deep)">${p.tip}</div>
-        </div>
+        <p class="info-modal-desc">${item.desc||''}</p>
+        ${details}
       </div>
-      <button class="form-submit" onclick="closeModal();scrollToId('activities')">${t('explore-nearby')}</button>
+      <div id="tab-book" class="modal-tab-content">
+        <div class="form-group"><label class="form-label">${t('full-name')}</label><input class="form-input" type="text" placeholder="${t('full-name')}"/></div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="your@email.com"/></div>
+        <div class="form-group"><label class="form-label">WhatsApp</label><input class="form-input" type="tel" placeholder="+212 645 297 934"/></div>
+        ${bookFields}
+        <div class="form-group"><label class="form-label">${t('special-req')}</label><textarea class="form-input" rows="2" placeholder="..."></textarea></div>
+        <button class="form-submit" onclick="submitBooking('${esc}')">${t('confirm-booking')}</button>
+        <p style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:0.75rem">${t('team-confirm')}</p>
+      </div>
     </div>
   `;
   openModal();
+
+  // Load modal image async
+  fetchImg(imgQuery).then(img=>{
+    const el = document.getElementById(imgId);
+    if(el&&img){ el.innerHTML=`<img src="${img.url}" alt="${displayName}" style="width:100%;height:200px;object-fit:cover"/><span class="img-credit" style="position:absolute;bottom:4px;right:6px;font-size:0.6rem;color:rgba(255,255,255,0.6);background:rgba(0,0,0,0.35);padding:1px 5px;border-radius:2px">📷 ${img.credit}</span>`; }
+  });
 }
 
+function switchTab(tab){
+  document.querySelectorAll('.modal-tab-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.modal-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  document.getElementById('mtab-'+tab).classList.add('active');
+}
+
+// ══════════════════════════════════════════
+// CONTACT MODAL
+// ══════════════════════════════════════════
 function openContactModal(){
   document.getElementById('modal-content').innerHTML = `
     <div class="modal-header">
@@ -1061,11 +1444,7 @@ function openContactModal(){
       <div class="form-group"><label class="form-label">${t('name')}</label><input class="form-input" type="text"/></div>
       <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email"/></div>
       <div class="form-group"><label class="form-label">${t('subject')}</label>
-        <select class="form-input">
-          <option>${t('general-enquiry')}</option>
-          <option>${t('booking-help')}</option>
-          <option>${t('trip-planning')}</option>
-        </select>
+        <select class="form-input"><option>${t('general-enquiry')}</option><option>${t('booking-help')}</option><option>${t('trip-planning')}</option></select>
       </div>
       <div class="form-group"><label class="form-label">${t('message')}</label><textarea class="form-input" rows="3"></textarea></div>
       <button class="form-submit" onclick="submitContact()">${t('send')}</button>
@@ -1074,33 +1453,56 @@ function openContactModal(){
   openModal();
 }
 
-function openModal(){document.getElementById('modal-overlay').classList.add('open')}
-function closeModal(){document.getElementById('modal-overlay').classList.remove('open')}
-function closeModalOutside(e){if(e.target.id==='modal-overlay')closeModal()}
-function submitBooking(name){closeModal();showToast(t('toast-booking').replace('{n}',name));}
-function submitContact(){closeModal();showToast(t('toast-contact'));}
-function newsletterSubscribe(){showToast(t('toast-newsletter'))}
+// ══════════════════════════════════════════
+// BOOKING MODAL (direct, for guides footer)
+// ══════════════════════════════════════════
+function openBookModal(type, id, name){
+  openInfoModal(type, id);
+  setTimeout(()=>switchTab('book'), 80);
+}
 
-// ── TOAST ──
+function openModal(){ document.getElementById('modal-overlay').classList.add('open'); }
+function closeModal(){ document.getElementById('modal-overlay').classList.remove('open'); }
+function closeModalOutside(e){ if(e.target.id==='modal-overlay') closeModal(); }
+function submitBooking(name){ closeModal(); showToast(t('toast-booking').replace('{n}',name)); }
+function submitContact(){ closeModal(); showToast(t('toast-contact')); }
+function newsletterSubscribe(){ showToast(t('toast-newsletter')); }
+
+// ══════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════
 let toastTimer;
 function showToast(msg){
   const el=document.getElementById('toast');
-  el.textContent=msg;el.classList.add('show');
+  el.textContent=msg; el.classList.add('show');
   clearTimeout(toastTimer);
   toastTimer=setTimeout(()=>el.classList.remove('show'),4500);
 }
 
-// ── SCROLL ──
-function scrollToId(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+function scrollToId(id){ document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
 
-// ── INIT ──
+// ══════════════════════════════════════════
+// RESIZE handler
+// ══════════════════════════════════════════
+window.addEventListener('resize',()=>{
+  ['hotels-c','rest-c','tourism-c','cars-c','act-c','guides-c'].forEach(id=>{
+    const st=carouselState[id];
+    if(!st) return;
+    const track=document.getElementById(id);
+    if(!track) return;
+    const slideW=getSlideWidth(id);
+    track.querySelectorAll('.carousel-slide').forEach(s=>{s.style.width=slideW+'px';s.style.minWidth=slideW+'px';});
+    const refs=carouselRefs[id];
+    if(refs) updateCarousel(id,refs.counter,refs.dots);
+  });
+});
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
 convertCurrency();
-renderHotels();
-renderRestaurants();
-renderTourism();
-renderCars();
-renderActivities();
-renderGuides();
+loadLiveRates();
+renderAll();
 </script>
 </body>
 </html>
