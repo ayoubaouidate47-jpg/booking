@@ -25,7 +25,7 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);ove
 .currency-select{background:transparent;border:none;color:white;font-family:'Jost';font-size:0.82rem;font-weight:600;outline:none;cursor:pointer}
 .currency-select option{background:#1A0F0A;color:#fff}
 .currency-result{font-size:0.82rem;color:black;min-width:80px}
-.lang-switcher{position:relative;display:inline-block}
+.lang-switcher{position:relative;display:inline-block;order:2;margin-left:auto}
 .lang-btn{display:none;background:transparent;border:none;color:white;font-family:'Jost';font-size:0.75rem;font-weight:600;letter-spacing:1px;padding:5px 10px;cursor:pointer;transition:all 0.2s;text-transform:uppercase}
 .lang-btn.active{display:flex;align-items:center;gap:5px;background:white;border:1px solid rgba(184,134,11,0.3);border-radius:4px;color:#5a2e10}
 .lang-dropdown{display:none;position:absolute;top:110%;right:0;background:#1A0F0A;border:1px solid rgba(240,192,64,0.2);border-radius:4px;overflow:hidden;z-index:999;min-width:70px}
@@ -33,14 +33,26 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);ove
 .lang-dropdown .lang-btn{display:block;width:100%;text-align:center;color:rgba(255,255,255,0.6);padding:8px 14px}
 .lang-dropdown .lang-btn:hover{background:rgba(240,192,64,0.1);color:var(--gold-bright)}
 .nav{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(26,15,10,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold)}
-.nav-inner{max-width:1400px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:65px}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:65px;position:relative}
 .nav-logo{font-family:'Cinzel Decorative',serif;font-size:1.3rem;color:var(--gold-bright);letter-spacing:2px;cursor:pointer}
 .nav-logo span{color:var(--terracotta-light)}
-.nav-links{display:flex;gap:0;list-style:none}
-.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.76rem;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;padding:0 0.85rem;height:65px;display:flex;align-items:center;border-bottom:3px solid transparent;transition:all 0.3s;cursor:pointer}
-.nav-links a:hover{color:var(--gold-bright);border-bottom-color:var(--gold-bright)}
-.nav-cta{background:var(--terracotta)!important;color:#fff!important;border-radius:4px;height:36px!important;padding:0 1.2rem!important;margin-left:0.75rem}
-.nav-cta:hover{background:var(--terracotta-light)!important}
+.nav-links{display:none}
+.nav-actions{display:flex;align-items:center;gap:0.75rem;order:3;margin-left:0.75rem}
+.nav-menu-toggle{width:42px;height:42px;border:1px solid rgba(240,192,64,0.35);border-radius:6px;background:rgba(255,255,255,0.06);color:var(--gold-bright);font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.25s}
+.nav-menu-toggle:hover,.nav-menu-toggle.open{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
+.nav-menu{position:absolute;top:65px;right:2rem;width:min(360px,calc(100vw - 2rem));background:rgba(26,15,10,0.98);border:1px solid rgba(240,192,64,0.25);border-radius:8px;box-shadow:0 24px 70px rgba(0,0,0,0.35);padding:0.75rem;display:none;z-index:1200}
+.nav-menu.open{display:block}
+.nav-menu-head{padding:0.55rem 0.65rem 0.9rem;border-bottom:1px solid rgba(240,192,64,0.12);margin-bottom:0.45rem}
+.nav-menu-kicker{font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.2rem}
+.nav-menu-title{font-family:'Cormorant Garamond',serif;color:#fff;font-size:1.15rem}
+.nav-menu-grid{display:grid;gap:0.35rem}
+.nav-menu-item{width:100%;border:1px solid transparent;background:transparent;color:rgba(255,255,255,0.75);border-radius:6px;padding:0.75rem 0.8rem;text-align:left;font-family:'Jost';font-size:0.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+.nav-menu-item:hover{background:rgba(240,192,64,0.1);border-color:rgba(240,192,64,0.18);color:var(--gold-bright);transform:translateX(2px)}
+.nav-menu-item.primary{background:var(--terracotta);color:#fff;border-color:var(--terracotta);margin-top:0.25rem}
+.nav-menu-item.primary:hover{background:var(--terracotta-light);color:#fff}
+.nav-menu-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid rgba(240,192,64,0.12);margin-top:0.65rem;padding:0.8rem 0.65rem 0.2rem}
+.nav-menu-lang-label{font-size:0.66rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+[dir="rtl"] .nav-menu-item{text-align:right}
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--deep)}
 .hero-pattern{position:absolute;inset:0;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpolygon points='40,2 78,20 78,60 40,78 2,60 2,20' fill='none' stroke='%23F0C040' stroke-width='1'/%3E%3C/svg%3E")}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1A0F0A 0%,#3D1A0A 40%,#1A2A20 100%)}
@@ -89,6 +101,7 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);ove
 .carousel-track{
   display:flex;
   gap:1.5rem;
+  align-items:stretch;
   transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);
   will-change:transform;
 }
@@ -98,6 +111,11 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);ove
   cursor:pointer;
   position:relative;
 }
+#hotels-c-outer{min-height:470px}
+#rest-c-outer{min-height:430px}
+#cars-c-outer{min-height:470px}
+#act-c-outer{min-height:390px}
+#guides-c-outer{min-height:445px}
 
 /* Nav arrows */
 .carousel-nav{
@@ -129,6 +147,7 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);ove
   box-shadow:0 4px 24px rgba(0,0,0,0.08);
   border:1px solid var(--border);
   transition:box-shadow 0.3s,transform 0.3s;
+  height:100%;display:flex;flex-direction:column;
 }
 .hotel-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.15);transform:translateY(-4px)}
 .hotel-img-wrap{position:relative;height:240px;overflow:hidden;background:linear-gradient(135deg,#F5E6CC,#D4A96B)}
@@ -136,14 +155,14 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);ove
 .hotel-card:hover .hotel-img{transform:scale(1.06)}
 .hotel-badge{position:absolute;top:12px;left:12px;background:var(--terracotta);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:3px}
 .img-credit{position:absolute;bottom:4px;right:6px;font-size:0.6rem;color:rgba(255,255,255,0.6);background:rgba(0,0,0,0.35);padding:1px 5px;border-radius:2px}
-.hotel-body{padding:1.4rem}
+.hotel-body{padding:1.4rem;display:flex;flex-direction:column;flex:1}
 .hotel-name{font-family:'Cinzel Decorative',serif;font-size:0.95rem;color:var(--deep);margin-bottom:0.3rem}
 .hotel-loc{font-size:0.78rem;color:var(--text-muted);margin-bottom:0.5rem}
 .hotel-stars{color:var(--gold-light);font-size:0.88rem;margin-bottom:0.6rem}
 .hotel-desc{font-size:0.83rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .hotel-amenities{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0.9rem}
 .amenity-pill{font-size:0.68rem;color:var(--text-muted);background:var(--cream);padding:3px 8px;border-radius:20px;border:1px solid var(--border)}
-.hotel-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.8rem;border-top:1px solid var(--border)}
+.hotel-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.8rem;border-top:1px solid var(--border);margin-top:auto}
 .price-block{}
 .price-main{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--terracotta)}
 .price-main span{font-size:0.75rem;color:var(--text-muted);font-family:'Jost';font-weight:400}
@@ -154,19 +173,19 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);ove
 .card-btn-gold{background:var(--gold);color:var(--deep)}.card-btn-gold:hover{background:var(--gold-light)}
 
 /* ── RESTAURANT CARD ── */
-.rest-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid var(--border);transition:all 0.3s}
+.rest-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid var(--border);transition:all 0.3s;height:100%;display:flex;flex-direction:column}
 .rest-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.13);transform:translateY(-4px)}
 .rest-img-wrap{position:relative;height:200px;overflow:hidden;background:linear-gradient(135deg,#F8E8D8,#D4906A)}
 .rest-img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
 .rest-card:hover .rest-img{transform:scale(1.06)}
 .rest-type-badge{position:absolute;top:10px;left:10px;background:var(--teal);color:#fff;font-size:0.68rem;font-weight:700;padding:3px 9px;border-radius:3px;text-transform:uppercase;letter-spacing:1px}
-.rest-body{padding:1.25rem}
+.rest-body{padding:1.25rem;display:flex;flex-direction:column;flex:1}
 .rest-name{font-family:'Cinzel Decorative',serif;font-size:0.88rem;color:var(--deep);margin-bottom:0.3rem}
 .rest-loc{font-size:0.76rem;color:var(--text-muted);margin-bottom:0.4rem}
 .rest-stars{color:var(--gold-light);font-size:0.85rem;margin-bottom:0.5rem}
 .rest-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.5rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .rest-hours{font-size:0.74rem;color:var(--teal);font-weight:600;margin-bottom:0.8rem}
-.rest-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.75rem;border-top:1px solid var(--border)}
+.rest-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.75rem;border-top:1px solid var(--border);margin-top:auto}
 
 /* ── PLACE CARD (tourism carousel) ── */
 .place-card{border-radius:12px;overflow:hidden;height:320px;position:relative;transition:all 0.4s}
@@ -182,19 +201,19 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);ove
 .place-cta:hover{background:rgba(240,192,64,0.15)}
 
 /* ── CAR CARD ── */
-.car-card{background:rgba(255,255,255,0.04);border:1px solid rgba(240,192,64,0.15);border-radius:12px;overflow:hidden;transition:all 0.3s}
+.car-card{background:rgba(255,255,255,0.04);border:1px solid rgba(240,192,64,0.15);border-radius:12px;overflow:hidden;transition:all 0.3s;height:100%;display:flex;flex-direction:column}
 .car-card:hover{border-color:var(--gold-bright);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.3)}
 .car-img-wrap{position:relative;height:220px;overflow:hidden;background:rgba(0,0,0,0.3)}
 .car-img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
 .car-card:hover .car-img{transform:scale(1.06)}
 .car-badge{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--deep);font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:3px}
-.car-body{padding:1.25rem}
+.car-body{padding:1.25rem;display:flex;flex-direction:column;flex:1}
 .car-name{font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:var(--gold-bright);margin-bottom:0.4rem}
 .car-desc{font-size:0.81rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:0.85rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .car-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:0.9rem}
 .car-spec{background:rgba(255,255,255,0.05);padding:6px 10px;border-radius:5px;font-size:0.72rem;color:rgba(255,255,255,0.5)}
 .car-spec strong{color:rgba(255,255,255,0.85);display:block;font-size:0.78rem}
-.car-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.8rem;border-top:1px solid rgba(240,192,64,0.12)}
+.car-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.8rem;border-top:1px solid rgba(240,192,64,0.12);margin-top:auto}
 .car-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold-bright);font-weight:600}
 .car-price span{font-size:0.72rem;color:rgba(255,255,255,0.4);font-family:'Jost';font-weight:400}
 .car-price-sub{font-size:0.68rem;color:rgba(255,255,255,0.35)}
@@ -324,7 +343,9 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
 #hotels,#restaurants,#tourism,#cars,#map,#activities,#guides{scroll-margin-top:65px}
 
 @media(max-width:768px){
-  .nav-links{display:none}
+  .nav-inner{padding:0 1rem}
+  .nav-logo{font-size:1.05rem}
+  .nav-menu{right:1rem}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
@@ -369,6 +390,29 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
       <li><a onclick="scrollToId('map')" data-i="nav-map">Map</a></li>
       <li><a class="nav-cta" onclick="openContactModal()" data-i="nav-contact">Contact</a></li>
     </ul>
+    <div class="nav-actions">
+      <button class="nav-menu-toggle" id="nav-menu-toggle" onclick="toggleMainMenu()" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="nav-menu" id="nav-menu">
+        <div class="nav-menu-head">
+          <div class="nav-menu-kicker" data-i="menu-kicker">Plan Marrakech</div>
+          <div class="nav-menu-title" data-i="menu-title">Choose what you want to book</div>
+        </div>
+        <div class="nav-menu-grid">
+          <button class="nav-menu-item" onclick="menuGo('hotels')" data-i="menu-hotels">Hotels &amp; Riads</button>
+          <button class="nav-menu-item" onclick="menuGo('restaurants')" data-i="menu-dine">Restaurants, Bars &amp; Clubs</button>
+          <button class="nav-menu-item" onclick="menuGo('cars')" data-i="menu-rentals">Rent Cars &amp; Bikes</button>
+          <button class="nav-menu-item" onclick="menuGo('guides')" data-i="menu-guides">Book Chauffeur &amp; Guide</button>
+          <button class="nav-menu-item" onclick="menuGo('activities')" data-i="menu-activities">Book Activities</button>
+          <button class="nav-menu-item" onclick="menuGo('tourism')" data-i="menu-places">Iconic Places</button>
+          <button class="nav-menu-item" onclick="menuGo('map')" data-i="menu-map">Map</button>
+          <button class="nav-menu-item primary" onclick="closeMainMenu();openContactModal()" data-i="menu-contact">Contact Concierge</button>
+        </div>
+        <div class="nav-menu-foot">
+          <span class="nav-menu-lang-label" data-i="menu-language">Language</span>
+          <span class="nav-menu-lang-label" data-i="menu-change-lang">Use selector</span>
+        </div>
+      </div>
+    </div>
     <div class="lang-switcher" id="lang-switcher">
       <button class="lang-btn active" id="active-lang" onclick="toggleLangDropdown()">EN ▾</button>
       <div class="lang-dropdown" id="lang-dropdown">
@@ -1183,6 +1227,7 @@ const T = {
     'fi1':'About Us','fi2':'Travel Tips','fi3':'Visa Information','fi4':'Weather Guide','fi5':'Emergency Contacts',
     'nav-hotels':'Hotels','nav-dine':'Dine','nav-explore':'Explore','nav-rentals':'Rentals',
     'nav-activities':'Activities','nav-guides':'Guides','nav-map':'Map','nav-contact':'Contact',
+    'menu-kicker':'Plan Marrakech','menu-title':'Choose what you want to book','menu-hotels':'Hotels & Riads','menu-dine':'Restaurants, Bars & Clubs','menu-rentals':'Rent Cars & Bikes','menu-guides':'Book Chauffeur & Guide','menu-activities':'Book Activities','menu-places':'Iconic Places','menu-map':'Map','menu-contact':'Contact Concierge','menu-language':'Language','menu-change-lang':'Use selector',
     'wa-tooltip':'Chat with us on WhatsApp','lbl-convert':'Convert',
     'book':'Book Now','reserve':'Reserve','rent':'Rent Now','view-info':'View Details',
     'check-in':'Check-in','check-out':'Check-out','pickup':'Pick-up Date','return':'Return Date',
@@ -1218,6 +1263,7 @@ const T = {
     'fi1':'À propos','fi2':'Conseils voyage','fi3':'Infos visa','fi4':'Météo','fi5':"Urgences",
     'nav-hotels':'Hôtels','nav-dine':'Dîner','nav-explore':'Explorer','nav-rentals':'Locations',
     'nav-activities':'Activités','nav-guides':'Guides','nav-map':'Carte','nav-contact':'Contact',
+    'menu-kicker':'Planifier Marrakech','menu-title':'Choisissez quoi réserver','menu-hotels':'Hôtels & Riads','menu-dine':'Restaurants, Bars & Clubs','menu-rentals':'Louer voitures & motos','menu-guides':'Réserver chauffeur & guide','menu-activities':'Réserver activités','menu-places':'Lieux iconiques','menu-map':'Carte','menu-contact':'Conciergerie','menu-language':'Langue','menu-change-lang':'Sélecteur',
     'wa-tooltip':'Chattez sur WhatsApp','lbl-convert':'Convertir',
     'book':'Réserver','reserve':'Réserver','rent':'Louer','view-info':'Voir détails',
     'check-in':'Arrivée','check-out':'Départ','pickup':'Prise en charge','return':'Retour',
@@ -1253,6 +1299,7 @@ const T = {
     'fi1':'من نحن','fi2':'نصائح السفر','fi3':'التأشيرة','fi4':'الطقس','fi5':'الطوارئ',
     'nav-hotels':'فنادق','nav-dine':'مطاعم','nav-explore':'استكشف','nav-rentals':'تأجير',
     'nav-activities':'أنشطة','nav-guides':'مرشدون','nav-map':'خريطة','nav-contact':'اتصل',
+    'menu-kicker':'خطط لمراكش','menu-title':'اختر ما تريد حجزه','menu-hotels':'فنادق ورياضات','menu-dine':'مطاعم وبارات ونواد','menu-rentals':'استئجار سيارات ودراجات','menu-guides':'احجز سائق ومرشد','menu-activities':'احجز أنشطة','menu-places':'أماكن شهيرة','menu-map':'الخريطة','menu-contact':'خدمة الكونسيرج','menu-language':'اللغة','menu-change-lang':'اختيار اللغة',
     'wa-tooltip':'تحدث معنا','lbl-convert':'تحويل',
     'book':'احجز','reserve':'احجز','rent':'استأجر','view-info':'عرض التفاصيل',
     'check-in':'تسجيل الوصول','check-out':'تسجيل المغادرة','pickup':'تاريخ الاستلام','return':'تاريخ الإعادة',
@@ -1288,6 +1335,7 @@ const T = {
     'fi1':'Sobre nosotros','fi2':'Consejos','fi3':'Visado','fi4':'Clima','fi5':'Emergencias',
     'nav-hotels':'Hoteles','nav-dine':'Comer','nav-explore':'Explorar','nav-rentals':'Alquileres',
     'nav-activities':'Actividades','nav-guides':'Guías','nav-map':'Mapa','nav-contact':'Contacto',
+    'menu-kicker':'Plan Marrakech','menu-title':'Elige qué reservar','menu-hotels':'Hoteles y Riads','menu-dine':'Restaurantes, bares y clubs','menu-rentals':'Alquiler coches y motos','menu-guides':'Reservar chófer y guía','menu-activities':'Reservar actividades','menu-places':'Lugares icónicos','menu-map':'Mapa','menu-contact':'Conserjería','menu-language':'Idioma','menu-change-lang':'Selector',
     'wa-tooltip':'Chatea en WhatsApp','lbl-convert':'Convertir',
     'book':'Reservar','reserve':'Reservar','rent':'Alquilar','view-info':'Ver detalles',
     'check-in':'Entrada','check-out':'Salida','pickup':'Recogida','return':'Devolución',
@@ -1326,7 +1374,30 @@ async function loadLiveRates(){
 // LANGUAGE
 // ══════════════════════════════════════════
 function toggleLangDropdown(){ document.getElementById('lang-dropdown').classList.toggle('open'); }
-document.addEventListener('click', e=>{ if(!document.getElementById('lang-switcher').contains(e.target)) document.getElementById('lang-dropdown').classList.remove('open'); });
+function toggleMainMenu(){
+  const menu = document.getElementById('nav-menu');
+  const btn = document.getElementById('nav-menu-toggle');
+  if(!menu||!btn) return;
+  const open = !menu.classList.contains('open');
+  menu.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeMainMenu(){
+  const menu = document.getElementById('nav-menu');
+  const btn = document.getElementById('nav-menu-toggle');
+  if(menu) menu.classList.remove('open');
+  if(btn){ btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+}
+function menuGo(id){ closeMainMenu(); scrollToId(id); }
+document.addEventListener('click', e=>{
+  const langSwitcher = document.getElementById('lang-switcher');
+  const langDropdown = document.getElementById('lang-dropdown');
+  if(langSwitcher&&langDropdown&&!langSwitcher.contains(e.target)) langDropdown.classList.remove('open');
+  const navMenu = document.getElementById('nav-menu');
+  const navToggle = document.getElementById('nav-menu-toggle');
+  if(navMenu&&navToggle&&!navMenu.contains(e.target)&&!navToggle.contains(e.target)) closeMainMenu();
+});
 function setLang(l){
   lang = l;
   document.getElementById('active-lang').textContent = l.toUpperCase() + ' ▾';
@@ -1339,6 +1410,7 @@ function setLang(l){
     'tag-map','title-map','desc-map','pin-hotels','pin-restaurants','pin-sites','pin-activities','pin-cars',
     'tag-activities','title-activities','desc-activities','tag-guides','title-guides','desc-guides',
     'nl-title','nl-sub','nl-btn','footer-desc','ft-services','ft-discover','ft-info',
+    'menu-kicker','menu-title','menu-hotels','menu-dine','menu-rentals','menu-guides','menu-activities','menu-places','menu-map','menu-contact','menu-language','menu-change-lang',
     'fs1','fs2','fs3','fs4','fs5','fi1','fi2','fi3','fi4','fi5','wa-tooltip','lbl-convert'];
   ids.forEach(id=>{ const el=document.getElementById(id); if(el&&T[lang][id]) el.textContent=T[lang][id]; });
   document.querySelectorAll('[data-i]').forEach(el=>{ const k=el.getAttribute('data-i'); if(T[lang][k]) el.textContent=T[lang][k]; });
@@ -1546,9 +1618,20 @@ function renderCarFilters(){
   const f=[['all','f-all'],['sedan','f-sedans'],['suv','f-suv'],['scooter','f-scooters'],['bike','f-bikes']];
   document.getElementById('car-filters').innerHTML=f.map(([v,k])=>`<button class="filter-btn filter-btn-gold${carFilter===v?' active':''}" onclick="setCF('${v}')">${t(k)}</button>`).join('');
 }
-function setHF(v){hotelFilter=v;renderHotels();}
-function setRF(v){restFilter=v;renderRestaurants();}
-function setCF(v){carFilter=v;renderCars();}
+function keepSectionAnchored(sectionId, renderFn){
+  const section = document.getElementById(sectionId);
+  const before = section ? section.getBoundingClientRect().top : 0;
+  const result = renderFn();
+  requestAnimationFrame(()=>{
+    if(!section) return;
+    const after = section.getBoundingClientRect().top;
+    window.scrollBy(0, after - before);
+  });
+  return result;
+}
+function setHF(v){hotelFilter=v;keepSectionAnchored('hotels', renderHotels);}
+function setRF(v){restFilter=v;keepSectionAnchored('restaurants', renderRestaurants);}
+function setCF(v){carFilter=v;keepSectionAnchored('cars', renderCars);}
 
 // ══════════════════════════════════════════
 // RENDER HOTELS
