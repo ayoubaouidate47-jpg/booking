@@ -416,7 +416,7 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
     <p class="section-desc" id="desc-hotels">From traditional riads hidden in the medina to luxury resorts with Atlas views — find your perfect home in the Red City.</p>
     <div class="filter-bar" id="hotel-filters"></div>
     <div class="carousel-nav">
-      <div class="carousel-counter" id="hotel-counter">1 / 9</div>
+      <div class="carousel-counter" id="hotel-counter">1/9</div>
       <div class="carousel-arrows">
         <button class="carousel-arrow" onclick="carouselPrev('hotels-c')">←</button>
         <button class="carousel-arrow" onclick="carouselNext('hotels-c')">→</button>
@@ -441,7 +441,7 @@ footer{background:#0D0705;color:rgba(255,255,255,0.45);padding:3.5rem 2rem 2rem;
     <p class="section-desc" id="desc-dine">From fragrant tagines in century-old courtyards to rooftop cocktails at sunset — every meal is a celebration.</p>
     <div class="filter-bar" id="rest-filters"></div>
     <div class="carousel-nav">
-      <div class="carousel-counter" id="rest-counter">1 / 12</div>
+      <div class="carousel-counter" id="rest-counter">1/12</div>
       <div class="carousel-arrows">
         <button class="carousel-arrow" onclick="carouselPrev('rest-c')">←</button>
         <button class="carousel-arrow" onclick="carouselNext('rest-c')">→</button>
@@ -660,9 +660,82 @@ let carFilter = 'all';
 const carouselState = {};
 
 const hotels = [
-  {id:'h1',type:'riad',tier:'luxury',name:'Riad El Cadi',location:'Medina, Mouassine',desc:'A stunning 12th-century palace with 12 unique suites. Original zellige floors, carved plaster, jasmine courtyard. One of the most authentic heritage stays in the medina.',price:280,stars:5,amenities:['Rooftop terrace','Hammam','Pool','Breakfast','WiFi'],tags:['riad','heritage'],img:'marrakech riad interior courtyard zellige',badge:'Heritage',tip:'Request the suite overlooking the jasmine garden.'},
-  {id:'h2',type:'hotel',tier:'luxury',name:'La Mamounia',location:'Avenue Bab Jdid',desc:'The legendary palace hotel. Winston Churchill painted its gardens. Pure Art Deco grandeur in the heart of Marrakech, a true icon.',price:650,stars:5,amenities:['3 pools','Spa','4 restaurants','Casino','Tennis'],tags:['hotel','iconic'],img:'luxury moroccan palace hotel pool garden',badge:'Legendary',tip:'Book the Winston Churchill suite for an unforgettable stay.'},
-  {id:'h3',type:'riad',tier:'mid',name:'Riad Yasmine',location:'Derb Sidi Ahmed',desc:'A romantic 6-room riad with its iconic blue mosaic pool. Instagram-famous and blissfully quiet, perfect for couples.',price:120,stars:4,amenities:['Pool','Breakfast','Terrace','Hammam'],tags:['riad','romantic'],img:'blue mosaic pool riad marrakech',badge:'Boutique',tip:'Book early — only 6 rooms, always sold out.'},
+  {
+    id:'h1',
+    type:'riad',
+    tier:'mid',
+    name:'Riad Saad',
+    location:'99 Sidi Boulouqate, Medina, 44000 Marrakech',
+    desc:'Traditional riad in the heart of the Marrakech medina, just 2 minutes on foot from Jemaa El Fna. Rooms open onto a central patio with a fountain and plunge pool, with a planted rooftop terrace above the old city.',
+    price:null,
+    stars:3,
+    rating:8.2,
+    reviews:1420,
+    locationScore:9.4,
+    couplesScore:9.5,
+    quality:3,
+    wifi:'Free fast WiFi, 105 Mb/s',
+    rooms:['Twin Room - 2 single beds','Double Room - 1 large double bed','Suite - 1 extra-large double bed'],
+    highlights:['2 minutes from Jemaa El Fna','Excellent location, 9.4/10','Very good breakfast','Comfortable beds','24-hour reception'],
+    stayDetails:['Private tadelakt bathrooms with bath or shower and free toiletries','Breakfast included and served daily in the dining room','Moroccan dinner available with advance reservation','Public paid parking available nearby','Marrakech-Menara Airport is about 20 minutes by car'],
+    guestQuotes:['Very pretty riad and thank you for the warm welcome','Super location, easy to do everything on foot and the staff is fully available','Exceptional situation in the heart of the medina, warm welcome and good breakfast','Very good welcome, spacious room and very good breakfast','Ayoub is very friendly and helpful; clean room, comfortable bed and delicious Moroccan breakfast'],
+    amenities:['Fast WiFi','Airport shuttle','Parking nearby','Room service','Terrace','Daily housekeeping'],
+    tags:['riad','medina','breakfast included','terrace'],
+    localImages:['riadsaad/117553886.jpg','riadsaad/117553889.jpg','riadsaad/117555156.jpg','riadsaad/117555509.jpg','riadsaad/117555707.jpg','riadsaad/117556261.jpg','riadsaad/117556268.jpg','riadsaad/117556270.jpg','riadsaad/117556271.jpg','riadsaad/117556277.jpg','riadsaad/117556278.jpg','riadsaad/117556280.jpg','riadsaad/117556282.jpg','riadsaad/117556284.jpg','riadsaad/117556285.jpg','riadsaad/117556289.jpg','riadsaad/117556291.jpg','riadsaad/80605373.jpg','riadsaad/80605381.jpg','riadsaad/80605403.jpg','riadsaad/80605501.jpg','riadsaad/80605549.jpg'],
+    img:'riadsaad/117556291.jpg',
+    badge:'Very good',
+    tip:'Best for travelers who want to stay steps from Jemaa El Fna while sleeping in a quieter traditional lane.'
+  },
+
+  {
+  id:'h2',
+  type:'hotel',
+  tier:'luxury',
+  name:'Central Palace',
+  location:'Avenue Bab Jdid',
+  desc:'Classic Marrakech palace-style hotel close to the old city, with refined interiors and easy access to the medina.',
+  price:650,
+  stars:5,
+  amenities:['Spa','Restaurant','Pool','Concierge','WiFi'],
+  tags:['hotel','palace'],
+  img:'luxury moroccan palace hotel pool garden',
+  badge:'Luxury',
+  tip:'Choose this for a more hotel-style stay near the medina.'
+  },
+
+  {
+  id:'h3',
+  type:'riad',
+  tier:'mid',
+  name:'Ryad Hamza',
+  location:'108 Sidi Boulouqate, Medina, 44000 Marrakech',
+  desc:'Traditional ryad in the Marrakech medina, only 2 minutes on foot from Jemaa El Fna. It has air-conditioned rooms overlooking the patio, private tadelakt bathrooms, a traditional lounge, garden space, and a planted rooftop terrace with sun loungers.',
+  price:null,
+  stars:3,
+  rating:8.8,
+  reviews:1861,
+  locationScore:9.6,
+  couplesScore:9.7,
+  quality:3,
+  staffScore:9.6,
+  facilitiesScore:8.5,
+  cleanlinessScore:9.0,
+  comfortScore:8.8,
+  valueScore:8.9,
+  wifi:'Free fast WiFi, 106 Mb/s',
+  rooms:['Standard Twin Room - 2 single beds','Standard Double Room - 1 double bed','Suite - 1 large double bed','Double or Twin Room - 2 single beds or 1 double bed'],
+  highlights:['2 minutes from Jemaa El Fna','Excellent location, 9.6/10','Fabulous breakfast','Rooftop breakfast and terrace','Staff score, 9.6'],
+  stayDetails:['Air-conditioned traditional rooms with patio views','Private tadelakt bathroom with shower, toiletries and hairdryer','Moroccan specialties available with advance reservation','10 minutes by car from Marrakech train station','About 20 minutes by car from Marrakech-Menara Airport','No on-site parking'],
+  nearby:['Jemaa El Fna - 350 m','Dar Si Said Museum - 500 m','El Badi Palace - 800 m','Le Jardin Secret - 900 m','Bahia Palace - 1.1 km','Marrakech-Menara Airport - 3.7 km'],
+  guestQuotes:['Excellent welcome, clean and very well located with good value for money','Close to Jemaa El Fna, very kind staff who did everything to help','Quiet, central location and varied breakfast','Ideal location and really friendly staff','Very well placed, clean, comfortable beds and generous breakfast'],
+  amenities:['Fast WiFi','Airport shuttle','Non-smoking rooms','Terrace','24-hour reception','Heating','Daily housekeeping','Air conditioning'],
+  tags:['riad','medina','breakfast','terrace'],
+  localImages:['riadhamza/117262706.jpg','riadhamza/117898714.jpg','riadhamza/117899564.jpg','riadhamza/117899665.jpg','riadhamza/80312049.jpg','riadhamza/80312127.jpg','riadhamza/80312139.jpg','riadhamza/80312142.jpg','riadhamza/80312302 (1).jpg','riadhamza/80312302.jpg'],
+  img:'riadhamza/80312049.jpg',
+  badge:'Superb',
+  tip:'Book early — only 6 rooms, always sold out.'
+  },
+
   {id:'h4',type:'riad',tier:'budget',name:'Riad Dar Zitoun',location:'Mellah district',desc:'Family-run riad in the historic Jewish quarter. Authentic hospitality and homemade breakfasts served on the rooftop.',price:65,stars:3,amenities:['Terrace','Breakfast','WiFi'],tags:['riad','budget'],img:'moroccan riad courtyard fountain traditional',badge:'Local Charm',tip:'Ask the owner for his personal medina tour recommendations.'},
   {id:'h5',type:'hotel',tier:'luxury',name:'Royal Mansour',location:'Rue Abou Abbas El Sebti',desc:'53 private riads within a walled medina, each with its own courtyard and pool. The most exclusive address in all of Morocco.',price:1200,stars:5,amenities:['Private pool','Butler','3 restaurants','Spa','Library'],tags:['hotel','ultra-luxury'],img:'royal luxury moroccan hotel private villa pool',badge:'Ultra Luxury',tip:'Arrive by traditional carriage for the full experience.'},
   {id:'h6',type:'hotel',tier:'mid',name:'Nobu Hotel Marrakech',location:'Avenue Mohammed VI, Guéliz',desc:'Japanese minimalism meets Moroccan craft. Famous for its world-class Nobu restaurant and stunning rooftop pool.',price:320,stars:5,amenities:['Rooftop pool','Nobu restaurant','Spa','Gym'],tags:['hotel','design'],img:'modern luxury hotel rooftop pool morocco architecture',badge:'Design Hotel',tip:'The rooftop bar at sunset is unmissable.'},
@@ -925,6 +998,10 @@ function setLang(l){
 // UNSPLASH
 // ══════════════════════════════════════════
 async function fetchImg(query){
+  if(Array.isArray(query)) query = query[0];
+  if(typeof query === 'string' && /\.(jpg|jpeg|png|webp|gif)$/i.test(query)){
+    return {url:query,thumb:query,credit:'Riad Saad'};
+  }
   if(imgCache[query]) return imgCache[query];
   try{
     const res = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=5&orientation=landscape&client_id=${UNSPLASH_KEY}`);
@@ -1141,8 +1218,8 @@ async function renderHotels(){
         <div class="hotel-amenities">${h.amenities.slice(0,3).map(a=>`<span class="amenity-pill">${a}</span>`).join('')}</div>
         <div class="hotel-footer">
           <div class="price-block">
-            <div class="price-main">MAD ${h.price*10}<span>${t('per-night')}</span></div>
-            <div class="price-sub">≈ €${h.price}</div>
+            <div class="price-main">${h.price ? `MAD ${h.price*10}<span>${t('per-night')}</span>` : 'See rates'}</div>
+            <div class="price-sub">${h.price ? `approx. EUR ${h.price}` : 'Select dates for availability'}</div>
           </div>
           <button class="card-btn" onclick="event.stopPropagation();openInfoModal('hotel','${h.id}')">${t('view-info')}</button>
         </div>
@@ -1375,11 +1452,18 @@ function openInfoModal(type, id){
     details = `
       <div class="info-tags">${item.tags.map(tg=>`<span class="info-tag">${tg}</span>`).join('')}</div>
       <div class="info-grid">
-        <div class="info-box"><div class="info-box-label">Price</div><div class="info-box-val">MAD ${item.price*10} / night &nbsp;≈ €${item.price}</div></div>
-        <div class="info-box gold"><div class="info-box-label">Rating</div><div class="info-box-val">${'★'.repeat(item.stars)} (${item.stars}/5)</div></div>
+        <div class="info-box"><div class="info-box-label">Price</div><div class="info-box-val">${item.price ? `MAD ${item.price*10} / night approx. EUR ${item.price}` : 'Select dates to see live availability and rates'}</div></div>
+        <div class="info-box gold"><div class="info-box-label">Guest rating</div><div class="info-box-val">${item.rating ? `${item.rating}/10 - very good (${item.reviews} reviews)` : `${'★'.repeat(item.stars)} (${item.stars}/5)`}</div></div>
+        ${item.locationScore ? `<div class="info-box"><div class="info-box-label">Location</div><div class="info-box-val">${item.locationScore}/10 - excellent medina location</div></div>` : ''}
+        ${item.couplesScore ? `<div class="info-box gold"><div class="info-box-label">Couples</div><div class="info-box-val">${item.couplesScore}/10 for two-person stays</div></div>` : ''}
       </div>
+      ${item.highlights ? `<div class="info-box-label" style="margin-bottom:8px">Highlights</div><div class="info-amenities">${item.highlights.map(a=>`<span class="info-pill">${a}</span>`).join('')}</div>` : ''}
       <div class="info-box-label" style="margin-bottom:8px">${t('amenities')}</div>
       <div class="info-amenities">${item.amenities.map(a=>`<span class="info-pill">${a}</span>`).join('')}</div>
+      ${item.rooms ? `<div class="info-box-label" style="margin-bottom:8px">Room types</div><div class="info-amenities">${item.rooms.map(a=>`<span class="info-pill">${a}</span>`).join('')}</div>` : ''}
+      ${item.stayDetails ? `<div class="info-box-label" style="margin-bottom:8px">Stay details</div><div class="info-amenities">${item.stayDetails.map(a=>`<span class="info-pill">${a}</span>`).join('')}</div>` : ''}
+      ${item.guestQuotes ? `<div class="info-box-label" style="margin-bottom:8px">Guest comments</div><div style="display:grid;gap:8px;margin-bottom:1.25rem">${item.guestQuotes.slice(0,3).map(q=>`<div class="info-box" style="border-left-color:var(--gold);padding:0.75rem"><div class="info-box-val">"${q}"</div></div>`).join('')}</div>` : ''}
+      ${item.wifi ? `<div class="info-box" style="border-left-color:var(--teal)"><div class="info-box-label">WiFi</div><div class="info-box-val">${item.wifi}</div></div>` : ''}
       <div class="info-box" style="border-left-color:var(--gold);margin-bottom:0"><div class="info-box-label">${t('pro-tip')}</div><div class="info-box-val">${item.tip||''}</div></div>
     `;
   } else if(type==='restaurant'){
@@ -1465,6 +1549,7 @@ function openInfoModal(type, id){
         <div id="${imgId}" style="width:100%;height:200px;background:linear-gradient(135deg,#F5E6CC,#D4A96B);border-radius:8px;overflow:hidden;margin-bottom:1.25rem;position:relative">
           ${skImg('200px')}
         </div>
+        ${item.localImages ? `<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:-0.75rem 0 1.25rem">${item.localImages.slice(0,8).map(src=>`<button onclick="setModalImage('${src}','${displayName.replace(/'/g,"\\'")}')" style="border:0;padding:0;height:58px;border-radius:5px;overflow:hidden;cursor:pointer;background:var(--cream-dark)"><img src="${src}" alt="${displayName}" style="width:100%;height:100%;object-fit:cover"/></button>`).join('')}</div>` : ''}
         <p class="info-modal-desc">${item.desc||''}</p>
         ${details}
       </div>
@@ -1498,6 +1583,11 @@ function switchTab(tab){
 // ══════════════════════════════════════════
 // CONTACT MODAL
 // ══════════════════════════════════════════
+function setModalImage(src, alt){
+  const el = document.getElementById('modal-main-img');
+  if(el) el.innerHTML = `<img src="${src}" alt="${alt}" style="width:100%;height:200px;object-fit:cover"/>`;
+}
+
 function openContactModal(){
   document.getElementById('modal-content').innerHTML = `
     <div class="modal-header">
